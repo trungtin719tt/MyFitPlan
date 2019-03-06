@@ -3,4 +3,9 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
+    <color name="blueBackGroud">#2962ff</color>
+    <color name="greenStatusFillGoal">#00cb00</color>
+    <color name="grayStatusFillGoal">#c9ccc7</color>
+    <color name="whiteText">#FFFFFF</color>
+    <color name="lightBlue">#7BA6B4</color>
 </resources>
