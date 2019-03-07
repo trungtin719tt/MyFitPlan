@@ -1,17 +1,13 @@
 package mobile.myfitplan.myfitplan;
 
-
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-
-public class MainActivity extends AppCompatActivity   {
+public class DeleteAccount extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_chang_info);
-
+        setContentView(R.layout.activity_delete_account);
     }
-
 }
