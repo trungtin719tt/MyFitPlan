@@ -10,6 +10,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <activity android:name=".MainActivity">
+        android:theme="@style/AppTheme">
+        <activity android:name=".ChangeGoal">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -30,6 +32,9 @@
             android:theme="@style/AppTheme.CustomTheme" />
         <activity android:name=".DiaryActivity" />
         <activity android:name=".LibraryActivity"></activity>
+        <activity android:name=".ChangePassword" />
+        <activity android:name=".DeleteAccount" />
+        <activity android:name=".ChangInfo"></activity>
     </application>
 
 </manifest>
