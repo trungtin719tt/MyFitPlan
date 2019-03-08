@@ -7,6 +7,15 @@
     android:orientation="vertical"
     tools:context=".LoginPage">
 
+    <!-- Toolbar -->
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:background="@color/colorPrimary"
+        style="@style/MyTheme"
+        android:theme="@style/AppTheme.AppBarOverlay" />
+
     <ImageView
         android:layout_width="140dp"
         android:layout_height="140dp"

@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#008577</color>
-    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorPrimary">#2962ff</color>
+    <color name="colorPrimaryDark">#0039cb</color>
+    <color name="colorPrimaryLight">#7BA6B4</color>
     <color name="colorAccent">#D81B60</color>
     <color name="blueBackGroud">#2962ff</color>
     <color name="greenStatusFillGoal">#00cb00</color>
@@ -13,4 +14,10 @@
     <!--<color name="lightBlue">#768fff</color>-->
     <color name="white">#ffffff</color>
     <color name="black">#000000</color>
+    <color name="textColorOnPrimary">#ffffff</color>
+    <color name="textColorOnDark">#ffffff</color>
+    <color name="textColorOnLight">#ffffff</color>
+    <color name="textColorOnWhite">#000000</color>
+
+
 </resources>

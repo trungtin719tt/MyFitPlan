@@ -16,26 +16,34 @@
         <!--android:textSize="32dp"-->
         <!--android:textColor="#FFFFFF"-->
         <!--android:background="#2962ff"/>-->
-    <LinearLayout
+    <!--<LinearLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:orientation="horizontal"-->
+        <!--android:background="@color/blueBackGround">-->
+        <!--<ImageView-->
+            <!--android:layout_width="50dp"-->
+            <!--android:layout_height="50dp"-->
+            <!--android:src="@drawable/back_icon"/>-->
+        <!--<TextView-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="50dp"-->
+            <!--android:text="Đăng ký"-->
+            <!--android:gravity="left"-->
+            <!--android:textSize="30dp"-->
+            <!--android:textStyle="bold"-->
+            <!--android:textColor="@color/white"-->
+            <!--android:textAlignment="center"-->
+            <!--/>-->
+    <!--</LinearLayout>-->
+    <!-- Toolbar -->
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:background="@color/blueBackGround">
-        <ImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:src="@drawable/back_icon"/>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:text="Đăng ký"
-            android:gravity="left"
-            android:textSize="30dp"
-            android:textStyle="bold"
-            android:textColor="@color/white"
-            android:textAlignment="center"
-            />
-    </LinearLayout>
+        android:layout_height="55dp"
+        android:background="@color/colorPrimary"
+        style="@style/MyTheme"
+        android:theme="@style/AppTheme.AppBarOverlay" />
 
     <ImageView
         android:layout_width="140dp"

@@ -8,6 +8,7 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.os.Bundle;
+import android.text.Html;
 import android.view.MenuItem;
 import android.content.Intent;
 import android.view.View;
@@ -17,13 +18,18 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_library);
+        setContentView(R.layout.activity_main);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setHomeAsUpIndicator(R.drawable.ic_baseline_menu_24px);
+        //set title and color for toolbar
+        int textColor = getResources().getColor(R.color.textColorOnPrimary);
+        String сolorString = String.format("%X", textColor).substring(2);
+        getSupportActionBar().setTitle(Html.fromHtml(String.format("<font color=\"#%s\"'>Trang chủ </font>", сolorString)));
+
 
         drawerLayout = findViewById(R.id.drawer_layout);
 

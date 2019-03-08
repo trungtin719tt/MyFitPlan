@@ -7,39 +7,74 @@
     android:orientation="vertical"
     tools:context=".DeleteAccount">
 
+    <!--<LinearLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:orientation="horizontal"-->
+        <!--android:background="@color/colorPrimary">-->
+        <!--<ImageView-->
+            <!--android:layout_width="50dp"-->
+            <!--android:layout_height="50dp"-->
+            <!--android:src="@drawable/back_icon"/>-->
+        <!--<TextView-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="50dp"-->
+            <!--android:text="Nhập mã xác nhận"-->
+            <!--android:gravity="center"-->
+            <!--android:textSize="30dp"-->
+            <!--android:textStyle="bold"-->
+            <!--android:textColor="@color/textColorOnPrimary"-->
+            <!--/>-->
+    <!--</LinearLayout>-->
+    <!-- Toolbar -->
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:background="@color/colorPrimary"
+        style="@style/MyTheme"
+        android:theme="@style/AppTheme.AppBarOverlay" />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Nhập mật khẩu để xóa tài khoản."
+        android:background="@drawable/custom_editext"
         android:layout_marginTop="70dp"
-        android:layout_marginLeft="40dp"/>
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"/>
 
     <EditText
         android:id="@+id/edtPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Mật khẩu"
-        android:layout_marginLeft="40dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:background="@drawable/custom_editext"
         android:layout_marginTop="20dp"/>
 
     <TextView
         android:id="@+id/txtForgotPassword"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Quên mật khẩu"
-        android:layout_marginLeft="40dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
         android:layout_marginTop="20dp"
+        android:clickable="true"
         android:textColor="#3366FF"/>
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Xóa tài khoản"
-        android:layout_marginLeft="80dp"
-        android:layout_marginRight="80dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
         android:layout_marginTop="20dp"
         android:paddingTop="10dp"
         android:paddingBottom="10dp"
+        android:background="@drawable/custom_button"
+        android:textColor="@color/textColorOnDark"
         android:onClick="clickToDeleteAccount"/>
 
 </LinearLayout>

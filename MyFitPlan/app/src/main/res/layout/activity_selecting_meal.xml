@@ -5,31 +5,39 @@
     android:orientation="vertical"
     >
 
-    <LinearLayout
+    <!--<LinearLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:orientation="horizontal"-->
+        <!--android:background="@color/blueBackGroud">-->
+        <!--<ImageView-->
+            <!--android:layout_width="50dp"-->
+            <!--android:layout_height="50dp"-->
+            <!--android:src="@drawable/back_icon"/>-->
+        <!--<TextView-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="50dp"-->
+            <!--android:text="Chọn món ăn"-->
+            <!--android:gravity="left"-->
+            <!--android:textSize="30dp"-->
+            <!--android:textStyle="bold"-->
+            <!--android:textColor="@color/colorPrimaryDark"-->
+            <!--/>-->
+    <!--</LinearLayout>-->
+    <!-- Toolbar -->
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:background="@color/blueBackGroud">
-        <ImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:src="@drawable/back_icon"/>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:text="Chọn món ăn"
-            android:gravity="left"
-            android:textSize="30dp"
-            android:textStyle="bold"
-            android:textColor="@color/colorPrimaryDark"
-            />
-    </LinearLayout>
+        android:layout_height="55dp"
+        android:background="@color/colorPrimary"
+        style="@style/MyTheme"
+        android:theme="@style/AppTheme.AppBarOverlay" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="THỰC ĐƠN"
-        android:textColor="@color/blueBackGroud"
+        android:textColor="@color/colorPrimary"
         android:layout_gravity="center"
         android:textStyle="bold"
         android:textSize="30dp"/>
@@ -68,7 +76,7 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:orientation="horizontal"
-            android:background="@color/blueBackGroud">
+            android:background="@color/colorPrimary">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -76,7 +84,7 @@
                 android:text="Món thịt"
                 android:textSize="25dp"
                 android:layout_gravity="center"
-                android:textColor="@color/whiteText"
+                android:textColor="@color/textColorOnPrimary"
                 android:textStyle="bold"
                 />
             //layout + -
@@ -91,7 +99,7 @@
                     android:text="+"
                     android:textSize="40dp"
                     android:textStyle="bold"
-                    android:textColor="@color/whiteText"
+                    android:textColor="@color/textColorOnPrimary"
                     android:layout_alignParentRight="true"
                     android:visibility="invisible"
                     />
@@ -103,7 +111,7 @@
                     android:layout_alignParentRight="true"
                     android:layout_marginStart="8dp"
                     android:text="-"
-                    android:textColor="@color/whiteText"
+                    android:textColor="@color/textColorOnPrimary"
                     android:textSize="40dp"
                     android:textStyle="bold"
                     />
@@ -229,7 +237,7 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:orientation="horizontal"
-            android:background="@color/blueBackGroud">
+            android:background="@color/colorPrimary">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -237,7 +245,7 @@
                 android:text="Món ăn vặt"
                 android:textSize="25dp"
                 android:layout_gravity="center"
-                android:textColor="@color/whiteText"
+                android:textColor="@color/textColorOnPrimary"
                 android:textStyle="bold"
                 />
             //layout + -
@@ -252,7 +260,7 @@
                     android:text="+"
                     android:textSize="40dp"
                     android:textStyle="bold"
-                    android:textColor="@color/whiteText"
+                    android:textColor="@color/textColorOnPrimary"
                     android:layout_alignParentRight="true"
                     android:visibility="invisible"
                     />
@@ -264,7 +272,7 @@
                     android:layout_alignParentRight="true"
                     android:layout_marginStart="8dp"
                     android:text="-"
-                    android:textColor="@color/whiteText"
+                    android:textColor="@color/textColorOnPrimary"
                     android:textSize="40dp"
                     android:textStyle="bold"
                     />

@@ -18,8 +18,9 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="55dp"
-            android:background="#ff5722"
-            android:theme="@style/ThemeOverlay.AppCompat.ActionBar" />
+            android:background="@color/colorPrimary"
+            style="@style/MyTheme"
+            android:theme="@style/AppTheme.AppBarOverlay" />
 
         <!-- Main Home -->
         <LinearLayout
@@ -64,7 +65,9 @@
                         android:id="@+id/progress_calo"
                         android:layout_width="170dp"
                         android:layout_height="20dp"
-                        android:background="#ffeb3b"/>
+                        android:background="#ffeb3b"
+                        android:progress="25"
+                        />
 
                 </LinearLayout>
 

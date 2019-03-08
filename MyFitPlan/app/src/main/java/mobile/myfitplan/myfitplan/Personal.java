@@ -3,7 +3,6 @@ package mobile.myfitplan.myfitplan;
 import android.support.v4.app.Fragment;
 import android.support.design.widget.TabLayout;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
@@ -11,6 +10,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.os.Bundle;
+import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -76,6 +76,16 @@ public class Personal extends AppCompatActivity {
 //                        .setAction("Action", null).show();
 //            }
 //        });
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+
+        //set title and color for toolbar
+        int textColor = getResources().getColor(R.color.textColorOnPrimary);
+        String сolorString = String.format("%X", textColor).substring(2);
+        getSupportActionBar().setTitle(Html.fromHtml(String.format("<font color=\"#%s\"'>Tôi </font>", сolorString)));
+
 
     }
 

@@ -18,8 +18,9 @@ android:fitsSystemWindows="true">
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="55dp"
-        android:background="#ff5722"
-        android:theme="@style/ThemeOverlay.AppCompat.ActionBar" />
+        android:background="@color/colorPrimary"
+        style="@style/MyTheme"
+        android:theme="@style/AppTheme.AppBarOverlay" />
 
     <!-- Main Home -->
     <LinearLayout
@@ -122,15 +123,16 @@ android:fitsSystemWindows="true">
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:orientation="horizontal"
+                            android:layout_marginTop="20dp"
                             android:gravity="right">
                             <Button
-                                android:layout_width="40dp"
-                                android:layout_height="wrap_content"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
                                 android:background="@drawable/ic_food"
                                 android:layout_marginRight="10dp"/>
                             <Button
-                                android:layout_width="40dp"
-                                android:layout_height="wrap_content"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
                                 android:background="@drawable/ic_plus"/>
                         </LinearLayout>
 

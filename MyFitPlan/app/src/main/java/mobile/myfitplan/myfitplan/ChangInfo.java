@@ -4,6 +4,8 @@ import android.app.DatePickerDialog;
 import android.app.DialogFragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
+import android.text.Html;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -52,6 +54,15 @@ public class ChangInfo extends AppCompatActivity implements DatePickerDialog.OnD
 
             }
         });
+
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        //set title and color for toolbar
+        int textColor = getResources().getColor(R.color.textColorOnPrimary);
+        String сolorString = String.format("%X", textColor).substring(2);
+        getSupportActionBar().setTitle(Html.fromHtml(String.format("<font color=\"#%s\"'>Thay đổi thông tin </font>", сolorString)));
     }
 
     @Override

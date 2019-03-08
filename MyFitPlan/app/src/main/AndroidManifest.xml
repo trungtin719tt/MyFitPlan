@@ -11,16 +11,16 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".Personal"
-            android:label="@string/title_activity_personal"
-
-            android:theme="@style/AppTheme.NoActionBar" >
+            android:label="@string/title_activity_personal" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ForgotPassword2" />
+        <activity android:name=".ForgotPassword2" >
+
+        </activity>
         <activity android:name=".SignUp" />
         <activity android:name=".MainActivity">
 
@@ -28,23 +28,33 @@
         <activity android:name=".ChangeGoal">
 
         </activity>
-        <activity android:name=".Confirm" />
+        <activity android:name=".Confirm" >
+
+        </activity>
         <activity android:name=".FillingGoal" />
         <activity android:name=".ForgotPassword" />
         <activity android:name=".LoginPage" />
         <activity android:name=".FillingLevel" />
         <activity android:name=".FillingInfo" />
         <activity android:name=".FillingWeeklyGoal" />
-        <activity android:name=".AddingMeal" />
-        <activity android:name=".SelectingMeal" />
+        <activity android:name=".AddingMeal" >
+
+        </activity>
+        <activity android:name=".SelectingMeal" >
+
+        </activity>
         <activity
             android:name=".Pop"
             android:theme="@style/AppTheme.CustomTheme" />
-        <activity android:name=".DiaryActivity" />
+        <activity android:name=".DiaryActivity" >
+
+        </activity>
         <activity android:name=".LibraryActivity"></activity>
         <activity android:name=".ChangePassword" />
         <activity android:name=".DeleteAccount" />
-        <activity android:name=".ChangInfo"></activity>
+        <activity android:name=".ChangInfo">
+
+        </activity>
         <activity android:name=".NewFolder"
             android:theme="@style/AppTheme.CustomTheme">
 

@@ -18,8 +18,9 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="55dp"
-            android:background="#ff5722"
-            android:theme="@style/ThemeOverlay.AppCompat.ActionBar" />
+            android:background="@color/colorPrimary"
+            style="@style/MyTheme"
+            android:theme="@style/AppTheme.AppBarOverlay" />
 
         <!-- Main Home -->
         <LinearLayout
@@ -82,6 +83,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_toLeftOf="@+id/food_calories"
+                    android:textSize="30dp"
                     android:text="-"/>
                 <LinearLayout
                     android:id="@+id/food_calories"
@@ -106,6 +108,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_toRightOf="@+id/food_calories"
+                    android:textSize="30dp"
                     android:text="="/>
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -144,7 +147,7 @@
                             android:layout_marginTop="10dp"
                             android:layout_width="match_parent"
                             android:layout_height="40dp"
-                            android:background="@color/blueBackGroud">
+                            android:background="@color/colorPrimary">
                             <TextView
                                 android:layout_marginLeft="30dp"
                                 android:layout_width="wrap_content"
@@ -232,7 +235,7 @@
                             android:layout_marginTop="10dp"
                             android:layout_width="match_parent"
                             android:layout_height="40dp"
-                            android:background="@color/blueBackGroud">
+                            android:background="@color/colorPrimary">
                             <TextView
                                 android:layout_marginLeft="30dp"
                                 android:layout_width="wrap_content"
@@ -289,7 +292,7 @@
                             android:layout_marginTop="10dp"
                             android:layout_width="match_parent"
                             android:layout_height="40dp"
-                            android:background="@color/blueBackGroud">
+                            android:background="@color/colorPrimary">
                             <TextView
                                 android:layout_marginLeft="30dp"
                                 android:layout_width="wrap_content"
