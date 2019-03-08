@@ -10,7 +10,7 @@
     <color name="lightBlue">#7BA6B4</color>
     <color name="blueBackGround">#2962ff</color>
     <color name="darkBlue">#0039cb</color>
-    <color name="lightBlue">#768fff</color>
+    <!--<color name="lightBlue">#768fff</color>-->
     <color name="white">#ffffff</color>
     <color name="black">#000000</color>
 </resources>

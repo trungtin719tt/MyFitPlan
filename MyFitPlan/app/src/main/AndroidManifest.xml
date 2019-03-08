@@ -12,17 +12,21 @@
         <activity
             android:name=".Personal"
             android:label="@string/title_activity_personal"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".ForgotPassword2" />
-        <activity android:name=".SignUp" />
-        <activity android:name=".MainActivity">
-        android:theme="@style/AppTheme">
-        <activity android:name=".ChangeGoal">
+
+            android:theme="@style/AppTheme.NoActionBar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".ForgotPassword2" />
+        <activity android:name=".SignUp" />
+        <activity android:name=".MainActivity">
+
+        </activity>
+        <activity android:name=".ChangeGoal">
+
         </activity>
         <activity android:name=".Confirm" />
         <activity android:name=".FillingGoal" />
