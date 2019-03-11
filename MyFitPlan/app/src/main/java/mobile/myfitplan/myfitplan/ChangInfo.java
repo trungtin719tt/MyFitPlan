@@ -4,6 +4,7 @@ import android.app.DatePickerDialog;
 import android.app.DialogFragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -25,6 +26,9 @@ public class ChangInfo extends AppCompatActivity implements DatePickerDialog.OnD
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chang_info);
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeButtonEnabled(true);
 
         txtBirthday = findViewById(R.id.txtBirthday);
         final Calendar cal = Calendar.getInstance();
@@ -63,5 +67,16 @@ public class ChangInfo extends AppCompatActivity implements DatePickerDialog.OnD
     public void clickToGetDate(View view) {
         DialogFragment dateFragment = new DayPickerFragment();
         dateFragment.show(getFragmentManager(), "DatePicker");
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                finish();
+                return true;
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 }
