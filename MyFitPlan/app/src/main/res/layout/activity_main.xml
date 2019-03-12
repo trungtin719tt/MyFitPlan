@@ -67,6 +67,8 @@
                         android:layout_height="20dp"
                         android:background="#ffeb3b"
                         android:progress="25"
+                        android:max="100"
+                        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
                         />
 
                 </LinearLayout>
@@ -216,7 +218,8 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_food"/>
+                    android:src="@drawable/ic_food"
+                    android:onClick="clickToEat"/>
                 <TextView
                     android:paddingTop="5dp"
                     android:layout_width="wrap_content"
@@ -418,6 +421,28 @@
 
 
     </android.support.design.widget.NavigationView>
+
+    <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="info.androidhive.bottomnavigation.MainActivity">
+
+        <android.support.design.widget.BottomNavigationView
+            android:id="@+id/navigation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            app:itemBackground="@color/colorPrimary"
+            android:foreground="?attr/selectableItemBackground"
+            app:itemIconTint="@android:color/white"
+            app:itemTextColor="@android:color/white"
+            app:menu="@menu/navigation" />
+
+    </android.support.design.widget.CoordinatorLayout>
+
 
 
 

@@ -1,5 +1,7 @@
 package mobile.myfitplan.myfitplan;
 
+import android.support.design.widget.BottomNavigationView;
+
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -12,6 +14,7 @@ import android.text.Html;
 import android.view.MenuItem;
 import android.content.Intent;
 import android.view.View;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     private DrawerLayout drawerLayout;
@@ -43,7 +46,32 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
+        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+
     }
+
+    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
+            = new BottomNavigationView.OnNavigationItemSelectedListener() {
+
+        @Override
+        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+            switch (item.getItemId()) {
+                case R.id.navigation_home:
+                    return true;
+                case R.id.navigation_diary:
+                    startActivity(new Intent(MainActivity.this, DiaryActivity.class));
+                    return true;
+                case R.id.navigation_library:
+                    startActivity(new Intent(MainActivity.this, LibraryActivity.class));
+                    return true;
+                case R.id.navigation_me:
+                    startActivity(new Intent(MainActivity.this, Personal.class));
+                    return true;
+            }
+            return false;
+        }
+    };
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -53,6 +81,9 @@ public class MainActivity extends AppCompatActivity {
                 return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    public void clickToEat(View view) {
     }
 
     //click để hiện popup

@@ -14,38 +14,38 @@
         android:paddingTop="@dimen/appbar_padding_top"
         android:theme="@style/AppTheme.AppBarOverlay">
 
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="55dp"
-            android:layout_weight="1"
-            android:background="@color/darkBlue"
-            android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
-            app:layout_scrollFlags="scroll|enterAlways"
-            app:popupTheme="@style/AppTheme.PopupOverlay">
+        <!--<android.support.v7.widget.Toolbar-->
+            <!--android:id="@+id/toolbar"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="55dp"-->
+            <!--android:layout_weight="1"-->
+            <!--android:background="@color/darkBlue"-->
+            <!--android:theme="@style/ThemeOverlay.AppCompat.ActionBar"-->
+            <!--app:layout_scrollFlags="scroll|enterAlways"-->
+            <!--app:popupTheme="@style/AppTheme.PopupOverlay">-->
 
 
-            <!--<RelativeLayout-->
-                <!--android:orientation="horizontal"-->
-                <!--android:layout_width="fill_parent"-->
-                <!--android:layout_height="fill_parent">-->
+            <!--&lt;!&ndash;<RelativeLayout&ndash;&gt;-->
+                <!--&lt;!&ndash;android:orientation="horizontal"&ndash;&gt;-->
+                <!--&lt;!&ndash;android:layout_width="fill_parent"&ndash;&gt;-->
+                <!--&lt;!&ndash;android:layout_height="fill_parent">&ndash;&gt;-->
 
-                <!--<ImageView-->
-                    <!--android:layout_width="wrap_content"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:src="@drawable/ic_settings_black_18dp"-->
-                    <!--android:clickable="true"-->
-                    <!--android:layout_marginTop="20dp"-->
-                    <!--android:layout_alignParentRight="true"-->
-                    <!--android:layout_marginRight="20dp"-->
-                    <!--/>-->
+                <!--&lt;!&ndash;<ImageView&ndash;&gt;-->
+                    <!--&lt;!&ndash;android:layout_width="wrap_content"&ndash;&gt;-->
+                    <!--&lt;!&ndash;android:layout_height="wrap_content"&ndash;&gt;-->
+                    <!--&lt;!&ndash;android:src="@drawable/ic_settings_black_18dp"&ndash;&gt;-->
+                    <!--&lt;!&ndash;android:clickable="true"&ndash;&gt;-->
+                    <!--&lt;!&ndash;android:layout_marginTop="20dp"&ndash;&gt;-->
+                    <!--&lt;!&ndash;android:layout_alignParentRight="true"&ndash;&gt;-->
+                    <!--&lt;!&ndash;android:layout_marginRight="20dp"&ndash;&gt;-->
+                    <!--&lt;!&ndash;/>&ndash;&gt;-->
 
-            <!--</RelativeLayout>-->
-
-
+            <!--&lt;!&ndash;</RelativeLayout>&ndash;&gt;-->
 
 
-        </android.support.v7.widget.Toolbar>
+
+
+        <!--</android.support.v7.widget.Toolbar>-->
         <RelativeLayout
             android:layout_width="250dp"
             android:layout_height="wrap_content"
@@ -112,6 +112,16 @@
 
 
     </android.support.v4.view.ViewPager>
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        app:itemBackground="@color/colorPrimary"
+        android:foreground="?attr/selectableItemBackground"
+        app:itemIconTint="@android:color/white"
+        app:itemTextColor="@android:color/white"
+        app:menu="@menu/navigation" />
 
     <!--<android.support.design.widget.FloatingActionButton-->
         <!--android:id="@+id/fab"-->

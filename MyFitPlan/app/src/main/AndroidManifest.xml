@@ -12,11 +12,7 @@
         <activity
             android:name=".Personal"
             android:label="@string/title_activity_personal" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".ForgotPassword2" >
 
@@ -49,7 +45,13 @@
         <activity android:name=".DiaryActivity" >
 
         </activity>
-        <activity android:name=".LibraryActivity"></activity>
+        <activity android:name=".LibraryActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".ChangePassword" />
         <activity android:name=".DeleteAccount" />
         <activity android:name=".ChangInfo">
