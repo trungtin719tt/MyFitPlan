@@ -12,6 +12,7 @@ import android.support.v7.widget.Toolbar;
 import android.text.Html;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 public class DiaryActivity extends AppCompatActivity {
     private DrawerLayout drawerLayout;
@@ -38,6 +39,10 @@ public class DiaryActivity extends AppCompatActivity {
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
         navigation.setSelectedItemId(R.id.navigation_diary);
+    }
+
+    public void clickToEat(View view) {
+        startActivity(new Intent(DiaryActivity.this, SelectingMeal.class));
     }
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener

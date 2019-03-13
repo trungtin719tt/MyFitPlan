@@ -12,6 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingTop="@dimen/appbar_padding_top"
+        android:background="@color/colorPrimary"
         android:theme="@style/AppTheme.AppBarOverlay">
 
         <!--<android.support.v7.widget.Toolbar-->
@@ -60,7 +61,7 @@
                 android:id="@+id/username"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:text="Username here"
+                android:text="TinNTSE62434"
                 android:textColor="@color/white"
                 android:textStyle="bold"
                 android:textSize="20dp"

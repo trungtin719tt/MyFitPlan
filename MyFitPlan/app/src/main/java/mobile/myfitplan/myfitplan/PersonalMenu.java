@@ -7,7 +7,9 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.support.v7.app.AppCompatActivity;
 import android.content.Intent;
@@ -29,13 +31,38 @@ public class PersonalMenu extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_personal_menu, container, false);
-        LinearLayout linearLayout = (LinearLayout) rootView.findViewById(R.id.popUp);
-        linearLayout.setOnClickListener(new View.OnClickListener() {
+
+        RelativeLayout addFolder = rootView.findViewById(R.id.add_folder);
+        addFolder.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getActivity(), NewFolder.class));
             }
         });
+
+        ImageView addMeal1 = rootView.findViewById(R.id.add_meal1);
+        addMeal1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getActivity(), LibraryActivity.class));
+            }
+        });
+
+        ImageView addMeal2 = rootView.findViewById(R.id.add_meal2);
+        addMeal2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getActivity(), LibraryActivity.class));
+            }
+        });
+
+//        LinearLayout linearLayout = (LinearLayout) rootView.findViewById(R.id.popUp);
+//        linearLayout.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                startActivity(new Intent(getActivity(), NewFolder.class));
+//            }
+//        });
         LinearLayout linearLayoutMinimize = (LinearLayout) rootView.findViewById(R.id.minimize_layout);
         linearLayoutMinimize.setOnClickListener(new View.OnClickListener() {
             @Override

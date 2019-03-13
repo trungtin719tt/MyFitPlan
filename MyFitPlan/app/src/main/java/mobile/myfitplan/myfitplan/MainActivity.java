@@ -84,6 +84,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void clickToEat(View view) {
+        startActivity(new Intent(MainActivity.this, SelectingMeal.class));
     }
 
     //click để hiện popup

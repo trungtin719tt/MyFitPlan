@@ -28,9 +28,27 @@
             android:layout_height="match_parent"
             android:gravity="center_horizontal"
             android:orientation="vertical">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp">
+                <ImageView
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:src="@drawable/exclamation"
+                    />
+                <TextView
+                    android:id="@+id/alert_message"
+                    android:layout_width="300dp"
+                    android:layout_marginLeft="50dp"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/alertColor"
+                    android:textSize="30dp"
+                    android:text="Chú ý ăn uống! "/>
+            </RelativeLayout>
             <TextView
                 android:id="@+id/home_notification"
-                android:layout_marginTop="40dp"
+                android:layout_marginTop="10dp"
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"
                 android:gravity="center"
@@ -66,8 +84,8 @@
                         android:layout_width="170dp"
                         android:layout_height="20dp"
                         android:background="#ffeb3b"
-                        android:progress="25"
-                        android:max="100"
+                        android:progress="54"
+                        android:max="160"
                         style="@style/Widget.AppCompat.ProgressBar.Horizontal"
                         />
 
@@ -103,6 +121,9 @@
                         android:id="@+id/progress_protein"
                         android:layout_width="170dp"
                         android:layout_height="20dp"
+                        android:progress="54"
+                        android:max="160"
+                        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
                         android:background="#ffeb3b"/>
                 </LinearLayout>
 
@@ -136,6 +157,9 @@
                         android:id="@+id/progress_carb"
                         android:layout_width="170dp"
                         android:layout_height="20dp"
+                        android:progress="54"
+                        android:max="160"
+                        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
                         android:background="#ffeb3b"/>
                 </LinearLayout>
 
@@ -169,6 +193,9 @@
                         android:id="@+id/progress_fat"
                         android:layout_width="170dp"
                         android:layout_height="20dp"
+                        android:progress="54"
+                        android:max="160"
+                        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
                         android:background="#ffeb3b"/>
                 </LinearLayout>
 
@@ -202,31 +229,61 @@
                         android:id="@+id/progress_water"
                         android:layout_width="170dp"
                         android:layout_height="20dp"
+                        android:progress="540"
+                        android:max="2500"
+                        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
                         android:background="#ffeb3b"/>
                 </LinearLayout>
 
 
             </LinearLayout>
-
-            <LinearLayout
+            <RelativeLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:gravity="center_horizontal"
-                android:layout_marginTop="20dp"
-                android:layout_marginLeft="130dp">
-                <ImageView
+                android:layout_height="wrap_content">
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_food"
-                    android:onClick="clickToEat"/>
-                <TextView
-                    android:paddingTop="5dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Hôm nay ăn gì?"/>
+                    android:orientation="vertical"
+                    android:gravity="center_horizontal"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="50dp"
+                    android:layout_marginTop="20dp">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_food"
+                        android:onClick="clickToEat"/>
+                    <TextView
+                        android:paddingTop="5dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Hôm nay ăn gì?"/>
 
-            </LinearLayout>
+                </LinearLayout>
+                <!--<LinearLayout-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:orientation="vertical"-->
+                    <!--android:gravity="center_horizontal"-->
+                    <!--android:layout_marginTop="20dp"-->
+                    <!--android:layout_alignParentRight="true"-->
+                    <!--android:layout_marginRight="170dp">-->
+                    <!--<ImageView-->
+                        <!--android:layout_width="40dp"-->
+                        <!--android:layout_height="40dp"-->
+                        <!--android:src="@drawable/water"-->
+                        <!--android:onClick="clickToEat"/>-->
+                    <!--<TextView-->
+                        <!--android:paddingTop="5dp"-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:text="Uống nước"/>-->
+
+                <!--</LinearLayout>-->
+            </RelativeLayout>
+
+
+
 
         </LinearLayout>
 
