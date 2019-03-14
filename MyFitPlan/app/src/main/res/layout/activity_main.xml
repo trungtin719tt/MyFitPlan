@@ -78,7 +78,7 @@
                         android:id="@+id/txt_progress_calo"
                         android:layout_width="match_parent"
                         android:layout_height="20dp"
-                        android:text="54/160"/>
+                        android:text="2650/3250"/>
                     <ProgressBar
                         android:id="@+id/progress_calo"
                         android:layout_width="170dp"
