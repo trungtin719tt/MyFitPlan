@@ -5,26 +5,7 @@
     android:orientation="vertical"
     >
 
-    <!--<LinearLayout-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:orientation="horizontal"-->
-        <!--android:background="@color/blueBackGroud">-->
-        <!--<ImageView-->
-            <!--android:layout_width="50dp"-->
-            <!--android:layout_height="50dp"-->
-            <!--android:src="@drawable/back_icon"/>-->
-        <!--<TextView-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="50dp"-->
-            <!--android:text="Chọn món ăn"-->
-            <!--android:gravity="left"-->
-            <!--android:textSize="30dp"-->
-            <!--android:textStyle="bold"-->
-            <!--android:textColor="@color/colorPrimaryDark"-->
-            <!--/>-->
-    <!--</LinearLayout>-->
-    <!-- Toolbar -->
+
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
@@ -46,8 +27,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:clickable="true"
-        android:onClick="clickToGoToLibrary"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:onClick="clickToMoveToLibrary">
 
         <ImageView
             android:layout_width="30dp"
@@ -62,9 +43,36 @@
             android:text="Tìm trên hệ thống"
             android:textStyle="bold"
             android:layout_gravity="center"
-            />
+            android:textColor="@color/textColorOnWhite"
 
+            />
     </LinearLayout>
+    <!--<LinearLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:orientation="horizontal"-->
+        <!--android:onClick="clickToMoveToLibrary"-->
+        <!--&gt;-->
+        <!--<ImageView-->
+            <!--android:layout_width="30dp"-->
+            <!--android:layout_height="30dp"-->
+            <!--android:src="@drawable/search_icon"-->
+            <!--android:layout_marginTop="5dp"-->
+            <!--/>-->
+
+        <!--<EditText-->
+            <!--android:background="@drawable/custom_search_text"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="40dp"-->
+            <!--android:id="@+id/edtAccount"-->
+            <!--android:paddingLeft="30dp"-->
+            <!--android:layout_marginLeft="-30dp"-->
+            <!--android:layout_marginBottom="10dp"-->
+            <!--android:layout_marginRight="50dp"-->
+            <!--android:hint="Tên đăng nhập"-->
+
+            <!--/>-->
+    <!--</LinearLayout>-->
 
     //menu món thịt
     <LinearLayout
@@ -152,7 +160,7 @@
                         android:text="Cháo hành Chí Phèo"
                         android:layout_gravity="center"
                         android:layout_marginLeft="5dp"
-                        android:textColor="@color/colorPrimaryDark"
+                        android:textColor="@color/textColorOnWhite"
                         android:textStyle="bold"/>
                     <TextView
                         android:layout_width="match_parent"
@@ -161,7 +169,7 @@
                         android:layout_gravity="center"
                         android:layout_marginLeft="5dp"
                         android:layout_marginTop="20dp"
-                        android:textColor="@color/colorPrimaryDark"
+                        android:textColor="@color/textColorOnWhite"
                         />
                 </RelativeLayout>
                 <!--<TextView-->
@@ -178,7 +186,8 @@
                     android:text="30 cal"
                     android:layout_marginLeft="20dp"
                     android:layout_gravity="center"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold"
+                    android:textColor="@color/textColorOnWhite"/>
             </LinearLayout>
             <LinearLayout
                 android:id="@+id/popUp1"
@@ -204,7 +213,7 @@
                         android:text="Cháo hành Chí Phèo"
                         android:layout_gravity="center"
                         android:layout_marginLeft="5dp"
-                        android:textColor="@color/colorPrimaryDark"
+                        android:textColor="@color/textColorOnWhite"
                         android:textStyle="bold"/>
                     <TextView
                         android:layout_width="match_parent"
@@ -213,7 +222,7 @@
                         android:layout_gravity="center"
                         android:layout_marginLeft="5dp"
                         android:layout_marginTop="20dp"
-                        android:textColor="@color/colorPrimaryDark"
+                        android:textColor="@color/textColorOnWhite"
                         />
                 </RelativeLayout>
                 <TextView
@@ -222,7 +231,8 @@
                     android:text="30 cal"
                     android:layout_gravity="center"
                     android:layout_marginLeft="20dp"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold"
+                    android:textColor="@color/textColorOnWhite"/>
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
@@ -313,7 +323,7 @@
                         android:text="Cháo hành Chí Phèo"
                         android:layout_gravity="center"
                         android:layout_marginLeft="5dp"
-                        android:textColor="@color/colorPrimaryDark"
+                        android:textColor="@color/textColorOnWhite"
                         android:textStyle="bold"/>
                     <TextView
                         android:layout_width="match_parent"
@@ -322,7 +332,7 @@
                         android:layout_gravity="center"
                         android:layout_marginLeft="5dp"
                         android:layout_marginTop="20dp"
-                        android:textColor="@color/colorPrimaryDark"
+                        android:textColor="@color/textColorOnWhite"
                         />
                 </RelativeLayout>
                 <!--<TextView-->
@@ -339,7 +349,8 @@
                     android:text="30 cal"
                     android:layout_marginLeft="20dp"
                     android:layout_gravity="center"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold"
+                    android:textColor="@color/textColorOnWhite"/>
             </LinearLayout>
             <LinearLayout
                 android:id="@+id/popUp3"
@@ -365,7 +376,7 @@
                         android:text="Cháo hành Chí Phèo"
                         android:layout_gravity="center"
                         android:layout_marginLeft="5dp"
-                        android:textColor="@color/colorPrimaryDark"
+                        android:textColor="@color/textColorOnWhite"
                         android:textStyle="bold"/>
                     <TextView
                         android:layout_width="match_parent"
@@ -374,7 +385,7 @@
                         android:layout_gravity="center"
                         android:layout_marginLeft="5dp"
                         android:layout_marginTop="20dp"
-                        android:textColor="@color/colorPrimaryDark"
+                        android:textColor="@color/textColorOnWhite"
                         />
                 </RelativeLayout>
                 <TextView
@@ -383,7 +394,8 @@
                     android:text="30 cal"
                     android:layout_gravity="center"
                     android:layout_marginLeft="20dp"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold"
+                    android:textColor="@color/textColorOnWhite"/>
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>

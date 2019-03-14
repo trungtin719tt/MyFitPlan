@@ -8,18 +8,11 @@
     tools:context=".LoginPage">
 
     <!-- Toolbar -->
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="55dp"
-        android:background="@color/colorPrimary"
-        style="@style/MyTheme"
-        android:theme="@style/AppTheme.AppBarOverlay" />
 
     <ImageView
         android:layout_width="140dp"
         android:layout_height="140dp"
-        android:src="@drawable/main_icon"
+        android:src="@drawable/main_icon1"
         android:layout_gravity="center"
         android:layout_marginTop="30dp"
         android:layout_marginBottom="30dp"
@@ -33,17 +26,22 @@
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:src="@drawable/user"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="5dp"
+
             />
 
         <EditText
-            android:background="@drawable/custom_edittext"
+            android:background="@drawable/custom_editext"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/edtUsername"
-            android:layout_marginLeft="20dp"
-            android:text="Tên đăng nhập"
+            android:layout_height="40dp"
+            android:id="@+id/edtAccount"
+            android:paddingLeft="30dp"
+            android:layout_marginLeft="-30dp"
             android:layout_marginBottom="10dp"
             android:layout_marginRight="50dp"
+            android:hint="Tên đăng nhập"
+
             />
     </LinearLayout>
 
@@ -51,51 +49,72 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
-        <ImageView
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:src="@drawable/key"
-            />
 
-        <EditText
-            android:background="@drawable/custom_edittext"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/edtPassword"
-            android:layout_marginLeft="20dp"
-            android:layout_marginBottom="10dp"
-            android:layout_marginRight="50dp"
-            android:text="Mật khẩu"/></LinearLayout>
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/key"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="5dp"
+                />
+
+            <EditText
+                android:background="@drawable/custom_editext"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:id="@+id/edtPassword"
+                android:paddingLeft="30dp"
+                android:layout_marginLeft="-30dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginRight="50dp"
+                android:hint="Mật khẩu"
+                />
 
 
-    <TextView
+    </LinearLayout>
+
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Quên mật khẩu?"
-        android:layout_marginLeft="50dp"
-        android:textStyle="bold|italic"
-        android:layout_marginBottom="10dp"
-        android:layout_marginRight="50dp"
-        android:textColor="@android:color/holo_blue_dark"/>
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Quên mật khẩu?"
+            android:layout_marginLeft="50dp"
+            android:textStyle="bold|italic"
+            android:layout_marginBottom="10dp"
+            android:layout_marginRight="50dp"
+            android:textColor="@color/orangeText"
+            android:onClick="clickToForgotPassword"/>
 
-    <Button
-        android:id="@+id/btnSignIn"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:text="Đăng nhập"
-        android:layout_gravity="center"
-        android:layout_marginBottom="10dp"
-        android:background="@drawable/custom_button"
-        />
+        <Button
+            android:id="@+id/btnSignIn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Đăng nhập"
+            android:textColor="@color/textColorOnPrimary"
+            android:layout_gravity="center"
+            android:layout_marginRight="50dp"
+            android:background="@drawable/custom_button"
+            android:onClick="clickToLogin"
+            android:layout_marginLeft="50dp"
+            android:layout_marginBottom="10dp"
+            />
 
+        <Button
+            android:id="@+id/btnSignUp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Đăng ký"
+            android:textColor="@color/textColorOnPrimary"
+            android:background="@drawable/custom_button"
+            android:layout_gravity="center"
+            android:onClick="clickToSignUp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            />
+    </LinearLayout>
 
-    <Button
-        android:id="@+id/btnSignUp"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:text="Đăng ký"
-        android:background="@drawable/custom_button"
-        android:layout_gravity="center"
-
-        />
 </LinearLayout>

@@ -102,17 +102,6 @@ public class SelectingMeal extends AppCompatActivity {
 
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                finish();
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
-        }
-    }
-
 //    public void clickToMinimizeMaxmimize(View view) {
 //        if (foodDisplay.getVisibility() == View.VISIBLE) {
 //            setLayoutInvisible();
@@ -136,9 +125,24 @@ public class SelectingMeal extends AppCompatActivity {
         }
     }
 
-    public void clickToGoToLibrary(View view) {
-        startActivity(new Intent(SelectingMeal.this, LibraryActivity.class));
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                finish();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
+
+    public void clickToMoveToLibrary(View view) {
+        startActivity(new Intent(this, LibraryActivity.class));
+    }
+
+//    public void clickToBack(View view) {
+//        startActivity(new Intent(this, DiaryActivity.class));
+//    }
 
 //    public void setLayoutVisible1() {
 //        if (foodDisplay1.getVisibility() == View.GONE) {
