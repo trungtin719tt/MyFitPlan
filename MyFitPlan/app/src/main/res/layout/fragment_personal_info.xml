@@ -8,82 +8,116 @@
 
     <!-- TODO: Update blank fragment layout -->
 
-    <TextView
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Mục tiêu"
-        android:textStyle="bold"
-        android:textAlignment="viewStart"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="40dp"
-        android:textSize="20dp"/>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Cân nặng"
-        android:textAlignment="viewStart"
-        android:textStyle="bold"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="20dp"
-        android:textSize="20dp"/>
-    <TextView
-        android:id="@+id/weight"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="65 KG"
-        android:textStyle="bold"
-        android:textAlignment="viewStart"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="5dp"
-        android:textSize="20dp"/>
-    <TextView
-        android:id="@+id/weight_gain"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Tăng 0.5kg trong 1 tuần"
-        android:textAlignment="viewStart"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="5dp"
-        android:textSize="20dp"/>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Calories hằng ngày"
-        android:textAlignment="viewStart"
-        android:textStyle="bold"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="20dp"
-        android:textSize="20dp"/>
-    <TextView
-        android:id="@+id/calories"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="3220 cal"
-        android:textStyle="bold"
-        android:textAlignment="viewStart"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="5dp"
-        android:textSize="20dp"/>
-    <TextView
-        android:id="@+id/calories_details"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Carb 401g / Fat 107g / Protein 161g"
-        android:textAlignment="viewStart"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="5dp"
-        android:textSize="20dp"/>
-    <TextView
-        android:id="@+id/change_info_text_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Cập nhật thông tin cá nhân"
-        android:textAlignment="viewStart"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="40dp"
-        android:textSize="20dp"
-        android:clickable="true"
-        android:textColor="@color/blueBackGround"/>
+        android:layout_height="match_parent"
+        android:layout_marginBottom="60dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Mục tiêu"
+                android:textStyle="bold"
+                android:textAlignment="viewStart"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="40dp"
+                android:textSize="20dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Cân nặng"
+                android:textAlignment="viewStart"
+                android:textStyle="bold"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="20dp"
+                android:textSize="20dp"/>
+            <TextView
+                android:id="@+id/weight"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="65 KG"
+                android:textStyle="bold"
+                android:textAlignment="viewStart"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="5dp"
+                android:textSize="20dp"/>
+            <TextView
+                android:id="@+id/weight_gain"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tăng 0.5kg trong 1 tuần"
+                android:textAlignment="viewStart"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="5dp"
+                android:textSize="20dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Calories hằng ngày"
+                android:textAlignment="viewStart"
+                android:textStyle="bold"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="20dp"
+                android:textSize="20dp"/>
+            <TextView
+                android:id="@+id/calories"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="3220 cal"
+                android:textStyle="bold"
+                android:textAlignment="viewStart"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="5dp"
+                android:textSize="20dp"/>
+            <TextView
+                android:id="@+id/calories_details"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Carb 401g / Fat 107g / Protein 161g"
+                android:textAlignment="viewStart"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="5dp"
+                android:textSize="20dp"/>
+            <TextView
+                android:id="@+id/change_info_text_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cập nhật thông tin cá nhân"
+                android:textAlignment="viewStart"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="20dp"
+                android:textSize="20dp"
+                android:clickable="true"
+                android:textColor="@color/blueBackGround"/>
+            <TextView
+                android:id="@+id/change_goal_text_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Thay đổi mục tiêu"
+                android:textAlignment="viewStart"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="20dp"
+                android:textSize="20dp"
+                android:clickable="true"
+                android:textColor="@color/blueBackGround"/>
+            <TextView
+                android:id="@+id/change_password_text_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Đổi mật khẩu"
+                android:textAlignment="viewStart"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="20dp"
+                android:textSize="20dp"
+                android:clickable="true"
+                android:textColor="@color/blueBackGround"/>
+        </LinearLayout>
+    </ScrollView>
+
+
 
 
 </LinearLayout>

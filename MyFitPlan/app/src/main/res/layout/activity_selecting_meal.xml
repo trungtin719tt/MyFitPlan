@@ -43,8 +43,10 @@
         android:textSize="30dp"/>
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:clickable="true"
+        android:onClick="clickToGoToLibrary"
         android:orientation="horizontal">
 
         <ImageView

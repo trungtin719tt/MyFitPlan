@@ -33,6 +33,20 @@ public class PersonalInfo extends Fragment {
                 startActivity(new Intent(getActivity(), ChangInfo.class));
             }
         });
+        TextView changeGoal = rootView.findViewById(R.id.change_goal_text_button);
+        changeGoal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getActivity(), ChangeGoal.class));
+            }
+        });
+        TextView changePassword = rootView.findViewById(R.id.change_password_text_button);
+        changePassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getActivity(), ChangePassword.class));
+            }
+        });
         return rootView;
     }
 

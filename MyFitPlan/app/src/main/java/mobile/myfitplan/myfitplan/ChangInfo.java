@@ -2,10 +2,12 @@ package mobile.myfitplan.myfitplan;
 
 import android.app.DatePickerDialog;
 import android.app.DialogFragment;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.text.Html;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -66,6 +68,17 @@ public class ChangInfo extends AppCompatActivity implements DatePickerDialog.OnD
     }
 
     @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                finish();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
+    @Override
     public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
         String date = dayOfMonth + "-" + (month + 1) + "-" + year;
         txtBirthday.setText(date);
@@ -74,5 +87,9 @@ public class ChangInfo extends AppCompatActivity implements DatePickerDialog.OnD
     public void clickToGetDate(View view) {
         DialogFragment dateFragment = new DayPickerFragment();
         dateFragment.show(getFragmentManager(), "DatePicker");
+    }
+
+    public void saveChange(View view) {
+        this.finish();
     }
 }

@@ -1,10 +1,12 @@
 package mobile.myfitplan.myfitplan;
 
+import android.app.DialogFragment;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.text.Html;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -100,6 +102,17 @@ public class SelectingMeal extends AppCompatActivity {
 
     }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                finish();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
 //    public void clickToMinimizeMaxmimize(View view) {
 //        if (foodDisplay.getVisibility() == View.VISIBLE) {
 //            setLayoutInvisible();
@@ -121,6 +134,10 @@ public class SelectingMeal extends AppCompatActivity {
             LL.setVisibility(View.VISIBLE);
             TV.setVisibility(View.GONE);
         }
+    }
+
+    public void clickToGoToLibrary(View view) {
+        startActivity(new Intent(SelectingMeal.this, LibraryActivity.class));
     }
 
 //    public void setLayoutVisible1() {
