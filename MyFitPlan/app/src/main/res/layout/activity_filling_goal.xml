@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -7,41 +8,36 @@
     tools:context=".FillingGoal"
     android:orientation="vertical">
 
-    <!--<LinearLayout-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:orientation="horizontal"-->
-        <!--android:background="@color/blueBackGroud">-->
-        <!--<ImageView-->
-            <!--android:layout_width="50dp"-->
-            <!--android:layout_height="50dp"-->
-            <!--android:src="@drawable/back_icon"/>-->
-        <!--<TextView-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="50dp"-->
-            <!--android:text="Mục tiêu"-->
-            <!--android:gravity="left"-->
-            <!--android:textSize="30dp"-->
-            <!--android:textStyle="bold"-->
-            <!--android:textColor="@color/colorPrimaryDark"-->
-            <!--/>-->
-        <!--<TextView-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="match_parent"-->
-            <!--android:text="Next"-->
-            <!--android:gravity="right"-->
-            <!--android:textSize="30dp"-->
-            <!--android:textStyle="bold"-->
-            <!--android:textColor="@color/colorPrimaryDark"/>-->
-    <!--</LinearLayout>-->
-    <!-- Toolbar -->
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="55dp"
-        android:background="@color/colorPrimary"
-        style="@style/MyTheme"
-        android:theme="@style/AppTheme.AppBarOverlay" />
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/colorPrimaryDark">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="Mục tiêu"
+            android:gravity="center"
+            android:textSize="30dp"
+            android:textStyle="bold"
+            android:textColor="@color/textColorOnDark"
+            />
+        <TextView
+            android:id="@+id/txtNext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tiếp"
+            android:gravity="right"
+            android:layout_centerInParent="true"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:textColor="@color/textColorOnDark"
+            android:onClick="clickToNext"
+            android:layout_marginRight="10dp"/>
+
+    </RelativeLayout>
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -82,6 +78,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Mục tiêu của bạn là gì?"
+            android:textColor="@color/textColorOnWhite"
             android:textSize="25dp"
             android:textStyle="bold"
             android:layout_marginTop="20dp"/>

@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#2962ff</color>
-    <color name="colorPrimaryDark">#0039cb</color>
-    <color name="colorPrimaryLight">#7BA6B4</color>
+    <color name="colorPrimary">#ffa000</color>
+    <color name="colorPrimaryDark">#c67100</color>
+    <color name="colorPrimaryLight">#ffd149</color>
     <color name="colorAccent">#D81B60</color>
-    <color name="blueBackGroud">#2962ff</color>
+    <color name="blueBackGroud">#ffd149</color>
     <color name="greenStatusFillGoal">#00cb00</color>
     <color name="grayStatusFillGoal">#c9ccc7</color>
     <color name="whiteText">#FFFFFF</color>
+    <color name="orangeText">#c67100</color>
     <color name="lightBlue">#7BA6B4</color>
     <color name="blueBackGround">#2962ff</color>
     <color name="darkBlue">#0039cb</color>

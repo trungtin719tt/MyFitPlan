@@ -20,20 +20,21 @@
         <!--android:layout_width="match_parent"-->
         <!--android:layout_height="wrap_content"-->
         <!--android:orientation="horizontal"-->
-        <!--android:background="@color/blueBackGround">-->
+        <!--android:background="@color/colorPrimaryDark">-->
         <!--<ImageView-->
             <!--android:layout_width="50dp"-->
             <!--android:layout_height="50dp"-->
-            <!--android:src="@drawable/back_icon"/>-->
+            <!--android:src="@drawable/back_icon"-->
+            <!--android:onClick="clickToBack"/>-->
         <!--<TextView-->
             <!--android:layout_width="match_parent"-->
             <!--android:layout_height="50dp"-->
             <!--android:text="Đăng ký"-->
-            <!--android:gravity="left"-->
             <!--android:textSize="30dp"-->
             <!--android:textStyle="bold"-->
-            <!--android:textColor="@color/white"-->
+            <!--android:textColor="@color/textColorOnDark"-->
             <!--android:textAlignment="center"-->
+            <!--android:layout_gravity="center"-->
             <!--/>-->
     <!--</LinearLayout>-->
     <!-- Toolbar -->
@@ -48,10 +49,9 @@
     <ImageView
         android:layout_width="140dp"
         android:layout_height="140dp"
-        android:src="@drawable/logo"
+        android:src="@drawable/main_icon1"
         android:layout_gravity="center"
         android:layout_marginTop="30dp"
-        android:layout_marginBottom="30dp"
         />
 
 
@@ -63,7 +63,7 @@
         android:layout_marginLeft="50dp"
         android:layout_marginRight="50dp"
         android:inputType="text"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="30dp"
         android:background="@drawable/custom_editext"
         />
     <EditText
@@ -106,10 +106,9 @@
         android:layout_marginTop="20dp"
         android:text="Đăng ký"
         android:background="@drawable/custom_button"
-        android:textColor="#FFFFFF"
+        android:textColor="@color/textColorOnPrimary"
         android:layout_marginBottom="50dp"
+        android:onClick="clickToConfirm"
         />
-
-
 
 </LinearLayout>

@@ -1,21 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent"
-
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/border"
     >
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:background="@drawable/border"
+        android:background="@color/colorPrimaryDark"
+
         >
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:text="Tùy chọn"
-            android:layout_gravity="center"
+            android:gravity="center"
             android:textStyle="bold"
             android:textSize="25dp"
+            android:textColor="@color/textColorOnPrimary"
             />
 
     </LinearLayout>
@@ -75,7 +78,6 @@
         <Button
             android:layout_width="30dp"
             android:layout_height="match_parent"
-            android:padding="0dp"
             android:textSize="25sp"
             android:textColor="@android:color/black"
             android:background="@null"
@@ -90,6 +92,7 @@
         android:layout_width="match_parent"
         android:background="@drawable/custom_button"
         android:text="Hoàn tất"
+        android:textColor="@color/textColorOnPrimary"
         android:gravity="center"
         android:layout_marginLeft="50dp"
         android:layout_marginRight="50dp"

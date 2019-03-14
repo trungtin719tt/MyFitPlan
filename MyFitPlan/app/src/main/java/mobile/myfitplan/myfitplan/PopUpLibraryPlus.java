@@ -9,25 +9,20 @@ import android.util.DisplayMetrics;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.NumberPicker;
 import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Pop extends AppCompatActivity {
-    private Spinner spFoodName;
-    private String selectedSpinner;
-    private NumberPicker np;
-    int quantity = 1;
+public class PopUpLibraryPlus extends AppCompatActivity {
+    public Spinner spFoodName;
+    public String selectedSpinner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.popwindow);
+        setContentView(R.layout.activity_pop_up_library_plus);
 
         DisplayMetrics dm = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(dm);
@@ -64,26 +59,26 @@ public class Pop extends AppCompatActivity {
     }
 
 
-    //nhấn dấu -
-    public void clickToDecrease(View view) {
-        Button decrement = (Button) findViewById(R.id.decrement);
-        quantity = quantity - 1;
-        display(quantity);
-    }
-
-    //nhấn dấu +
-    public void clickToIncrease(View view) {
-        Button increment = (Button) findViewById(R.id.increment);
-        quantity = quantity + 1;
-        display(quantity);
-    }
-
-    //hiển thị số
-    private void display(int number) {
-        TextView numberDisplay = (TextView) findViewById(
-                R.id.numberDisplay);
-        numberDisplay.setText("" + number);
-    }
+//    //nhấn dấu -
+//    public void clickToDecrease(View view) {
+//        Button decrement = (Button) findViewById(R.id.decrement);
+//        quantity = quantity - 1;
+//        display(quantity);
+//    }
+//
+//    //nhấn dấu +
+//    public void clickToIncrease(View view) {
+//        Button increment = (Button) findViewById(R.id.increment);
+//        quantity = quantity + 1;
+//        display(quantity);
+//    }
+//
+//    //hiển thị số
+//    private void display(int number) {
+//        TextView numberDisplay = (TextView) findViewById(
+//                R.id.numberDisplay);
+//        numberDisplay.setText("" + number);
+//    }
 
     //nhấn hoàn tất popup
     public void clickToSubmit(View view) {

@@ -35,13 +35,42 @@
             <!--android:textColor="@color/colorPrimaryDark"/>-->
     <!--</LinearLayout>-->
     <!-- Toolbar -->
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="55dp"
-        android:background="@color/colorPrimary"
-        style="@style/MyTheme"
-        android:theme="@style/AppTheme.AppBarOverlay" />
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/colorPrimaryDark">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Quay lại"
+            android:layout_alignParentLeft="true"
+            android:layout_centerInParent="true"
+            android:textSize="20dp"
+            android:textColor="@color/textColorOnPrimary"
+            android:onClick="clickToBack"
+            android:layout_marginLeft="5dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tần suất"
+            android:layout_centerInParent="true"
+            android:textColor="@color/textColorOnPrimary"
+            android:textSize="30dp"
+            android:textStyle="bold"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tiếp"
+            android:textColor="@color/textColorOnPrimary"
+            android:gravity="right"
+            android:layout_centerInParent="true"
+            android:textSize="20dp"
+            android:layout_marginRight="10dp"
+            android:onClick="clickToNext"/>
+    </RelativeLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -84,6 +113,7 @@
             android:layout_height="wrap_content"
             android:text="Tần suất luyện tập thể dục thể thao của bạn?"
             android:textSize="25dp"
+            android:textColor="@color/textColorOnWhite"
             android:textStyle="bold"
             android:layout_marginTop="20dp"/>
 
@@ -95,6 +125,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Nhiều"
+                android:textColor="@color/textColorOnWhite"
                 android:textSize="20dp"
                 />
             <TextView
@@ -111,6 +142,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Ít"
+                android:textColor="@color/textColorOnWhite"
                 android:textSize="20dp"
                 />
             <TextView
@@ -127,6 +159,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Không có"
+                android:textColor="@color/textColorOnWhite"
                 android:textSize="20dp"
                 />
 

@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.text.Html;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -122,6 +123,25 @@ public class SelectingMeal extends AppCompatActivity {
             TV.setVisibility(View.GONE);
         }
     }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                finish();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
+    public void clickToMoveToLibrary(View view) {
+        startActivity(new Intent(this, LibraryActivity.class));
+    }
+
+//    public void clickToBack(View view) {
+//        startActivity(new Intent(this, DiaryActivity.class));
+//    }
 
 //    public void setLayoutVisible1() {
 //        if (foodDisplay1.getVisibility() == View.GONE) {
