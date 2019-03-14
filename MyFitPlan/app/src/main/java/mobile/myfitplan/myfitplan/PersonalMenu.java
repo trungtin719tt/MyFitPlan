@@ -44,7 +44,7 @@ public class PersonalMenu extends Fragment {
         addMeal1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getActivity(), LibraryActivity.class));
+                startActivity(new Intent(getActivity(), AddingMeal.class));
             }
         });
 
@@ -52,7 +52,7 @@ public class PersonalMenu extends Fragment {
         addMeal2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getActivity(), LibraryActivity.class));
+                startActivity(new Intent(getActivity(), AddingMeal.class));
             }
         });
 

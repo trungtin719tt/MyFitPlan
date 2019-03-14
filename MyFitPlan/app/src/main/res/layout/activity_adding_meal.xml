@@ -42,6 +42,8 @@
             android:layout_width="30dp"
             android:layout_height="20dp"
             android:src="@drawable/search_icon"
+            android:clickable="true"
+            android:onClick="clickToGoToLibrary"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="10dp"
             />
@@ -49,6 +51,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Tìm trên hệ thống"
+            android:clickable="true"
+            android:onClick="clickToGoToLibrary"
             android:textStyle="bold"
             android:layout_marginTop="20dp"
             android:layout_marginBottom="20dp"/>
@@ -106,11 +110,13 @@
             android:layout_height="match_parent"
             android:text="Calories"
             android:textStyle="bold"
+            android:layout_gravity="center_vertical"
+            android:layout_marginTop="10dp"
             android:layout_marginLeft="20dp"/>
 
         <EditText
             android:layout_width="match_parent"
-            android:layout_height="30dp"
+            android:layout_height="45dp"
             android:layout_marginLeft="80dp"
             android:layout_marginRight="40dp"/>
 
@@ -125,11 +131,13 @@
             android:layout_height="match_parent"
             android:text="Tinh bột"
             android:textStyle="bold"
+            android:layout_gravity="center_vertical"
+            android:layout_marginTop="10dp"
             android:layout_marginLeft="20dp"/>
 
         <EditText
             android:layout_width="match_parent"
-            android:layout_height="30dp"
+            android:layout_height="45dp"
             android:layout_marginLeft="80dp"
             android:layout_marginRight="40dp"/>
 
@@ -144,11 +152,13 @@
             android:layout_height="match_parent"
             android:text="Chất đạm"
             android:textStyle="bold"
+            android:layout_gravity="center_vertical"
+            android:layout_marginTop="10dp"
             android:layout_marginLeft="20dp"/>
 
         <EditText
             android:layout_width="match_parent"
-            android:layout_height="30dp"
+            android:layout_height="45dp"
             android:layout_marginLeft="70dp"
             android:layout_marginRight="40dp"/>
 
@@ -163,11 +173,13 @@
             android:layout_height="match_parent"
             android:text="Chất béo"
             android:textStyle="bold"
+            android:layout_gravity="center_vertical"
+            android:layout_marginTop="10dp"
             android:layout_marginLeft="20dp"/>
 
         <EditText
             android:layout_width="match_parent"
-            android:layout_height="30dp"
+            android:layout_height="45dp"
             android:layout_marginLeft="75dp"
             android:layout_marginRight="40dp"/>
 
@@ -179,9 +191,12 @@
         android:orientation="vertical"
         android:background="@color/lightBlue">
         <ImageView
+            android:id="@+id/get_photo"
             android:layout_width="100dp"
             android:layout_height="80dp"
             android:src="@drawable/camera"
+            android:clickable="true"
+            android:onClick="clickToChoosePicture"
             android:layout_gravity="center"/>
         <TextView
             android:layout_width="wrap_content"
@@ -200,6 +215,7 @@
         android:background="@drawable/custom_button"
         android:text="Thêm món"
         android:textColor="@color/white"
+        android:onClick="clickToAddMeal"
         android:gravity="center"
         android:layout_marginLeft="50dp"
         android:layout_marginRight="50dp"

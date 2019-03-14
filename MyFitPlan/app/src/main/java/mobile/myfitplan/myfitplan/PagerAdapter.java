@@ -16,10 +16,11 @@ public class PagerAdapter extends FragmentStatePagerAdapter {
         Fragment frag=null;
         switch (position){
             case 0:
-                frag = new PersonalInfo();
+                frag = new PersonalMenu();
+
                 break;
             case 1:
-                frag = new PersonalMenu();
+                frag = new PersonalInfo();
                 break;
         }
         return frag;
@@ -34,10 +35,10 @@ public class PagerAdapter extends FragmentStatePagerAdapter {
         String title = "";
         switch (position){
             case 0:
-                title = "Thông tin cá nhân";
+                title = "Thực đơn";
                 break;
             case 1:
-                title = "Thực đơn";
+                title = "Thông tin cá nhân" ;
                 break;
         }
         return title;

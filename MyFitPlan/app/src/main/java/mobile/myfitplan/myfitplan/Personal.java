@@ -37,14 +37,14 @@ public class Personal extends AppCompatActivity {
      */
     // Titles of the individual pages (displayed in tabs)
     private final String[] PAGE_TITLES = new String[] {
-            "Thông tin cá nhân",
-            "Thực đơn"
+            "Thực đơn",
+            "Thông tin cá nhân"
     };
 
     // The fragments that are used as the individual pages
     private final Fragment[] PAGES = new Fragment[] {
-            new PersonalInfo(),
-            new PersonalMenu()
+            new PersonalMenu(),
+            new PersonalInfo()
     };
 //    private PagerAdapter mPagerAdapter;
 
