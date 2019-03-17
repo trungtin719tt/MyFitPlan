@@ -26,8 +26,8 @@ import org.w3c.dom.Text;
 // * create an instance of this fragment.
 // */
 public class PersonalMenu extends Fragment {
-    private LinearLayout mainLayout, foodDisplay, foodDisplay1;
-    private TextView txtPlus, txtPlus1;
+    private LinearLayout mainLayout, foodDisplay, foodDisplay1, foodDisplay2;
+    private TextView txtPlus, txtPlus1, txtPlus2;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_personal_menu, container, false);
@@ -44,7 +44,7 @@ public class PersonalMenu extends Fragment {
         addMeal1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getActivity(), AddingMeal.class));
+                startActivity(new Intent(getActivity(), LibraryActivity.class));
             }
         });
 
@@ -52,7 +52,15 @@ public class PersonalMenu extends Fragment {
         addMeal2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getActivity(), AddingMeal.class));
+                startActivity(new Intent(getActivity(), LibraryActivity.class));
+            }
+        });
+
+        ImageView addMeal3 = rootView.findViewById(R.id.add_meal3);
+        addMeal3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getActivity(), LibraryActivity.class));
             }
         });
 
@@ -85,10 +93,23 @@ public class PersonalMenu extends Fragment {
                 }
             }
         });
+        LinearLayout linearLayoutMinimize2 = (LinearLayout) rootView.findViewById(R.id.minimize_layout2);
+        linearLayoutMinimize2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (foodDisplay2.getVisibility() == View.VISIBLE) {
+                    setLayoutInvisible(foodDisplay1, txtPlus1);
+                } else {
+                    setLayoutVisible(foodDisplay1, txtPlus1);
+                }
+            }
+        });
         foodDisplay = (LinearLayout)rootView.findViewById(R.id.foodDisplay);
         txtPlus = (TextView)rootView.findViewById(R.id.txtPlus);
         foodDisplay1 = (LinearLayout) rootView.findViewById(R.id.foodDisplay1);
         txtPlus1 = (TextView) rootView.findViewById(R.id.txtPlus1);
+        foodDisplay2 = (LinearLayout) rootView.findViewById(R.id.foodDisplay2);
+        txtPlus2 = (TextView) rootView.findViewById(R.id.txtPlus2);
         return rootView;
     }
 //    public void clickToMinimizeMaxmimize(LinearLayout LL) {
