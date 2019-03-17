@@ -47,7 +47,7 @@ public class LibraryActivity extends AppCompatActivity {
         popUp1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(LibraryActivity.this, PopUpLibraryPlus.class));
+                startActivity(new Intent(LibraryActivity.this, Pop.class));
             }
         });
         //pop up plus 2
@@ -55,7 +55,7 @@ public class LibraryActivity extends AppCompatActivity {
         popUp2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(LibraryActivity.this, PopUpLibraryPlus.class));
+                startActivity(new Intent(LibraryActivity.this, Pop.class));
             }
         });
         //pop up plus 3
@@ -63,7 +63,7 @@ public class LibraryActivity extends AppCompatActivity {
         popUp3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(LibraryActivity.this, PopUpLibraryPlus.class));
+                startActivity(new Intent(LibraryActivity.this, Pop.class));
             }
         });
         //pop up plus 4
@@ -71,7 +71,7 @@ public class LibraryActivity extends AppCompatActivity {
         popUp4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(LibraryActivity.this, PopUpLibraryPlus.class));
+                startActivity(new Intent(LibraryActivity.this, Pop.class));
             }
         });
         //pop up plus 5
@@ -79,7 +79,7 @@ public class LibraryActivity extends AppCompatActivity {
         popUp5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(LibraryActivity.this, PopUpLibraryPlus.class));
+                startActivity(new Intent(LibraryActivity.this, Pop.class));
             }
         });
         //pop up plus 6
@@ -87,59 +87,59 @@ public class LibraryActivity extends AppCompatActivity {
         popUp6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(LibraryActivity.this, PopUpLibraryPlus.class));
-            }
-        });
-
-        //pop up food 1
-        Button pop1 = (Button) findViewById(R.id.btnAddFood1);
-        pop1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
                 startActivity(new Intent(LibraryActivity.this, Pop.class));
             }
         });
 
-        //pop up food 2
-        Button pop2 = (Button) findViewById(R.id.btnAddFood2);
-        pop2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(LibraryActivity.this, Pop.class));
-            }
-        });
-        //pop up food 3
-        Button pop3 = (Button) findViewById(R.id.btnAddFood3);
-        pop3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(LibraryActivity.this, Pop.class));
-            }
-        });
-        //pop up food 4
-        Button pop4 = (Button) findViewById(R.id.btnAddFood4);
-        pop4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(LibraryActivity.this, Pop.class));
-            }
-        });
-        //pop up food 5
-        Button pop5 = (Button) findViewById(R.id.btnAddFood5);
-        pop5.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(LibraryActivity.this, Pop.class));
-            }
-        });
-        //pop up food 6
-        Button pop6 = (Button) findViewById(R.id.btnAddFood6);
-        pop6.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(LibraryActivity.this, Pop.class));
-            }
-        });
+//        //pop up food 1
+//        Button pop1 = (Button) findViewById(R.id.btnAddFood1);
+//        pop1.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                startActivity(new Intent(LibraryActivity.this, Pop.class));
+//            }
+//        });
+//
+//        //pop up food 2
+//        Button pop2 = (Button) findViewById(R.id.btnAddFood2);
+//        pop2.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                startActivity(new Intent(LibraryActivity.this, Pop.class));
+//            }
+//        });
+//        //pop up food 3
+//        Button pop3 = (Button) findViewById(R.id.btnAddFood3);
+//        pop3.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                startActivity(new Intent(LibraryActivity.this, Pop.class));
+//            }
+//        });
+//        //pop up food 4
+//        Button pop4 = (Button) findViewById(R.id.btnAddFood4);
+//        pop4.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                startActivity(new Intent(LibraryActivity.this, Pop.class));
+//            }
+//        });
+//        //pop up food 5
+//        Button pop5 = (Button) findViewById(R.id.btnAddFood5);
+//        pop5.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                startActivity(new Intent(LibraryActivity.this, Pop.class));
+//            }
+//        });
+//        //pop up food 6
+//        Button pop6 = (Button) findViewById(R.id.btnAddFood6);
+//        pop6.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                startActivity(new Intent(LibraryActivity.this, Pop.class));
+//            }
+//        });
     }
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
@@ -170,15 +170,15 @@ public class LibraryActivity extends AppCompatActivity {
 
 
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                finish();
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
-        }
-    }
+//    @Override
+//    public boolean onOptionsItemSelected(MenuItem item) {
+//        switch (item.getItemId()) {
+//            case android.R.id.home:
+//                finish();
+//                return true;
+//            default:
+//                return super.onOptionsItemSelected(item);
+//        }
+//    }
 
 }

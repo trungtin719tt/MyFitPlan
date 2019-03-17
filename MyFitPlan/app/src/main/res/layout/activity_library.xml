@@ -28,55 +28,33 @@ android:fitsSystemWindows="true">
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <!--Search box -->
-        <!--<LinearLayout-->
-            <!--android:layout_marginTop="30dp"-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="100dp"-->
-            <!--android:gravity="center_horizontal">-->
-            <!--<LinearLayout-->
-                <!--android:layout_width="250dp"-->
-                <!--android:layout_height="40dp"-->
-                <!--android:orientation="horizontal"-->
-                <!--android:background="@drawable/border">-->
-                <!--<EditText-->
-                    <!--android:id="@+id/txt_library_search"-->
-                    <!--android:layout_width="210dp"-->
-                    <!--android:layout_height="match_parent" />-->
-                <!--<Button-->
-                    <!--android:layout_width="match_parent"-->
-                    <!--android:layout_height="match_parent"-->
-                    <!--android:background="@drawable/ic_search"/>-->
-            <!--</LinearLayout>-->
-
-        <!--</LinearLayout>-->
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_marginLeft="40dp"
             android:layout_marginTop="10dp"
+            android:layout_gravity="center_horizontal"
         >
-        <ImageView
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:src="@drawable/search_icon"
-            android:layout_marginTop="5dp"
-        />
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="45dp"
+                android:src="@drawable/orange_search_icon"
+                android:layout_marginLeft="300dp"
+                />
 
-        <EditText
-            android:background="@drawable/custom_search_text"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:id="@+id/edtAccount"
-            android:paddingLeft="30dp"
-            android:layout_marginLeft="-30dp"
-            android:layout_marginBottom="10dp"
-            android:layout_marginRight="50dp"
-            android:hint="Tên món ăn"
+            <EditText
+                android:id="@+id/edtAccount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/custom_search_text"
+                android:hint="Tên món ăn"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="-230dp"
+                android:layout_marginRight="72dp"
+                />
 
-        />
+
         </LinearLayout>
 
 
@@ -111,7 +89,7 @@ android:fitsSystemWindows="true">
                             android:id="@+id/txt_library_name1"
                             android:layout_width="wrap_content"
                             android:layout_height="25dp"
-                            android:text="Cơm tấm Cali"
+                            android:text="Cơm tấm sườn"
                             android:textStyle="bold"
                             android:textColor="@color/textColorOnWhite" />
 
@@ -161,7 +139,7 @@ android:fitsSystemWindows="true">
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginRight="5dp"
-                                android:text="600"
+                                android:text="300"
                                 android:textColor="@color/textColorOnWhite" />
 
                             <TextView
@@ -180,16 +158,11 @@ android:fitsSystemWindows="true">
                             android:orientation="horizontal">
 
                             <Button
-                                android:id="@+id/btnAddFood1"
-                                android:layout_width="30dp"
-                                android:layout_height="30dp"
-                                android:layout_marginRight="10dp"
-                                android:background="@drawable/cutlery1" />
-
-                            <Button
                                 android:id="@+id/btnAdd1"
                                 android:layout_width="30dp"
                                 android:layout_height="30dp"
+                                android:layout_marginRight="15dp"
+
                                 android:background="@drawable/add_icon1" />
                         </LinearLayout>
 
@@ -213,14 +186,14 @@ android:fitsSystemWindows="true">
                             android:id="@+id/txt_library_name2"
                             android:layout_width="wrap_content"
                             android:layout_height="25dp"
-                            android:text="Cơm tấm Cali"
+                            android:text="Bò bít-tết"
                             android:textStyle="bold"
                             android:textColor="@color/textColorOnWhite" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="25dp"
-                            android:text="(10 fats, 15 carbs, 20 proteins)"
+                            android:text="(10 fats, 15 carbs, 110 proteins)"
                             android:textStyle="italic"
                             android:textColor="@color/textColorOnWhite" />
 
@@ -235,7 +208,7 @@ android:fitsSystemWindows="true">
                                 android:id="@+id/txt_library_count2"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:text="50"
+                                android:text="30"
                                 android:textColor="@color/textColorOnWhite" />
 
                             <TextView
@@ -263,7 +236,7 @@ android:fitsSystemWindows="true">
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginRight="5dp"
-                                android:text="600"
+                                android:text="400"
                                 android:textColor="@color/textColorOnWhite" />
 
                             <TextView
@@ -282,16 +255,10 @@ android:fitsSystemWindows="true">
                             android:orientation="horizontal">
 
                             <Button
-                                android:id="@+id/btnAddFood2"
-                                android:layout_width="30dp"
-                                android:layout_height="30dp"
-                                android:layout_marginRight="10dp"
-                                android:background="@drawable/cutlery1" />
-
-                            <Button
                                 android:id="@+id/btnAdd2"
                                 android:layout_width="30dp"
                                 android:layout_height="30dp"
+                                android:layout_marginRight="15dp"
                                 android:background="@drawable/add_icon1" />
                         </LinearLayout>
 
@@ -314,14 +281,14 @@ android:fitsSystemWindows="true">
                             android:id="@+id/txt_library_name3"
                             android:layout_width="wrap_content"
                             android:layout_height="25dp"
-                            android:text="Cơm tấm Cali"
+                            android:text="Bún bò Huế"
                             android:textStyle="bold"
                             android:textColor="@color/textColorOnWhite" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="25dp"
-                            android:text="(10 fats, 15 carbs, 20 proteins)"
+                            android:text="(10 fats, 20 carbs, 50 proteins)"
                             android:textStyle="italic"
                             android:textColor="@color/textColorOnWhite" />
 
@@ -336,7 +303,7 @@ android:fitsSystemWindows="true">
                                 android:id="@+id/txt_library_count3"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:text="50"
+                                android:text="40"
                                 android:textColor="@color/textColorOnWhite" />
 
                             <TextView
@@ -364,7 +331,7 @@ android:fitsSystemWindows="true">
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginRight="5dp"
-                                android:text="600"
+                                android:text="200"
                                 android:textColor="@color/textColorOnWhite" />
 
                             <TextView
@@ -383,16 +350,10 @@ android:fitsSystemWindows="true">
                             android:orientation="horizontal">
 
                             <Button
-                                android:id="@+id/btnAddFood3"
-                                android:layout_width="30dp"
-                                android:layout_height="30dp"
-                                android:layout_marginRight="10dp"
-                                android:background="@drawable/cutlery1" />
-
-                            <Button
                                 android:id="@+id/btnAdd3"
                                 android:layout_width="30dp"
                                 android:layout_height="30dp"
+                                android:layout_marginRight="15dp"
                                 android:background="@drawable/add_icon1" />
                         </LinearLayout>
 
@@ -415,7 +376,7 @@ android:fitsSystemWindows="true">
                             android:id="@+id/txt_library_name4"
                             android:layout_width="wrap_content"
                             android:layout_height="25dp"
-                            android:text="Cơm tấm Cali"
+                            android:text="Sinh tố bơ"
                             android:textStyle="bold"
                             android:textColor="@color/textColorOnWhite" />
 
@@ -437,7 +398,7 @@ android:fitsSystemWindows="true">
                                 android:id="@+id/txt_library_count4"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:text="50"
+                                android:text="10"
                                 android:textColor="@color/textColorOnWhite" />
 
                             <TextView
@@ -465,7 +426,7 @@ android:fitsSystemWindows="true">
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginRight="5dp"
-                                android:text="600"
+                                android:text="100"
                                 android:textColor="@color/textColorOnWhite" />
 
                             <TextView
@@ -484,16 +445,10 @@ android:fitsSystemWindows="true">
                             android:orientation="horizontal">
 
                             <Button
-                                android:id="@+id/btnAddFood4"
-                                android:layout_width="30dp"
-                                android:layout_height="30dp"
-                                android:layout_marginRight="10dp"
-                                android:background="@drawable/cutlery1" />
-
-                            <Button
                                 android:id="@+id/btnAdd4"
                                 android:layout_width="30dp"
                                 android:layout_height="30dp"
+                                android:layout_marginRight="15dp"
                                 android:background="@drawable/add_icon1" />
                         </LinearLayout>
 
@@ -516,14 +471,14 @@ android:fitsSystemWindows="true">
                             android:id="@+id/txt_library_name5"
                             android:layout_width="wrap_content"
                             android:layout_height="25dp"
-                            android:text="Cơm tấm Cali"
+                            android:text="Bún riêu cua"
                             android:textStyle="bold"
                             android:textColor="@color/textColorOnWhite" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="25dp"
-                            android:text="(10 fats, 15 carbs, 20 proteins)"
+                            android:text="(20 fats, 15 carbs, 20 proteins)"
                             android:textStyle="italic"
                             android:textColor="@color/textColorOnWhite" />
 
@@ -566,7 +521,7 @@ android:fitsSystemWindows="true">
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginRight="5dp"
-                                android:text="600"
+                                android:text="300"
                                 android:textColor="@color/textColorOnWhite" />
 
                             <TextView
@@ -585,16 +540,10 @@ android:fitsSystemWindows="true">
                             android:orientation="horizontal">
 
                             <Button
-                                android:id="@+id/btnAddFood5"
-                                android:layout_width="30dp"
-                                android:layout_height="30dp"
-                                android:layout_marginRight="10dp"
-                                android:background="@drawable/cutlery1" />
-
-                            <Button
                                 android:id="@+id/btnAdd5"
                                 android:layout_width="30dp"
                                 android:layout_height="30dp"
+                                android:layout_marginRight="15dp"
                                 android:background="@drawable/add_icon1" />
                         </LinearLayout>
 
@@ -617,7 +566,7 @@ android:fitsSystemWindows="true">
                             android:id="@+id/txt_library_name6"
                             android:layout_width="wrap_content"
                             android:layout_height="25dp"
-                            android:text="Cơm tấm Cali"
+                            android:text="Hủ tiếu nam vang"
                             android:textStyle="bold"
                             android:textColor="@color/textColorOnWhite" />
 
@@ -667,7 +616,7 @@ android:fitsSystemWindows="true">
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginRight="5dp"
-                                android:text="600"
+                                android:text="230"
                                 android:textColor="@color/textColorOnWhite" />
 
                             <TextView
@@ -686,16 +635,10 @@ android:fitsSystemWindows="true">
                             android:orientation="horizontal">
 
                             <Button
-                                android:id="@+id/btnAddFood6"
-                                android:layout_width="30dp"
-                                android:layout_height="30dp"
-                                android:layout_marginRight="10dp"
-                                android:background="@drawable/cutlery1" />
-
-                            <Button
                                 android:id="@+id/btnAdd6"
                                 android:layout_width="30dp"
                                 android:layout_height="30dp"
+                                android:layout_marginRight="15dp"
                                 android:background="@drawable/add_icon1" />
                         </LinearLayout>
 

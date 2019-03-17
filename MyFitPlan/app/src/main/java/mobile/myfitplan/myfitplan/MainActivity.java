@@ -14,10 +14,18 @@ import android.text.Html;
 import android.view.MenuItem;
 import android.content.Intent;
 import android.view.View;
+import android.view.animation.AlphaAnimation;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.view.animation.RotateAnimation;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     private DrawerLayout drawerLayout;
+    Animation rotateAnimation;
+    ImageButton imageButton;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,7 +57,24 @@ public class MainActivity extends AppCompatActivity {
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
+        imageButton = (ImageButton)findViewById(R.id.btnHnag);
+        Animation btnAni = new AlphaAnimation(1, 0);
+        btnAni.setDuration(1100);
+        btnAni.setRepeatCount(Animation.INFINITE);
+        btnAni.setRepeatMode(Animation.REVERSE);
+        imageButton.startAnimation(btnAni);
+//        rotateAnimation();
+
     }
+
+//    private void rotateAnimation() {
+//        rotateAnimation = AnimationUtils.loadAnimation(this, R.anim.rotate);
+//        rotateAnimation.setDuration(2500);
+//        rotateAnimation.setRepeatCount(Animation.INFINITE);
+//        rotateAnimation.setRepeatMode(Animation.REVERSE);
+//        rotateAnimation.setFillAfter(true);
+//        imageButton.startAnimation(rotateAnimation);
+//    }
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {

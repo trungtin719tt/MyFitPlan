@@ -1,6 +1,5 @@
 package mobile.myfitplan.myfitplan;
 
-import android.app.DialogFragment;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -13,18 +12,21 @@ import android.widget.TextView;
 
 
 public class SelectingMeal extends AppCompatActivity {
-    private LinearLayout foodDisplay, foodDisplay1;
-    private TextView txtPlus, txtPlus1;
+    public LinearLayout foodDisplay, foodDisplay1, foodDisplay2;
+    public TextView txtPlus, txtPlus1, txtPlus2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_selecting_meal);
 
+        //khai báo
         foodDisplay = (LinearLayout)findViewById(R.id.foodDisplay);
         txtPlus = (TextView)findViewById(R.id.txtPlus);
         foodDisplay1 = (LinearLayout) findViewById(R.id.foodDisplay1);
         txtPlus1 = (TextView) findViewById(R.id.txtPlus1);
+        foodDisplay2 = (LinearLayout) findViewById(R.id.foodDisplay2);
+        txtPlus2 = (TextView) findViewById(R.id.txtPlus2);
 
         //layout popup
         LinearLayout popUp = (LinearLayout) findViewById(R.id.popUp);
@@ -62,6 +64,23 @@ public class SelectingMeal extends AppCompatActivity {
             }
         });
 
+        //layout popup 5
+        LinearLayout popUp4 = (LinearLayout) findViewById(R.id.popUp4);
+        popUp4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(SelectingMeal.this, Pop.class));
+            }
+        });
+        //layout popup 6
+        LinearLayout popUp5 = (LinearLayout) findViewById(R.id.popUp5);
+        popUp5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(SelectingMeal.this, Pop.class));
+            }
+        });
+
         //layout mini 1
         LinearLayout mmL = (LinearLayout) findViewById(R.id.minimize_layout);
 
@@ -86,6 +105,19 @@ public class SelectingMeal extends AppCompatActivity {
                     setLayoutInvisible(foodDisplay1, txtPlus1);
                 } else {
                     setLayoutVisible(foodDisplay1, txtPlus1);
+                }
+            }
+        });
+        //layout mini 3
+        LinearLayout mmL2 = (LinearLayout) findViewById(R.id.minimize_layout2);
+
+        mmL2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (foodDisplay2.getVisibility() == View.VISIBLE) {
+                    setLayoutInvisible(foodDisplay2, txtPlus2);
+                } else {
+                    setLayoutVisible(foodDisplay2, txtPlus2);
                 }
             }
         });

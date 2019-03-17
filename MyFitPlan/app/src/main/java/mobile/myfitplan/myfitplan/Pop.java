@@ -37,29 +37,29 @@ public class Pop extends AppCompatActivity {
 
         getWindow().setLayout((int)(width * .8), (int)(height * .4));
 
-        spFoodName = (Spinner)findViewById(R.id.spFoodName);
-        List<String> dataSrc = new ArrayList<>();
-
-        dataSrc.add("Bữa sáng");
-        dataSrc.add("Bữa trưa");
-        dataSrc.add("Bữa tối");
-
-        //danh sách muốn hiện lên control phải có adapter
-        ArrayAdapter<String> dataAdp = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, dataSrc);
-        dataAdp.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-
-        spFoodName.setAdapter(dataAdp);
-        spFoodName.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                selectedSpinner = parent.getItemAtPosition(position).toString();
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });
+//        spFoodName = (Spinner)findViewById(R.id.spFoodName);
+//        List<String> dataSrc = new ArrayList<>();
+//
+//        dataSrc.add("Bữa sáng");
+//        dataSrc.add("Bữa trưa");
+//        dataSrc.add("Bữa tối");
+//
+//        //danh sách muốn hiện lên control phải có adapter
+//        ArrayAdapter<String> dataAdp = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, dataSrc);
+//        dataAdp.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+//
+//        spFoodName.setAdapter(dataAdp);
+//        spFoodName.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+//            @Override
+//            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+//                selectedSpinner = parent.getItemAtPosition(position).toString();
+//            }
+//
+//            @Override
+//            public void onNothingSelected(AdapterView<?> parent) {
+//
+//            }
+//        });
 
     }
 
