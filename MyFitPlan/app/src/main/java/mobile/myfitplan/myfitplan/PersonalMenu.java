@@ -98,9 +98,9 @@ public class PersonalMenu extends Fragment {
             @Override
             public void onClick(View v) {
                 if (foodDisplay2.getVisibility() == View.VISIBLE) {
-                    setLayoutInvisible(foodDisplay1, txtPlus1);
+                    setLayoutInvisible(foodDisplay2, txtPlus2);
                 } else {
-                    setLayoutVisible(foodDisplay1, txtPlus1);
+                    setLayoutVisible(foodDisplay2, txtPlus2);
                 }
             }
         });
