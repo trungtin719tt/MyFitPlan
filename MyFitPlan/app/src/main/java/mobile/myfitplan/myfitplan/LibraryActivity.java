@@ -1,6 +1,9 @@
 package mobile.myfitplan.myfitplan;
 
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.view.GravityCompat;
@@ -10,10 +13,17 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.text.Html;
+import android.view.Gravity;
+import android.view.KeyEvent;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.View.OnKeyListener;
+
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 public class LibraryActivity extends AppCompatActivity {
     private DrawerLayout drawerLayout;
@@ -23,6 +33,30 @@ public class LibraryActivity extends AppCompatActivity {
         setContentView(R.layout.activity_library);
 
         drawerLayout = findViewById(R.id.drawer_layout);
+
+        ImageView searchButton = findViewById(R.id.search_button);
+        searchButton.bringToFront();
+        searchButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Search();
+            }
+        });
+
+        EditText searchBox = findViewById(R.id.edtAccount);
+        searchBox.setImeActionLabel("Done", KeyEvent.KEYCODE_ENTER);
+        searchBox.setOnKeyListener(new OnKeyListener() {
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+                // If the event is a key-down event on the "enter" button
+                if ((event.getAction() == KeyEvent.ACTION_DOWN) &&
+                        (keyCode == KeyEvent.KEYCODE_ENTER)) {
+                    // Perform action on key press
+                    Search();
+                    return true;
+                }
+                return false;
+            }
+        });
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
 //        setSupportActionBar(toolbar);
@@ -142,6 +176,8 @@ public class LibraryActivity extends AppCompatActivity {
 //        });
     }
 
+
+
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
@@ -164,6 +200,50 @@ public class LibraryActivity extends AppCompatActivity {
             return false;
         }
     };
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                drawerLayout.openDrawer(GravityCompat.START);
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    public void Search() {
+        TextView textView = new TextView(this);
+        textView.setText("Không có kết quả phù hợp!");
+        textView.setGravity(Gravity.CENTER);
+        textView.setTextSize(20);
+        textView.setLayoutParams(new LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.FILL_PARENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT));
+        LinearLayout content = findViewById(R.id.food_content);
+
+        Button addFood = new Button(this);
+        addFood.setText("Thêm món mới");
+        addFood.setBackground(getResources().getDrawable(R.drawable.custom_button));
+        LinearLayout.LayoutParams ll = new LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.WRAP_CONTENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT);
+        ll.gravity = Gravity.CENTER;
+        ll.topMargin = 20;
+        addFood.setLayoutParams(ll);
+        addFood.setPadding(10, 0, 10, 0);
+        addFood.setTextColor(Color.parseColor("#FFFFFF"));
+
+        addFood.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(LibraryActivity.this, AddingMeal.class));
+            }
+        });
+
+        content.removeAllViews();
+        content.addView(textView);
+        content.addView(addFood);
+    }
 
 
 

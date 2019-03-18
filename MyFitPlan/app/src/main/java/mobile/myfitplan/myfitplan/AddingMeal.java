@@ -71,7 +71,8 @@ public class AddingMeal extends AppCompatActivity {
     }
 
     public void clickToAddMeal(View view) {
-        this.finish();
+//        this.finish();
+        startActivity(new Intent(AddingMeal.this, LibraryActivity.class));
     }
 
     public void clickToChoosePicture(View view) {

@@ -255,7 +255,7 @@
                         android:minHeight="20dp"
                         android:scaleType="fitXY"
                         android:layout_width="80dp"
-                        android:layout_height="55dp"
+                        android:layout_height="70dp"
                         android:onClick="clickToEat"
                         />
                     <TextView

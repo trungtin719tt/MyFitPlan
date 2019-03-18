@@ -48,15 +48,16 @@
             <!--/>-->
 
     <!--</LinearLayout>-->
-
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="20dp"
+        android:layout_height="wrap_content"
+        android:scrollbars="vertical"
         android:layout_marginBottom="60dp">
+
         <LinearLayout
+
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
             //menu món thịt
             <LinearLayout
@@ -105,7 +106,7 @@
                             android:layout_alignParentRight="true"
                             android:layout_marginStart="8dp"
                             android:text="-"
-                            android:textColor="@color/white"
+                            android:textColor="@color/textColorOnPrimary"
                             android:textSize="40dp"
                             android:textStyle="bold"
                             />
@@ -126,7 +127,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
-                        android:layout_marginTop="5dp">
+                        android:layout_marginTop="5dp"
+                        >
                         <ImageView
                             android:layout_width="50dp"
                             android:layout_height="50dp"
@@ -134,16 +136,16 @@
                             android:layout_marginLeft="20dp"
                             android:layout_gravity="center"/>
                         <RelativeLayout
-                            android:layout_width="200dp"
+                            android:layout_width="220dp"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center">
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="Cháo hành Chí Phèo"
+                                android:text="Cháo hành"
                                 android:layout_gravity="center"
                                 android:layout_marginLeft="5dp"
-                                android:textColor="@color/black"
+                                android:textColor="@color/textColorOnWhite"
                                 android:textStyle="bold"/>
                             <TextView
                                 android:layout_width="match_parent"
@@ -152,7 +154,7 @@
                                 android:layout_gravity="center"
                                 android:layout_marginLeft="5dp"
                                 android:layout_marginTop="20dp"
-                                android:textColor="@color/black"
+                                android:textColor="@color/textColorOnWhite"
                                 />
                         </RelativeLayout>
                         <!--<TextView-->
@@ -166,67 +168,62 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="600 cal"
+                            android:text="30 cal"
                             android:layout_marginLeft="20dp"
                             android:layout_gravity="center"
-                            android:textStyle="bold"/>
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/ic_menu_delete"/>
+                            android:textStyle="bold"
+                            android:textColor="@color/textColorOnWhite"/>
                     </LinearLayout>
                     <LinearLayout
+                        android:id="@+id/popUp1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
-                        android:layout_marginTop="5dp">
+                        android:layout_marginTop="5dp"
+                        >
                         <ImageView
                             android:layout_width="50dp"
                             android:layout_height="50dp"
-                            android:src="@drawable/chao_hanh"
+                            android:src="@drawable/bun_bo_hue"
                             android:layout_marginLeft="20dp"
                             android:layout_gravity="center"
                             />
                         <RelativeLayout
-                            android:layout_width="200dp"
+                            android:layout_width="220dp"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center">
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="Cháo hành Chí Phèo"
+                                android:text="Bún bò Huế"
                                 android:layout_gravity="center"
                                 android:layout_marginLeft="5dp"
-                                android:textColor="@color/black"
+                                android:textColor="@color/textColorOnWhite"
                                 android:textStyle="bold"/>
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="(10 fats, 15 carbs, 20 proteins)"
+                                android:text="(20 fats, 30 carbs, 50 proteins)"
                                 android:layout_gravity="center"
                                 android:layout_marginLeft="5dp"
                                 android:layout_marginTop="20dp"
-                                android:textColor="@color/black"
+                                android:textColor="@color/textColorOnWhite"
                                 />
                         </RelativeLayout>
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="600 cal"
+                            android:text="150 cal"
                             android:layout_gravity="center"
                             android:layout_marginLeft="20dp"
-                            android:textStyle="bold"/>
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/ic_menu_delete"/>
+                            android:textStyle="bold"
+                            android:textColor="@color/textColorOnWhite"/>
                     </LinearLayout>
-
                     <!-- add food -->
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="50dp"
-                        android:layout_marginLeft="20dp">
+                        android:layout_marginLeft="30dp">
                         <ImageView
                             android:id="@+id/add_meal1"
                             android:layout_width="wrap_content"
@@ -243,22 +240,19 @@
                     </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
-
             //menu món vặt
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:layout_marginTop="5dp">
+                android:layout_marginTop="10dp">
 
                 <LinearLayout
                     android:id="@+id/minimize_layout1"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:orientation="horizontal"
-                    android:background="@color/colorPrimary"
-                    android:onClick="clickToMinimizeMaxmimize1"
-                    >
+                    android:background="@color/colorPrimary">
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -268,12 +262,12 @@
                         android:layout_gravity="center"
                         android:textColor="@color/textColorOnPrimary"
                         android:textStyle="bold"
-
                         />
                     //layout + -
                     <RelativeLayout
                         android:layout_width="fill_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        >
                         <TextView
                             android:id="@+id/txtPlus1"
                             android:layout_width="wrap_content"
@@ -293,7 +287,7 @@
                             android:layout_alignParentRight="true"
                             android:layout_marginStart="8dp"
                             android:text="-"
-                            android:textColor="@color/white"
+                            android:textColor="@color/textColorOnPrimary"
                             android:textSize="40dp"
                             android:textStyle="bold"
                             />
@@ -310,102 +304,106 @@
                     android:visibility="visible"
                     >
                     <LinearLayout
-                        android:id="@+id/popUp1"
+                        android:id="@+id/popUp2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
-                        android:layout_marginTop="5dp">
+                        android:layout_marginTop="5dp"
+                        >
                         <ImageView
                             android:layout_width="50dp"
                             android:layout_height="50dp"
-                            android:src="@drawable/chao_hanh"
+                            android:src="@drawable/hu_tieu_nam_vang"
                             android:layout_marginLeft="20dp"
                             android:layout_gravity="center"/>
                         <RelativeLayout
-                            android:layout_width="200dp"
+                            android:layout_width="220dp"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center">
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="Cháo hành Chí Phèo"
+                                android:text="Hủ tiếu nam vang"
                                 android:layout_gravity="center"
                                 android:layout_marginLeft="5dp"
-                                android:textColor="@color/black"
+                                android:textColor="@color/textColorOnWhite"
                                 android:textStyle="bold"/>
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="(10 fats, 15 carbs, 20 proteins)"
+                                android:text="(23 fats, 19 carbs, 30 proteins)"
                                 android:layout_gravity="center"
                                 android:layout_marginLeft="5dp"
                                 android:layout_marginTop="20dp"
-                                android:textColor="@color/black"
+                                android:textColor="@color/textColorOnWhite"
                                 />
                         </RelativeLayout>
+                        <!--<TextView-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:text="Cháo hành Chí Phèo-->
+                        <!--(10 fats, 15 carbs, 20 proteins)"-->
+                        <!--android:layout_gravity="center"-->
+                        <!--android:layout_marginLeft="5dp"-->
+                        <!--android:textStyle="bold"/>-->
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="600 cal"
+                            android:text="70 cal"
                             android:layout_marginLeft="20dp"
                             android:layout_gravity="center"
-                            android:textStyle="bold"/>
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/ic_menu_delete"/>
+                            android:textStyle="bold"
+                            android:textColor="@color/textColorOnWhite"/>
                     </LinearLayout>
                     <LinearLayout
+                        android:id="@+id/popUp3"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
-                        android:layout_marginTop="5dp">
+                        android:layout_marginTop="5dp"
+                        >
                         <ImageView
                             android:layout_width="50dp"
                             android:layout_height="50dp"
-                            android:src="@drawable/chao_hanh"
+                            android:src="@drawable/bo_bit_tet"
                             android:layout_marginLeft="20dp"
                             android:layout_gravity="center"
                             />
                         <RelativeLayout
-                            android:layout_width="200dp"
+                            android:layout_width="220dp"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center">
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="Cháo hành Chí Phèo"
+                                android:text="Bò bít-tết"
                                 android:layout_gravity="center"
                                 android:layout_marginLeft="5dp"
-                                android:textColor="@color/black"
+                                android:textColor="@color/textColorOnWhite"
                                 android:textStyle="bold"/>
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="(10 fats, 15 carbs, 20 proteins)"
+                                android:text="(40 fats, 25 carbs,120 proteins)"
                                 android:layout_gravity="center"
                                 android:layout_marginLeft="5dp"
                                 android:layout_marginTop="20dp"
-                                android:textColor="@color/black"
+                                android:textColor="@color/textColorOnWhite"
                                 />
                         </RelativeLayout>
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="600 cal"
-                            android:layout_marginTop="10dp"
+                            android:text="200 cal"
+                            android:layout_gravity="center"
                             android:layout_marginLeft="20dp"
-                            android:textStyle="bold"/>
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/ic_menu_delete"/>
+                            android:textStyle="bold"
+                            android:textColor="@color/textColorOnWhite"/>
                     </LinearLayout>
-                    <!-- add food -->
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="50dp"
-                        android:layout_marginLeft="20dp">
+                        android:layout_marginLeft="30dp">
                         <ImageView
                             android:id="@+id/add_meal2"
                             android:layout_width="wrap_content"
@@ -422,9 +420,567 @@
                     </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
+            //menu món nước
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="10dp">
+
+                <LinearLayout
+                    android:id="@+id/minimize_layout2"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:orientation="horizontal"
+                    android:background="@color/colorPrimary">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Món nước"
+                        android:textSize="25dp"
+                        android:layout_gravity="center"
+                        android:textColor="@color/textColorOnPrimary"
+                        android:textStyle="bold"
+                        />
+                    //layout + -
+                    <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        >
+                        <TextView
+                            android:id="@+id/txtPlus2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="+"
+                            android:textSize="40dp"
+                            android:textStyle="bold"
+                            android:textColor="@color/textColorOnPrimary"
+                            android:layout_alignParentRight="true"
+                            android:visibility="invisible"
+                            />
+
+                        <TextView
+                            android:id="@+id/txtMinus2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginStart="8dp"
+                            android:text="-"
+                            android:textColor="@color/textColorOnPrimary"
+                            android:textSize="40dp"
+                            android:textStyle="bold"
+                            />
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                //layout nội dung đồ ăn
+                <LinearLayout
+                    android:id="@+id/foodDisplay2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="visible"
+                    >
+                    <LinearLayout
+                        android:id="@+id/popUp4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="5dp"
+                        >
+                        <ImageView
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:src="@drawable/sinh_to_bo"
+                            android:layout_marginLeft="20dp"
+                            android:layout_gravity="center"/>
+                        <RelativeLayout
+                            android:layout_width="220dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center">
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Sinh tố bơ"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="5dp"
+                                android:textColor="@color/textColorOnWhite"
+                                android:textStyle="bold"/>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="(25 fats, 22 carbs, 30 proteins)"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginTop="20dp"
+                                android:textColor="@color/textColorOnWhite"
+                                />
+                        </RelativeLayout>
+                        <!--<TextView-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:text="Cháo hành Chí Phèo-->
+                        <!--(10 fats, 15 carbs, 20 proteins)"-->
+                        <!--android:layout_gravity="center"-->
+                        <!--android:layout_marginLeft="5dp"-->
+                        <!--android:textStyle="bold"/>-->
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="80 cal"
+                            android:layout_marginLeft="20dp"
+                            android:layout_gravity="center"
+                            android:textStyle="bold"
+                            android:textColor="@color/textColorOnWhite"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/popUp5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="5dp"
+                        >
+                        <ImageView
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:src="@drawable/sinh_to_dau"
+                            android:layout_marginLeft="20dp"
+                            android:layout_gravity="center"
+                            />
+                        <RelativeLayout
+                            android:layout_width="220dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center">
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Sinh tố dâu"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="5dp"
+                                android:textColor="@color/textColorOnWhite"
+                                android:textStyle="bold"/>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="(20 fats, 25 carbs,30 proteins)"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginTop="20dp"
+                                android:textColor="@color/textColorOnWhite"
+                                />
+                        </RelativeLayout>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="65 cal"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="20dp"
+                            android:textStyle="bold"
+                            android:textColor="@color/textColorOnWhite"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="50dp"
+                        android:layout_marginLeft="30dp">
+                        <ImageView
+                            android:id="@+id/add_meal3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:clickable="true"
+                            android:src="@drawable/ic_plus"/>
+                        <TextView
+                            android:paddingLeft="10dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical"
+                            android:text="Thêm món ăn"
+                            android:textSize="22sp"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
         </LinearLayout>
 
     </ScrollView>
+
+    <!--<ScrollView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:layout_marginTop="20dp"-->
+        <!--android:layout_marginBottom="60dp">-->
+        <!--<LinearLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:orientation="vertical">-->
+            <!--//menu món thịt-->
+            <!--<LinearLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:orientation="vertical"-->
+                <!--android:layout_marginTop="10dp">-->
+
+                <!--<LinearLayout-->
+                    <!--android:id="@+id/minimize_layout"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="50dp"-->
+                    <!--android:orientation="horizontal"-->
+                    <!--android:background="@color/colorPrimary">-->
+
+                    <!--<TextView-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:text="Món thịt"-->
+                        <!--android:textSize="25dp"-->
+                        <!--android:layout_gravity="center"-->
+                        <!--android:textColor="@color/textColorOnPrimary"-->
+                        <!--android:textStyle="bold"-->
+                        <!--/>-->
+                    <!--//layout + - -->
+                    <!--<RelativeLayout-->
+                        <!--android:layout_width="fill_parent"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--&gt;-->
+                        <!--<TextView-->
+                            <!--android:id="@+id/txtPlus"-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="match_parent"-->
+                            <!--android:text="+"-->
+                            <!--android:textSize="40dp"-->
+                            <!--android:textStyle="bold"-->
+                            <!--android:textColor="@color/textColorOnPrimary"-->
+                            <!--android:layout_alignParentRight="true"-->
+                            <!--android:visibility="invisible"-->
+                            <!--/>-->
+
+                        <!--<TextView-->
+                            <!--android:id="@+id/txtMinus"-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:layout_alignParentRight="true"-->
+                            <!--android:layout_marginStart="8dp"-->
+                            <!--android:text="-"-->
+                            <!--android:textColor="@color/white"-->
+                            <!--android:textSize="40dp"-->
+                            <!--android:textStyle="bold"-->
+                            <!--/>-->
+                    <!--</RelativeLayout>-->
+
+                <!--</LinearLayout>-->
+
+                <!--//layout nội dung đồ ăn-->
+                <!--<LinearLayout-->
+                    <!--android:id="@+id/foodDisplay"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:orientation="vertical"-->
+                    <!--android:visibility="visible"-->
+                    <!--&gt;-->
+                    <!--<LinearLayout-->
+                        <!--android:id="@+id/popUp"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:orientation="horizontal"-->
+                        <!--android:layout_marginTop="5dp">-->
+                        <!--<ImageView-->
+                            <!--android:layout_width="50dp"-->
+                            <!--android:layout_height="50dp"-->
+                            <!--android:src="@drawable/chao_hanh"-->
+                            <!--android:layout_marginLeft="20dp"-->
+                            <!--android:layout_gravity="center"/>-->
+                        <!--<RelativeLayout-->
+                            <!--android:layout_width="200dp"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:layout_gravity="center">-->
+                            <!--<TextView-->
+                                <!--android:layout_width="match_parent"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:text="Cháo hành Chí Phèo"-->
+                                <!--android:layout_gravity="center"-->
+                                <!--android:layout_marginLeft="5dp"-->
+                                <!--android:textColor="@color/black"-->
+                                <!--android:textStyle="bold"/>-->
+                            <!--<TextView-->
+                                <!--android:layout_width="match_parent"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:text="(10 fats, 15 carbs, 20 proteins)"-->
+                                <!--android:layout_gravity="center"-->
+                                <!--android:layout_marginLeft="5dp"-->
+                                <!--android:layout_marginTop="20dp"-->
+                                <!--android:textColor="@color/black"-->
+                                <!--/>-->
+                        <!--</RelativeLayout>-->
+                        <!--&lt;!&ndash;<TextView&ndash;&gt;-->
+                        <!--&lt;!&ndash;android:layout_width="match_parent"&ndash;&gt;-->
+                        <!--&lt;!&ndash;android:layout_height="wrap_content"&ndash;&gt;-->
+                        <!--&lt;!&ndash;android:text="Cháo hành Chí Phèo&ndash;&gt;-->
+                        <!--&lt;!&ndash;(10 fats, 15 carbs, 20 proteins)"&ndash;&gt;-->
+                        <!--&lt;!&ndash;android:layout_gravity="center"&ndash;&gt;-->
+                        <!--&lt;!&ndash;android:layout_marginLeft="5dp"&ndash;&gt;-->
+                        <!--&lt;!&ndash;android:textStyle="bold"/>&ndash;&gt;-->
+                        <!--<TextView-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:text="600 cal"-->
+                            <!--android:layout_marginLeft="20dp"-->
+                            <!--android:layout_gravity="center"-->
+                            <!--android:textStyle="bold"/>-->
+                        <!--<ImageView-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:src="@drawable/ic_menu_delete"/>-->
+                    <!--</LinearLayout>-->
+                    <!--<LinearLayout-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:orientation="horizontal"-->
+                        <!--android:layout_marginTop="5dp">-->
+                        <!--<ImageView-->
+                            <!--android:layout_width="50dp"-->
+                            <!--android:layout_height="50dp"-->
+                            <!--android:src="@drawable/chao_hanh"-->
+                            <!--android:layout_marginLeft="20dp"-->
+                            <!--android:layout_gravity="center"-->
+                            <!--/>-->
+                        <!--<RelativeLayout-->
+                            <!--android:layout_width="200dp"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:layout_gravity="center">-->
+                            <!--<TextView-->
+                                <!--android:layout_width="match_parent"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:text="Cháo hành Chí Phèo"-->
+                                <!--android:layout_gravity="center"-->
+                                <!--android:layout_marginLeft="5dp"-->
+                                <!--android:textColor="@color/black"-->
+                                <!--android:textStyle="bold"/>-->
+                            <!--<TextView-->
+                                <!--android:layout_width="match_parent"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:text="(10 fats, 15 carbs, 20 proteins)"-->
+                                <!--android:layout_gravity="center"-->
+                                <!--android:layout_marginLeft="5dp"-->
+                                <!--android:layout_marginTop="20dp"-->
+                                <!--android:textColor="@color/black"-->
+                                <!--/>-->
+                        <!--</RelativeLayout>-->
+                        <!--<TextView-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:text="600 cal"-->
+                            <!--android:layout_gravity="center"-->
+                            <!--android:layout_marginLeft="20dp"-->
+                            <!--android:textStyle="bold"/>-->
+                        <!--<ImageView-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:src="@drawable/ic_menu_delete"/>-->
+                    <!--</LinearLayout>-->
+
+                    <!--&lt;!&ndash; add food &ndash;&gt;-->
+                    <!--<LinearLayout-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="50dp"-->
+                        <!--android:layout_marginLeft="20dp">-->
+                        <!--<ImageView-->
+                            <!--android:id="@+id/add_meal1"-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="match_parent"-->
+                            <!--android:clickable="true"-->
+                            <!--android:src="@drawable/ic_plus"/>-->
+                        <!--<TextView-->
+                            <!--android:paddingLeft="10dp"-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="match_parent"-->
+                            <!--android:gravity="center_vertical"-->
+                            <!--android:text="Thêm món ăn"-->
+                            <!--android:textSize="22sp"/>-->
+                    <!--</LinearLayout>-->
+                <!--</LinearLayout>-->
+            <!--</LinearLayout>-->
+
+            <!--//menu món vặt-->
+            <!--<LinearLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:orientation="vertical"-->
+                <!--android:layout_marginTop="5dp">-->
+
+                <!--<LinearLayout-->
+                    <!--android:id="@+id/minimize_layout1"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="50dp"-->
+                    <!--android:orientation="horizontal"-->
+                    <!--android:background="@color/colorPrimary"-->
+                    <!--android:onClick="clickToMinimizeMaxmimize1"-->
+                    <!--&gt;-->
+
+                    <!--<TextView-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:text="Món ăn vặt"-->
+                        <!--android:textSize="25dp"-->
+                        <!--android:layout_gravity="center"-->
+                        <!--android:textColor="@color/textColorOnPrimary"-->
+                        <!--android:textStyle="bold"-->
+
+                        <!--/>-->
+                    <!--//layout + - -->
+                    <!--<RelativeLayout-->
+                        <!--android:layout_width="fill_parent"-->
+                        <!--android:layout_height="wrap_content">-->
+                        <!--<TextView-->
+                            <!--android:id="@+id/txtPlus1"-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="match_parent"-->
+                            <!--android:text="+"-->
+                            <!--android:textSize="40dp"-->
+                            <!--android:textStyle="bold"-->
+                            <!--android:textColor="@color/textColorOnPrimary"-->
+                            <!--android:layout_alignParentRight="true"-->
+                            <!--android:visibility="invisible"-->
+                            <!--/>-->
+
+                        <!--<TextView-->
+                            <!--android:id="@+id/txtMinus1"-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:layout_alignParentRight="true"-->
+                            <!--android:layout_marginStart="8dp"-->
+                            <!--android:text="-"-->
+                            <!--android:textColor="@color/white"-->
+                            <!--android:textSize="40dp"-->
+                            <!--android:textStyle="bold"-->
+                            <!--/>-->
+                    <!--</RelativeLayout>-->
+
+                <!--</LinearLayout>-->
+
+                <!--//layout nội dung đồ ăn-->
+                <!--<LinearLayout-->
+                    <!--android:id="@+id/foodDisplay1"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:orientation="vertical"-->
+                    <!--android:visibility="visible"-->
+                    <!--&gt;-->
+                    <!--<LinearLayout-->
+                        <!--android:id="@+id/popUp1"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:orientation="horizontal"-->
+                        <!--android:layout_marginTop="5dp">-->
+                        <!--<ImageView-->
+                            <!--android:layout_width="50dp"-->
+                            <!--android:layout_height="50dp"-->
+                            <!--android:src="@drawable/chao_hanh"-->
+                            <!--android:layout_marginLeft="20dp"-->
+                            <!--android:layout_gravity="center"/>-->
+                        <!--<RelativeLayout-->
+                            <!--android:layout_width="200dp"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:layout_gravity="center">-->
+                            <!--<TextView-->
+                                <!--android:layout_width="match_parent"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:text="Cháo hành Chí Phèo"-->
+                                <!--android:layout_gravity="center"-->
+                                <!--android:layout_marginLeft="5dp"-->
+                                <!--android:textColor="@color/black"-->
+                                <!--android:textStyle="bold"/>-->
+                            <!--<TextView-->
+                                <!--android:layout_width="match_parent"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:text="(10 fats, 15 carbs, 20 proteins)"-->
+                                <!--android:layout_gravity="center"-->
+                                <!--android:layout_marginLeft="5dp"-->
+                                <!--android:layout_marginTop="20dp"-->
+                                <!--android:textColor="@color/black"-->
+                                <!--/>-->
+                        <!--</RelativeLayout>-->
+                        <!--<TextView-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:text="600 cal"-->
+                            <!--android:layout_marginLeft="20dp"-->
+                            <!--android:layout_gravity="center"-->
+                            <!--android:textStyle="bold"/>-->
+                        <!--<ImageView-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:src="@drawable/ic_menu_delete"/>-->
+                    <!--</LinearLayout>-->
+                    <!--<LinearLayout-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:orientation="horizontal"-->
+                        <!--android:layout_marginTop="5dp">-->
+                        <!--<ImageView-->
+                            <!--android:layout_width="50dp"-->
+                            <!--android:layout_height="50dp"-->
+                            <!--android:src="@drawable/chao_hanh"-->
+                            <!--android:layout_marginLeft="20dp"-->
+                            <!--android:layout_gravity="center"-->
+                            <!--/>-->
+                        <!--<RelativeLayout-->
+                            <!--android:layout_width="200dp"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:layout_gravity="center">-->
+                            <!--<TextView-->
+                                <!--android:layout_width="match_parent"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:text="Cháo hành Chí Phèo"-->
+                                <!--android:layout_gravity="center"-->
+                                <!--android:layout_marginLeft="5dp"-->
+                                <!--android:textColor="@color/black"-->
+                                <!--android:textStyle="bold"/>-->
+                            <!--<TextView-->
+                                <!--android:layout_width="match_parent"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:text="(10 fats, 15 carbs, 20 proteins)"-->
+                                <!--android:layout_gravity="center"-->
+                                <!--android:layout_marginLeft="5dp"-->
+                                <!--android:layout_marginTop="20dp"-->
+                                <!--android:textColor="@color/black"-->
+                                <!--/>-->
+                        <!--</RelativeLayout>-->
+                        <!--<TextView-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:text="600 cal"-->
+                            <!--android:layout_marginTop="10dp"-->
+                            <!--android:layout_marginLeft="20dp"-->
+                            <!--android:textStyle="bold"/>-->
+                        <!--<ImageView-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:src="@drawable/ic_menu_delete"/>-->
+                    <!--</LinearLayout>-->
+                    <!--&lt;!&ndash; add food &ndash;&gt;-->
+                    <!--<LinearLayout-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="50dp"-->
+                        <!--android:layout_marginLeft="20dp">-->
+                        <!--<ImageView-->
+                            <!--android:id="@+id/add_meal2"-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="match_parent"-->
+                            <!--android:clickable="true"-->
+                            <!--android:src="@drawable/ic_plus"/>-->
+                        <!--<TextView-->
+                            <!--android:paddingLeft="10dp"-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="match_parent"-->
+                            <!--android:gravity="center_vertical"-->
+                            <!--android:text="Thêm món ăn"-->
+                            <!--android:textSize="22sp"/>-->
+                    <!--</LinearLayout>-->
+                <!--</LinearLayout>-->
+            <!--</LinearLayout>-->
+        <!--</LinearLayout>-->
+
+    <!--</ScrollView>-->
 
 
 
