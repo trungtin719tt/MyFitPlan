@@ -57,12 +57,12 @@ public class MainActivity extends AppCompatActivity {
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
-        imageButton = (ImageButton)findViewById(R.id.btnHnag);
-        Animation btnAni = new AlphaAnimation(1, 0);
-        btnAni.setDuration(1100);
-        btnAni.setRepeatCount(Animation.INFINITE);
-        btnAni.setRepeatMode(Animation.REVERSE);
-        imageButton.startAnimation(btnAni);
+//        imageButton = (ImageButton)findViewById(R.id.btnHnag);
+//        Animation btnAni = new AlphaAnimation(1, 0);
+//        btnAni.setDuration(1100);
+//        btnAni.setRepeatCount(Animation.INFINITE);
+//        btnAni.setRepeatMode(Animation.REVERSE);
+//        imageButton.startAnimation(btnAni);
 //        rotateAnimation();
 
     }

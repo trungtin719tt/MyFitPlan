@@ -48,7 +48,6 @@
             </RelativeLayout>
             <TextView
                 android:id="@+id/home_notification"
-
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"
                 android:gravity="center"
@@ -57,7 +56,7 @@
 
             <!-- progress calories -->
             <LinearLayout
-                android:layout_width="300dp"
+                android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:orientation="horizontal"
                 android:gravity="center_vertical">
@@ -68,24 +67,27 @@
                     android:gravity="center"/>
 
                 <LinearLayout
-                    android:layout_marginLeft="20dp"
+                    android:layout_marginLeft="10dp"
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
                     android:orientation="vertical"
                     android:gravity="center_vertical">
                     <TextView
                         android:id="@+id/txt_progress_calo"
-                        android:layout_width="match_parent"
+                        android:layout_width="250dp"
                         android:layout_height="20dp"
-                        android:text="2650/3250"/>
+                        android:text="2600/3250"
+                        android:gravity="center"/>
                     <ProgressBar
+                        android:progressDrawable="@drawable/progess_bar"
                         android:id="@+id/progress_calo"
-                        android:layout_width="170dp"
+                        android:layout_width="280dp"
                         android:layout_height="30dp"
-                        android:background="#ffeb3b"
-                        android:progress="2650"
+                        android:progress="2600"
                         android:max="3250"
-                        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                        style="@android:style/Widget.ProgressBar.Horizontal"
+
+
                         />
 
                 </LinearLayout>
@@ -95,7 +97,7 @@
 
             <!-- progress protein -->
             <LinearLayout
-                android:layout_width="300dp"
+                android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:orientation="horizontal"
                 android:gravity="center_vertical">
@@ -106,24 +108,27 @@
                     android:gravity="center"/>
 
                 <LinearLayout
-                    android:layout_marginLeft="20dp"
+                    android:layout_marginLeft="10dp"
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
                     android:orientation="vertical"
                     android:gravity="center_vertical">
                     <TextView
                         android:id="@+id/txt_progress_protein"
-                        android:layout_width="match_parent"
+                        android:layout_width="280dp"
                         android:layout_height="20dp"
-                        android:text="54/160"/>
+                        android:text="65/200"
+                        android:gravity="center"/>
                     <ProgressBar
+                        android:progressDrawable="@drawable/progess_bar"
                         android:id="@+id/progress_protein"
-                        android:layout_width="170dp"
+                        android:layout_width="280dp"
                         android:layout_height="30dp"
-                        android:progress="54"
-                        android:max="160"
-                        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-                        android:background="#ffeb3b"/>
+                        android:secondaryProgress="60"
+                        android:max="200"
+                        style="@android:style/Widget.ProgressBar.Horizontal"
+                        />
+
                 </LinearLayout>
 
 
@@ -131,7 +136,7 @@
 
             <!-- progress carbohydrat -->
             <LinearLayout
-                android:layout_width="300dp"
+                android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:orientation="horizontal"
                 android:gravity="center_vertical">
@@ -142,32 +147,34 @@
                     android:gravity="center"/>
 
                 <LinearLayout
-                    android:layout_marginLeft="20dp"
+                    android:layout_marginLeft="10dp"
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
                     android:orientation="vertical"
                     android:gravity="center_vertical">
                     <TextView
                         android:id="@+id/txt_progress_carb"
-                        android:layout_width="match_parent"
+                        android:layout_width="280dp"
                         android:layout_height="20dp"
-                        android:text="54/160"/>
+                        android:text="150/325"
+                        android:gravity="center"/>
                     <ProgressBar
+                        android:progressDrawable="@drawable/progess_bar"
                         android:id="@+id/progress_carb"
-                        android:layout_width="170dp"
+                        android:layout_width="280dp"
                         android:layout_height="30dp"
-                        android:progress="54"
-                        android:max="160"
-                        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-                        android:background="#ffeb3b"/>
+                        android:secondaryProgress="150"
+                        android:max="325"
+                        style="@android:style/Widget.ProgressBar.Horizontal"
+                        />
+
                 </LinearLayout>
 
 
             </LinearLayout>
-
             <!-- progress fat -->
             <LinearLayout
-                android:layout_width="300dp"
+                android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:orientation="horizontal"
                 android:gravity="center_vertical">
@@ -178,24 +185,27 @@
                     android:gravity="center"/>
 
                 <LinearLayout
-                    android:layout_marginLeft="20dp"
+                    android:layout_marginLeft="10dp"
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
                     android:orientation="vertical"
                     android:gravity="center_vertical">
                     <TextView
                         android:id="@+id/txt_progress_fat"
-                        android:layout_width="match_parent"
+                        android:layout_width="280dp"
                         android:layout_height="20dp"
-                        android:text="54/160"/>
+                        android:text="23/150"
+                        android:gravity="center"/>
                     <ProgressBar
+                        android:progressDrawable="@drawable/progess_bar"
                         android:id="@+id/progress_fat"
-                        android:layout_width="170dp"
+                        android:layout_width="280dp"
                         android:layout_height="30dp"
-                        android:progress="54"
-                        android:max="160"
-                        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-                        android:background="#ffeb3b"/>
+                        android:secondaryProgress="23"
+                        android:max="150"
+                        style="@android:style/Widget.ProgressBar.Horizontal"
+                        />
+
                 </LinearLayout>
 
 
@@ -203,7 +213,7 @@
 
             <!-- progress water -->
             <LinearLayout
-                android:layout_width="300dp"
+                android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:orientation="horizontal"
                 android:gravity="center_vertical">
@@ -214,62 +224,32 @@
                     android:gravity="center"/>
 
                 <LinearLayout
-                    android:layout_marginLeft="20dp"
+                    android:layout_marginLeft="10dp"
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
                     android:orientation="vertical"
                     android:gravity="center_vertical">
                     <TextView
-                        android:id="@+id/txt_progress_water"
-                        android:layout_width="match_parent"
+                        android:id="@+id/txt_progress_nuoc"
+                        android:layout_width="280dp"
                         android:layout_height="20dp"
-                        android:text="540/2500ml"/>
+                        android:text="2222/2500ml"
+                        android:gravity="center"/>
                     <ProgressBar
-                        android:id="@+id/progress_water"
-                        android:layout_width="170dp"
+                        android:progressDrawable="@drawable/progess_bar"
+                        android:id="@+id/progress_nuoc"
+                        android:layout_width="280dp"
                         android:layout_height="30dp"
-                        android:progress="540"
-                        android:max="2500"
-                        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-                        android:background="#ffeb3b"/>
+                        android:progress="2222"
+                        android:max="3250"
+                        style="@android:style/Widget.ProgressBar.Horizontal"
+                        />
+
                 </LinearLayout>
+
 
 
             </LinearLayout>
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:gravity="center_horizontal"
-                    android:layout_alignParentRight="true"
-                    android:layout_marginRight="50dp"
-                    android:layout_marginTop="20dp">
-                    <ImageButton
-                        android:id="@+id/btnHnag"
-                        android:src="@drawable/hnag"
-                        android:backgroundTint="#00000000"
-                        android:minWidth="10dp"
-                        android:minHeight="20dp"
-                        android:scaleType="fitXY"
-                        android:layout_width="80dp"
-                        android:layout_height="70dp"
-                        android:onClick="clickToEat"
-                        />
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Hôm nay ăn gì?"
-                        android:textColor="@color/textColorOnWhite"/>
-
-                </LinearLayout>
-
-            </RelativeLayout>
-
-
-
 
         </LinearLayout>
 
@@ -483,6 +463,19 @@
             app:itemIconTint="@android:color/white"
             app:itemTextColor="@android:color/white"
             app:menu="@menu/navigation" />
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fab"
+            android:src="@drawable/plus_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:fabSize="auto"
+            android:layout_gravity="bottom|end"
+            android:onClick="clickToEat"
+            android:layout_marginBottom="80dp"
+            android:layout_marginRight="40dp"
+            app:backgroundTint="@color/colorPrimary"
+            />
 
     </android.support.design.widget.CoordinatorLayout>
 

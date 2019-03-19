@@ -94,7 +94,7 @@
         <Switch
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="Chia sẻ"
+            android:text="Công khai"
             android:checked="true"
             android:gravity="left"
             android:layout_marginLeft="20dp"
