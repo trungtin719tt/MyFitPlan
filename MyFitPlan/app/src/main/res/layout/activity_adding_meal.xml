@@ -79,30 +79,51 @@
         android:layout_marginBottom="10dp"
         />
 
+    <!--<LinearLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:orientation="horizontal">-->
+
+        <!--&lt;!&ndash;<TextView&ndash;&gt;-->
+            <!--&lt;!&ndash;android:layout_width="wrap_content"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:layout_height="wrap_content"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:text="Chia sẻ"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:layout_marginLeft="20dp"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:textStyle="bold"/>&ndash;&gt;-->
+
+        <!--<Switch-->
+            <!--android:id="@+id/is_published"-->
+            <!--android:layout_width="fill_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="Chia sẻ"-->
+            <!--android:checked="true"-->
+            <!--android:gravity="left"-->
+            <!--android:layout_marginLeft="20dp"-->
+            <!--android:layout_marginRight="40dp"-->
+            <!--android:textStyle="bold"-->
+            <!--/>-->
+    <!--</LinearLayout>-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
-
-        <!--<TextView-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:text="Chia sẻ"-->
-            <!--android:layout_marginLeft="20dp"-->
-            <!--android:textStyle="bold"/>-->
-
-        <Switch
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:text="Chia sẻ"
-            android:checked="true"
-            android:gravity="left"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="40dp"
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Đơn vị tính"
             android:textStyle="bold"
-            />
-    </LinearLayout>
+            android:layout_gravity="center_vertical"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="20dp"/>
 
+        <EditText
+            android:id="@+id/edtUnit"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginLeft="80dp"
+            android:layout_marginRight="40dp"/>
+
+    </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -117,6 +138,7 @@
             android:layout_marginLeft="20dp"/>
 
         <EditText
+            android:id="@+id/edtCalories"
             android:layout_width="match_parent"
             android:layout_height="45dp"
             android:layout_marginLeft="80dp"
@@ -138,6 +160,7 @@
             android:layout_marginLeft="20dp"/>
 
         <EditText
+            android:id="@+id/edtCarbs"
             android:layout_width="match_parent"
             android:layout_height="45dp"
             android:layout_marginLeft="80dp"
@@ -159,6 +182,7 @@
             android:layout_marginLeft="20dp"/>
 
         <EditText
+            android:id="@+id/edtProtein"
             android:layout_width="match_parent"
             android:layout_height="45dp"
             android:layout_marginLeft="70dp"
@@ -180,6 +204,7 @@
             android:layout_marginLeft="20dp"/>
 
         <EditText
+            android:id="@+id/edtFat"
             android:layout_width="match_parent"
             android:layout_height="45dp"
             android:layout_marginLeft="75dp"
@@ -222,6 +247,8 @@
         android:layout_marginLeft="50dp"
         android:layout_marginRight="50dp"
         android:layout_marginTop="20dp"
+
         />
+
 
 </LinearLayout>

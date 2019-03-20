@@ -11,10 +11,20 @@ import android.net.Uri;
 import java.io.InputStream;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.loopj.android.http.JsonHttpResponseHandler;
+import com.loopj.android.http.RequestParams;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.FileNotFoundException;
+
+import cz.msebera.android.httpclient.Header;
+import cz.msebera.android.httpclient.entity.ByteArrayEntity;
 
 public class AddingMeal extends AppCompatActivity {
     private static int RESULT_LOAD_IMAGE = 1;
@@ -72,7 +82,49 @@ public class AddingMeal extends AppCompatActivity {
 
     public void clickToAddMeal(View view) {
 //        this.finish();
-        startActivity(new Intent(AddingMeal.this, LibraryActivity.class));
+//        startActivity(new Intent(AddingMeal.this, LibraryActivity.class));
+
+        String foodName = ((EditText)findViewById(R.id.edtFoodName)).getText().toString();
+        String unit = ((EditText)findViewById(R.id.edtUnit)).getText().toString();
+        String calories = ((EditText)findViewById(R.id.edtCalories)).getText().toString();
+        String protein = ((EditText)findViewById(R.id.edtProtein)).getText().toString();
+        String carbs = ((EditText)findViewById(R.id.edtCarbs)).getText().toString();
+        String fat = ((EditText)findViewById(R.id.edtFat)).getText().toString();
+
+        if(foodName.trim().equals("") || calories.trim().equals("") || protein.trim().equals("") || carbs.trim().equals("") || fat.trim().equals("") ){
+            Toast.makeText(getApplicationContext(),"Vui lòng điền thông tin đầy đủ!",Toast.LENGTH_LONG).show();
+            return;
+        }
+//        String image = ((EditText)findViewById(R.id.edtFoodName)).getText().toString(); //thêm image sau
+        HttpUtils.client.removeHeader("Content-Type");
+
+        HttpUtils.client.addHeader("Content-Type", "application/x-www-form-urlencoded");
+
+        RequestParams rp = new RequestParams();
+        rp.add("NameVN", foodName);
+        rp.add("Unit", unit);
+        rp.add("Protein", protein);
+        rp.add("Fat", fat);
+        rp.add("Carbs", carbs);
+        rp.add("Calories", calories);
+        rp.add("FollowedBy", "1");
+        HttpUtils.post("api/Foods", rp, new JsonHttpResponseHandler() {
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
+                try {
+                    JSONObject serverResp = new JSONObject(response.toString());
+                    Toast.makeText(getApplicationContext(),"Tạo món ăn mới thành công",Toast.LENGTH_LONG).show();
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+
+            @Override
+            public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
+                super.onFailure(statusCode, headers, throwable, errorResponse);
+                Toast.makeText(getApplicationContext(),"Tạo món ăn mới thất bại",Toast.LENGTH_LONG).show();
+            }
+        });
     }
 
     public void clickToChoosePicture(View view) {
