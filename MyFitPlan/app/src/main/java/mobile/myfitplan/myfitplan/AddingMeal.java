@@ -96,9 +96,11 @@ public class AddingMeal extends AppCompatActivity {
             return;
         }
 //        String image = ((EditText)findViewById(R.id.edtFoodName)).getText().toString(); //thêm image sau
-        HttpUtils.client.removeHeader("Content-Type");
-
-        HttpUtils.client.addHeader("Content-Type", "application/x-www-form-urlencoded");
+        HttpUtils http = new HttpUtils();
+        String authorization = ((MyApplication)getApplication()).token_type + " " +  ((MyApplication)getApplication()).access_token;
+        http.client.addHeader("Accept", "application/json");
+        http.client.addHeader("Content-Type", "application/x-www-form-urlencoded");
+        http.client.addHeader("Authorization", authorization);
 
         RequestParams rp = new RequestParams();
         rp.add("NameVN", foodName);
@@ -108,7 +110,7 @@ public class AddingMeal extends AppCompatActivity {
         rp.add("Carbs", carbs);
         rp.add("Calories", calories);
         rp.add("FollowedBy", "1");
-        HttpUtils.post("api/Foods", rp, new JsonHttpResponseHandler() {
+        http.post("api/Foods", rp, new JsonHttpResponseHandler() {
             @Override
             public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
                 try {

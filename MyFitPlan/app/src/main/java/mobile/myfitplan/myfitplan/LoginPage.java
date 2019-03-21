@@ -3,8 +3,6 @@ package mobile.myfitplan.myfitplan;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
-import android.text.Html;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -38,18 +36,23 @@ public class LoginPage extends AppCompatActivity {
         rp.add("password", password);
         rp.add("grant_type", "password");
 
-
-        HttpUtils.post("Token", rp, new JsonHttpResponseHandler() {
+        HttpUtils httpUtils = new HttpUtils();
+        httpUtils.post("Token", rp, new JsonHttpResponseHandler() {
             @Override
             public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
                 try {
                     JSONObject serverResp = new JSONObject(response.toString());
                     ((MyApplication) getApplication()).access_token =  serverResp.get("access_token").toString();
                     ((MyApplication) getApplication()).token_type =  serverResp.get("token_type").toString();
-                    String authorization = ((MyApplication)getApplication()).token_type + " " +  ((MyApplication)getApplication()).access_token;
-                    HttpUtils.client.addHeader("Accept", "application/json");
-                    HttpUtils.client.addHeader("Content-Type", "application/json");
-                    HttpUtils.client.addHeader("Authorization", authorization);
+                    ((MyApplication) getApplication()).username =  serverResp.get("userName").toString();
+
+//                    String authorization = ((MyApplication)getApplication()).token_type + " " +  ((MyApplication)getApplication()).access_token;
+//                    HttpUtils.client.addHeader("Accept", "application/json");
+//                    HttpUtils.client.addHeader("Content-Type", "application/json");
+//                    HttpUtils.client.addHeader("Authorization", authorization);
+
+
+
                     startActivity(new Intent(LoginPage.this, MainActivity.class));
                 } catch (JSONException e) {
                     e.printStackTrace();

@@ -10,22 +10,23 @@ import javax.net.ssl.HttpsURLConnection;
 
 public class MyApplication extends Application {
 
-    public final String Url_API = "35.185.29.57:12345";
     public Map<Integer,String> NutritionMap = new HashMap<Integer,String>();
     public String access_token;
     public String token_type;
-    public int accUserID;
+    public  AccUser accUser;
+    public String username;
 
 //    URL url;
 //    HttpsURLConnection myConnection;
 
     public  MyApplication(){
+        accUser = new AccUser();
         NutritionMap.put(1, "Protein");
         NutritionMap.put(2, "Fat");
         NutritionMap.put(3, "Carbs");
         NutritionMap.put(4, "Calories");
 
-        accUserID = -1;
+
 //
 //        try{
 //            // Create URL

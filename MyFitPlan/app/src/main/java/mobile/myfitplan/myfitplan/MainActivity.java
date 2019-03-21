@@ -19,6 +19,8 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.view.animation.RotateAnimation;
 import android.widget.ImageButton;
+import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.loopj.android.http.JsonHttpResponseHandler;
@@ -28,10 +30,16 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+
 import cz.msebera.android.httpclient.Header;
 
 public class MainActivity extends AppCompatActivity {
     private DrawerLayout drawerLayout;
+    private ProgressBar calories, fat, carb, protein;
+    private TextView caloText, fatText, carbText, proteinText;
     Animation rotateAnimation;
     ImageButton imageButton;
 
@@ -40,20 +48,128 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        RequestParams rp = new RequestParams();
-        HttpUtils.get("api/Foods", rp, new JsonHttpResponseHandler() {
+        calories = findViewById(R.id.progress_calo);
+        fat = findViewById(R.id.progress_fat);
+        carb = findViewById(R.id.progress_carb);
+        protein = findViewById(R.id.progress_protein);
+
+        caloText = findViewById(R.id.txt_progress_calo);
+        fatText = findViewById(R.id.txt_progress_fat);
+        proteinText = findViewById(R.id.txt_progress_protein);
+        carbText = findViewById(R.id.txt_progress_carb);
+
+        RequestParams param = new RequestParams();
+        String username = ((MyApplication) getApplication()).username;
+        param.add("email", username);
+        HttpUtils httpUtils = new HttpUtils();
+        String authorization = ((MyApplication)getApplication()).token_type + " " +  ((MyApplication)getApplication()).access_token;
+        httpUtils.client.addHeader("Authorization", authorization);
+        httpUtils.get("api/AccUsers", param, new JsonHttpResponseHandler() {
             @Override
             public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
                 try {
-                    JSONObject serverResp = new JSONObject(response.toString());
+                    JSONObject res = new JSONObject(response.toString());
+                    int ID = (int)res.get("ID");
+                    String Email = res.get("Email").toString();
+                    String DateOfBirth = res.get("DateOfBirth").toString();
+                    String Name = res.get("Name").toString();
+                    int Purpose = (int)res.get("Purpose");
+                    String Gender = res.get("Gender").toString();
+                    int TrainingLevel = (int)res.get("TrainingLevel");
+//                                AccUser accUser = new AccUser(ID, Email, DateOfBirth, Name, Purpose, Gender, TrainingLevel);
+                    ((MyApplication) getApplication()).accUser = new AccUser(ID, Email, DateOfBirth, Name, Purpose, Gender, TrainingLevel);
+
+
+                    RequestParams rp = new RequestParams();
+                    int accUserID = ((MyApplication)getApplication()).accUser.ID;
+                    SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+                    String currentDateandTime = sdf.format(new Date());
+//                    Date currentTime = Calendar.getInstance().getTime();
+                    rp.add("accUserID", String.valueOf(accUserID));
+                    rp.add("date", currentDateandTime);
+                    HttpUtils http = new HttpUtils();
+                    String authorization = ((MyApplication)getApplication()).token_type + " " +  ((MyApplication)getApplication()).access_token;
+                    http.client.addHeader("Accept", "application/json");
+                    http.client.addHeader("Authorization", authorization);
+                    http.get("api/DailyProgressses", rp, new JsonHttpResponseHandler() {
+                        @Override
+                        public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
+                            try {
+                                JSONObject serverResp = new JSONObject(response.toString());
+                                int goalProtein = (int)serverResp.get("GoalProtein");
+                                int absorbedProtein = (int)serverResp.get("AbsorbedProtein");
+                                int goalCalories = (int)serverResp.get("GoalCalories");
+                                int absorbedCalories = (int)serverResp.get("AbsorbedCalories");
+                                int goalFat = (int)serverResp.get("GoalFat");
+                                int absorbedFat = (int)serverResp.get("AbsorbedFat");
+                                int goalCarb = (int)serverResp.get("GoalCarbs");
+                                int absorbedCarb = (int)serverResp.get("AbsorbedCarbs");
+
+                                calories.setMax(goalCalories);
+                                calories.setProgress(absorbedCalories);
+                                fat.setProgress(absorbedFat);
+                                fat.setMax(goalFat);
+                                carb.setMax(goalCarb);
+                                carb.setProgress(absorbedCarb);
+                                protein.setProgress(absorbedProtein);
+                                protein.setMax(goalProtein);
+
+                                caloText.setText(absorbedCalories+"/"+goalCalories);
+                                fatText.setText(absorbedFat+"/"+goalFat);
+                                proteinText.setText(absorbedProtein+"/"+goalProtein);
+                                carbText.setText(absorbedCarb+"/"+goalCarb);
+
+                            } catch (JSONException e) {
+                                e.printStackTrace();
+                            }
+                        }
+
+                        @Override
+                        public void onSuccess(int statusCode, Header[] headers, JSONArray response) {
+                            super.onSuccess(statusCode, headers, response);
+                        }
+
+                        @Override
+                        public void onSuccess(int statusCode, Header[] headers, String responseString) {
+                            super.onSuccess(statusCode, headers, responseString);
+                        }
+
+                        @Override
+                        public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
+                            super.onFailure(statusCode, headers, throwable, errorResponse);
+                            Toast.makeText(getApplicationContext(),"Kiểm tra lại kết nối mạng",Toast.LENGTH_LONG).show();
+                        }
+
+                        @Override
+                        public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONArray errorResponse) {
+                            super.onFailure(statusCode, headers, throwable, errorResponse);
+                        }
+
+                        @Override
+                        public void onFailure(int statusCode, Header[] headers, String responseString, Throwable throwable) {
+                            super.onFailure(statusCode, headers, responseString, throwable);
+                        }
+                    });
+
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
             }
 
             @Override
-            public void onSuccess(int statusCode, Header[] headers, JSONArray response) {
-                super.onSuccess(statusCode, headers, response);
+            public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
+                super.onFailure(statusCode, headers, throwable, errorResponse);
+                startActivity(new Intent(MainActivity.this, FillingGoal.class));
+            }
+
+            @Override
+            public void onFailure(int statusCode, Header[] headers, String responseString, Throwable throwable) {
+                super.onFailure(statusCode, headers, responseString, throwable);
+            }
+
+            @Override
+            public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONArray errorResponse) {
+                super.onFailure(statusCode, headers, throwable, errorResponse);
             }
 
             @Override
@@ -62,11 +178,12 @@ public class MainActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
-                super.onFailure(statusCode, headers, throwable, errorResponse);
-                Toast.makeText(getApplicationContext(),"Kiểm tra lại kết nối mạng",Toast.LENGTH_LONG).show();
+            public void onSuccess(int statusCode, Header[] headers, JSONArray response) {
+                super.onSuccess(statusCode, headers, response);
             }
         });
+
+
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);

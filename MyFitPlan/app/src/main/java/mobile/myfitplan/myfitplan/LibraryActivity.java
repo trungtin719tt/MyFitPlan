@@ -1,5 +1,6 @@
 package mobile.myfitplan.myfitplan;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
@@ -15,15 +16,30 @@ import android.support.v7.widget.Toolbar;
 import android.text.Html;
 import android.view.Gravity;
 import android.view.KeyEvent;
+import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnKeyListener;
 
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.loopj.android.http.JsonHttpResponseHandler;
+import com.loopj.android.http.RequestParams;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+import cz.msebera.android.httpclient.Header;
 
 public class LibraryActivity extends AppCompatActivity {
     private DrawerLayout drawerLayout;
@@ -76,54 +92,140 @@ public class LibraryActivity extends AppCompatActivity {
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
         navigation.setSelectedItemId(R.id.navigation_library);
 
-        //pop up plus 1
-        Button popUp1 = (Button) findViewById(R.id.btnAdd1);
-        popUp1.setOnClickListener(new View.OnClickListener() {
+        //add food
+        RequestParams rp = new RequestParams();
+        HttpUtils http = new HttpUtils();
+        String authorization = ((MyApplication)getApplication()).token_type + " " +  ((MyApplication)getApplication()).access_token;
+        http.client.addHeader("Accept", "application/json");
+        http.client.addHeader("Authorization", authorization);
+        http.get("api/Foods", rp, new JsonHttpResponseHandler() {
             @Override
-            public void onClick(View v) {
-                startActivity(new Intent(LibraryActivity.this, Pop.class));
+            public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
+                try {
+                    JSONObject serverResp = new JSONObject(response.toString());
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, JSONArray response) {
+                super.onSuccess(statusCode, headers, response);
+                for (int i = 0; i < response.length(); i++){
+                    try{
+                        JSONObject obj = response.getJSONObject(i);
+                        String ID = obj.get("ID").toString();
+                        String Name = obj.get("NameVN").toString().equals("null") ? obj.get("NameENG").toString() : obj.get("NameVN").toString();
+                        String Protein = obj.get("Protein").toString().equals("null") ? "0" : obj.get("Protein").toString();
+                        String Fat = obj.get("Fat").toString().equals("null") ? "0" : obj.get("Fat").toString();
+                        String Carbs = obj.get("Carbs").toString().equals("null") ? "0" : obj.get("Carbs").toString();
+                        String Calories = obj.get("Calories").toString().equals("null") ? "0" : obj.get("Calories").toString();
+                        String Unit = obj.get("Unit").toString().equals("null") ? "" : obj.get("Unit").toString();
+                        String FollowedBy = obj.get("FollowedBy").toString().equals("null") ? "0" : obj.get("FollowedBy").toString();
+
+
+                        LayoutInflater vi = (LayoutInflater) getApplicationContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                        View v = vi.inflate(R.layout.food_info, null);
+                        // fill in any details dynamically here
+                        TextView foodID =  v.findViewById(R.id.food_id);
+                        foodID.setText(ID);
+                        TextView name =  v.findViewById(R.id.txt_library_name);
+                        name.setText(Name);
+                        TextView nutrition_info =  v.findViewById(R.id.nutrition_info);
+                        nutrition_info.setText("("+ Fat + " fats, "+ Carbs +" carbs, " + Protein + " proteins)");
+                        TextView txt_library_count =  v.findViewById(R.id.txt_library_count);
+                        txt_library_count.setText(FollowedBy);
+                        TextView txt_library_calories = v.findViewById(R.id.txt_library_calories);
+                        txt_library_calories.setText(Calories);
+                        Button addBtn = v.findViewById(R.id.btnAdd);
+                        addBtn.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                startActivity(new Intent(LibraryActivity.this, Pop.class));
+                            }
+                        });
+                        // insert into main view
+                        ViewGroup insertPoint = (ViewGroup) findViewById(R.id.food_content);
+                        insertPoint.addView(v, 0, new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+
+
+                    }catch (Exception ex){
+
+                    }
+                }
+            }
+
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, String responseString) {
+                super.onSuccess(statusCode, headers, responseString);
+            }
+
+            @Override
+            public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
+                super.onFailure(statusCode, headers, throwable, errorResponse);
+                Toast.makeText(getApplicationContext(),"Kiểm tra lại kết nối mạng",Toast.LENGTH_LONG).show();
+            }
+
+            @Override
+            public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONArray errorResponse) {
+                super.onFailure(statusCode, headers, throwable, errorResponse);
+            }
+
+            @Override
+            public void onFailure(int statusCode, Header[] headers, String responseString, Throwable throwable) {
+                super.onFailure(statusCode, headers, responseString, throwable);
             }
         });
-        //pop up plus 2
-        Button popUp2= (Button) findViewById(R.id.btnAdd2);
-        popUp2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(LibraryActivity.this, Pop.class));
-            }
-        });
-        //pop up plus 3
-        Button popUp3 = (Button) findViewById(R.id.btnAdd3);
-        popUp3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(LibraryActivity.this, Pop.class));
-            }
-        });
-        //pop up plus 4
-        Button popUp4 = (Button) findViewById(R.id.btnAdd4);
-        popUp4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(LibraryActivity.this, Pop.class));
-            }
-        });
-        //pop up plus 5
-        Button popUp5 = (Button) findViewById(R.id.btnAdd5);
-        popUp5.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(LibraryActivity.this, Pop.class));
-            }
-        });
-        //pop up plus 6
-        Button popUp6 = (Button) findViewById(R.id.btnAdd6);
-        popUp6.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(LibraryActivity.this, Pop.class));
-            }
-        });
+
+//        //pop up plus 1
+//        Button popUp1 = (Button) findViewById(R.id.btnAdd1);
+//        popUp1.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                startActivity(new Intent(LibraryActivity.this, Pop.class));
+//            }
+//        });
+//        //pop up plus 2
+//        Button popUp2= (Button) findViewById(R.id.btnAdd2);
+//        popUp2.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                startActivity(new Intent(LibraryActivity.this, Pop.class));
+//            }
+//        });
+//        //pop up plus 3
+//        Button popUp3 = (Button) findViewById(R.id.btnAdd3);
+//        popUp3.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                startActivity(new Intent(LibraryActivity.this, Pop.class));
+//            }
+//        });
+//        //pop up plus 4
+//        Button popUp4 = (Button) findViewById(R.id.btnAdd4);
+//        popUp4.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                startActivity(new Intent(LibraryActivity.this, Pop.class));
+//            }
+//        });
+//        //pop up plus 5
+//        Button popUp5 = (Button) findViewById(R.id.btnAdd5);
+//        popUp5.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                startActivity(new Intent(LibraryActivity.this, Pop.class));
+//            }
+//        });
+//        //pop up plus 6
+//        Button popUp6 = (Button) findViewById(R.id.btnAdd6);
+//        popUp6.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                startActivity(new Intent(LibraryActivity.this, Pop.class));
+//            }
+//        });
 
 //        //pop up food 1
 //        Button pop1 = (Button) findViewById(R.id.btnAddFood1);
@@ -244,6 +346,7 @@ public class LibraryActivity extends AppCompatActivity {
         content.addView(textView);
         content.addView(addFood);
     }
+
 
 
 
