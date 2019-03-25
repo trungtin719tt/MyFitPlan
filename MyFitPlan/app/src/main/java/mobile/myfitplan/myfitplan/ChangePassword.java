@@ -7,6 +7,16 @@ import android.support.v7.widget.Toolbar;
 import android.text.Html;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
+import android.widget.Toast;
+
+import com.loopj.android.http.JsonHttpResponseHandler;
+import com.loopj.android.http.RequestParams;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import cz.msebera.android.httpclient.Header;
 
 public class ChangePassword extends AppCompatActivity {
 
@@ -37,6 +47,33 @@ public class ChangePassword extends AppCompatActivity {
     }
 
     public void clickToChangePassword(View view) {
+        RequestParams rp = new RequestParams();
+        rp.add("OldPassword", ((EditText)findViewById(R.id.edtOldPassword)).getText().toString());
+        rp.add("NewPassword", ((EditText)findViewById(R.id.edtNewPassword)).getText().toString());
+        rp.add("ConfirmPassword", ((EditText)findViewById(R.id.edtReenterPassword)).getText().toString());
+
+        HttpUtils httpUtils = new HttpUtils();
+        String authorization = ((MyApplication)getApplication()).token_type + " " +  ((MyApplication)getApplication()).access_token;
+        httpUtils.client.addHeader("Accept", "application/json");
+        httpUtils.client.addHeader("Authorization", authorization);
+        httpUtils.post("api/Account/ChangePassword", rp, new JsonHttpResponseHandler() {
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
+                try {
+                    JSONObject serverResp = new JSONObject(response.toString());
+                    Toast.makeText(getApplicationContext(),"Đổi mật khẩu thành công",Toast.LENGTH_LONG).show();
+                    finish();
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+
+            @Override
+            public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
+                super.onFailure(statusCode, headers, throwable, errorResponse);
+                Toast.makeText(getApplicationContext(),"Đổi mật khẩu thất bại",Toast.LENGTH_LONG).show();
+            }
+        });
         this.finish();
     }
 }

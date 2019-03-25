@@ -118,11 +118,13 @@
             android:layout_marginLeft="20dp"/>
 
         <RadioGroup
+            android:id="@+id/radio_gender"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:layout_marginLeft="40dp">
             <RadioButton
+                android:id="@+id/male"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Nam"
@@ -130,6 +132,7 @@
                 />
 
             <RadioButton
+                android:id="@+id/female"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Nữ"
@@ -148,6 +151,7 @@
             android:layout_marginLeft="20dp"
             />
         <EditText
+            android:id="@+id/date_of_birth"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Chọn ngày sinh của bạn"
@@ -165,6 +169,7 @@
             android:layout_marginLeft="20dp"
             />
         <EditText
+            android:id="@+id/weight"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="0 kg"
@@ -182,6 +187,7 @@
             android:layout_marginLeft="20dp"
             />
         <EditText
+            android:id="@+id/height"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="0 Cm"

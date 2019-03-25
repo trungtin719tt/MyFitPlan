@@ -55,17 +55,17 @@
         />
 
 
-    <EditText
-        android:id="@+id/name"
-        android:hint="Họ và tên"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="50dp"
-        android:layout_marginRight="50dp"
-        android:inputType="text"
-        android:layout_marginTop="30dp"
-        android:background="@drawable/custom_editext"
-        />
+    <!--<EditText-->
+        <!--android:id="@+id/name"-->
+        <!--android:hint="Họ và tên"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginLeft="50dp"-->
+        <!--android:layout_marginRight="50dp"-->
+        <!--android:inputType="text"-->
+        <!--android:layout_marginTop="30dp"-->
+        <!--android:background="@drawable/custom_editext"-->
+        <!--/>-->
     <EditText
         android:id="@+id/email"
         android:hint="Email"

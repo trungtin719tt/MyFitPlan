@@ -116,6 +116,7 @@ public class AddingMeal extends AppCompatActivity {
                 try {
                     JSONObject serverResp = new JSONObject(response.toString());
                     Toast.makeText(getApplicationContext(),"Tạo món ăn mới thành công",Toast.LENGTH_LONG).show();
+                    startActivity(new Intent(AddingMeal.this, LibraryActivity.class));
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }

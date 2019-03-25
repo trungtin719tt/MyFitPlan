@@ -96,28 +96,28 @@ public class MainActivity extends AppCompatActivity {
                         public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
                             try {
                                 JSONObject serverResp = new JSONObject(response.toString());
-                                int goalProtein = (int)serverResp.get("GoalProtein");
-                                int absorbedProtein = (int)serverResp.get("AbsorbedProtein");
-                                int goalCalories = (int)serverResp.get("GoalCalories");
-                                int absorbedCalories = (int)serverResp.get("AbsorbedCalories");
-                                int goalFat = (int)serverResp.get("GoalFat");
-                                int absorbedFat = (int)serverResp.get("AbsorbedFat");
-                                int goalCarb = (int)serverResp.get("GoalCarbs");
-                                int absorbedCarb = (int)serverResp.get("AbsorbedCarbs");
+                                double goalProtein = (double)serverResp.getDouble("GoalProtein");
+                                double absorbedProtein = (double)serverResp.getDouble("AbsorbedProtein");
+                                double goalCalories = (double)serverResp.getDouble("GoalCalories");
+                                double absorbedCalories = (double)serverResp.getDouble("AbsorbedCalories");
+                                double goalFat = (double)serverResp.getDouble("GoalFat");
+                                double absorbedFat = (double)serverResp.getDouble("AbsorbedFat");
+                                double goalCarb = (double)serverResp.getDouble("GoalCarbs");
+                                double absorbedCarb = (double)serverResp.getDouble("AbsorbedCarbs");
 
-                                calories.setMax(goalCalories);
-                                calories.setProgress(absorbedCalories);
-                                fat.setProgress(absorbedFat);
-                                fat.setMax(goalFat);
-                                carb.setMax(goalCarb);
-                                carb.setProgress(absorbedCarb);
-                                protein.setProgress(absorbedProtein);
-                                protein.setMax(goalProtein);
+                                calories.setMax((int)goalCalories);
+                                calories.setProgress((int)absorbedCalories);
+                                fat.setMax((int)goalFat);
+                                fat.setProgress((int)absorbedFat);
+                                carb.setMax((int)goalCarb);
+                                carb.setProgress((int)absorbedCarb);
+                                protein.setMax((int)goalProtein);
+                                protein.setProgress((int)absorbedProtein);
 
-                                caloText.setText(absorbedCalories+"/"+goalCalories);
-                                fatText.setText(absorbedFat+"/"+goalFat);
-                                proteinText.setText(absorbedProtein+"/"+goalProtein);
-                                carbText.setText(absorbedCarb+"/"+goalCarb);
+                                caloText.setText(String.format("%.0f", absorbedCalories) +"/"+String.format("%.0f", goalCalories));
+                                fatText.setText(String.format("%.0f", absorbedFat)+"/"+String.format("%.0f", goalFat));
+                                proteinText.setText(String.format("%.0f", absorbedProtein)+"/"+String.format("%.0f", goalProtein));
+                                carbText.setText(String.format("%.0f", absorbedCarb)+"/"+String.format("%.0f", goalCarb));
 
                             } catch (JSONException e) {
                                 e.printStackTrace();

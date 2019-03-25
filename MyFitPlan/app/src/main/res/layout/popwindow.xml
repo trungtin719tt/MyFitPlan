@@ -23,26 +23,28 @@
 
     </LinearLayout>
 
-    <!--<LinearLayout-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:orientation="horizontal"-->
-        <!--android:layout_marginTop="100dp"-->
-        <!--android:background="@drawable/border"-->
-        <!--android:layout_marginLeft="20dp"-->
-        <!--&gt;-->
-        <!--&lt;!&ndash;<TextView&ndash;&gt;-->
-            <!--&lt;!&ndash;android:layout_width="wrap_content"&ndash;&gt;-->
-            <!--&lt;!&ndash;android:layout_height="wrap_content"&ndash;&gt;-->
-            <!--&lt;!&ndash;android:text="Bữa sáng"&ndash;&gt;-->
-            <!--&lt;!&ndash;android:textStyle="bold"/>&ndash;&gt;-->
-        <!--&lt;!&ndash;<Spinner&ndash;&gt;-->
-            <!--&lt;!&ndash;android:layout_width="wrap_content"&ndash;&gt;-->
-            <!--&lt;!&ndash;android:layout_height="wrap_content"&ndash;&gt;-->
-            <!--&lt;!&ndash;android:id="@+id/spFoodName">&ndash;&gt;-->
-        <!--&lt;!&ndash;</Spinner>&ndash;&gt;-->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="60dp"
+        android:background="@drawable/border"
+        android:layout_marginLeft="0dp"
+        android:layout_centerHorizontal="true"
+        >
+        <!--<TextView-->
+            <!--android:id="@+id/txt_meal"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="Bữa sáng"-->
+            <!--android:textStyle="bold"/>-->
+        <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/spFoodName">
+        </Spinner>
 
-    <!--</LinearLayout>-->
+    </LinearLayout>
 
     <LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
@@ -50,7 +52,7 @@
         android:layout_height="40dp"
         android:orientation="horizontal"
         android:background="@android:color/white"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="120dp"
         android:layout_centerHorizontal="true"
         >
 

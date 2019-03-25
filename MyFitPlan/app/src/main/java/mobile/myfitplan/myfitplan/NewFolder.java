@@ -14,8 +14,16 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.loopj.android.http.JsonHttpResponseHandler;
+import com.loopj.android.http.RequestParams;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.ArrayList;
 import java.util.List;
+
+import cz.msebera.android.httpclient.Header;
 
 public class NewFolder extends AppCompatActivity {
     private Spinner spFoodName;
@@ -85,6 +93,44 @@ public class NewFolder extends AppCompatActivity {
 //
 //
     public void clickToSubmit(View view) {
-        this.finish();
+
+        String folderName = ((TextView)findViewById(R.id.txt_folder_name)).getText().toString();
+        String accUserID = String.valueOf(((MyApplication)getApplication()).accUser.ID);
+        HttpUtils http = new HttpUtils();
+        String authorization = ((MyApplication)getApplication()).token_type + " " +  ((MyApplication)getApplication()).access_token;
+        http.client.addHeader("Accept", "application/json");
+        http.client.addHeader("Content-Type", "application/x-www-form-urlencoded");
+        http.client.addHeader("Authorization", authorization);
+
+        RequestParams rp = new RequestParams();
+        rp.add("Name", folderName);
+        rp.add("AccUserID", accUserID);
+        http.post("api/PersonalCategories", rp, new JsonHttpResponseHandler() {
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
+                try {
+                    JSONObject serverResp = new JSONObject(response.toString());
+                    Toast.makeText(getApplicationContext(),"Tạo mới thư mục thành công",Toast.LENGTH_LONG).show();
+                    Refresh();
+                    finish();
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+
+            @Override
+            public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
+                super.onFailure(statusCode, headers, throwable, errorResponse);
+                Toast.makeText(getApplicationContext(),"Tạo mới thư mục th",Toast.LENGTH_LONG).show();
+                finish();
+            }
+        });
     }
+
+    public void Refresh(){
+        startActivity(new Intent(this, Personal.class));
+
+    }
+
 }

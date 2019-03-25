@@ -73,6 +73,7 @@
                     android:paddingLeft="20dp"
                     android:layout_alignParentLeft="true">
                     <TextView
+                        android:id="@+id/txt_calories_goal"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="3250"/>
@@ -98,6 +99,7 @@
                     android:paddingRight="40dp"
                     android:layout_centerInParent="true">
                     <TextView
+                        android:id="@+id/txt_calories_absorbed"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="600"/>
@@ -121,6 +123,7 @@
                     android:paddingRight="20dp"
                     android:layout_alignParentRight="true">
                     <TextView
+                        android:id="@+id/txt_calories_remain"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="2650"/>
@@ -161,6 +164,7 @@
                                 android:text="Bữa sáng"
                                 android:textColor="#ffffff"/>
                             <TextView
+                                android:id="@+id/breakfast_calories"
                                 android:layout_alignParentRight="true"
                                 android:layout_marginRight="50dp"
                                 android:layout_width="wrap_content"
@@ -180,56 +184,64 @@
                         </RelativeLayout>
 
                         <!-- food and calories for meal -->
-                        <RelativeLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="70dp"
-                            android:paddingLeft="30dp">
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:orientation="vertical"
-                                android:gravity="center_vertical">
-
-                                <TextView
-                                    android:layout_marginLeft="30dp"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:gravity="center"
-                                    android:text="Bún bò Huế"/>
-                                <TextView
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:text="(10 fats, 15 carbs, 20 proteins)"/>
-                            </LinearLayout>
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:layout_alignParentRight="true"
-                                android:layout_marginRight="30dp"
-                                android:gravity="center"
-                                android:text="600"/>
-                        </RelativeLayout>
-
-                        <!-- add food -->
                         <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="50dp"
-                            android:layout_marginLeft="30dp"
-                            android:layout_marginTop="10dp">
-                            <ImageView
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:onClick="clickToEat"
-                                android:clickable="true"
-                                android:src="@drawable/ic_plus"/>
-                            <TextView
-                                android:paddingLeft="10dp"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:gravity="center_vertical"
-                                android:text="Thêm món ăn"
-                                android:textSize="22sp"/>
+                            android:id="@+id/breakfast_content"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+                            <!--<RelativeLayout-->
+                                <!--android:layout_width="match_parent"-->
+                                <!--android:layout_height="70dp"-->
+                                <!--android:paddingLeft="30dp">-->
+                                <!--<LinearLayout-->
+                                    <!--android:layout_width="match_parent"-->
+                                    <!--android:layout_height="match_parent"-->
+                                    <!--android:orientation="vertical"-->
+                                    <!--android:gravity="center_vertical">-->
+
+                                    <!--<TextView-->
+                                        <!--android:layout_marginLeft="30dp"-->
+                                        <!--android:layout_width="wrap_content"-->
+                                        <!--android:layout_height="wrap_content"-->
+                                        <!--android:gravity="center"-->
+                                        <!--android:text="Bún bò Huế"/>-->
+                                    <!--<TextView-->
+                                        <!--android:layout_width="match_parent"-->
+                                        <!--android:layout_height="wrap_content"-->
+                                        <!--android:text="(10 fats, 15 carbs, 20 proteins)"/>-->
+                                <!--</LinearLayout>-->
+                                <!--<TextView-->
+                                    <!--android:layout_width="wrap_content"-->
+                                    <!--android:layout_height="match_parent"-->
+                                    <!--android:layout_alignParentRight="true"-->
+                                    <!--android:layout_marginRight="30dp"-->
+                                    <!--android:gravity="center"-->
+                                    <!--android:text="600"/>-->
+                            <!--</RelativeLayout>-->
+
+                            <!-- add food -->
+                            <!--<LinearLayout-->
+                                <!--android:layout_width="wrap_content"-->
+                                <!--android:layout_height="50dp"-->
+                                <!--android:layout_marginLeft="30dp"-->
+                                <!--android:layout_marginTop="10dp">-->
+                                <!--<ImageView-->
+                                    <!--android:layout_width="wrap_content"-->
+                                    <!--android:layout_height="match_parent"-->
+                                    <!--android:onClick="clickToEat"-->
+                                    <!--android:clickable="true"-->
+                                    <!--android:src="@drawable/ic_plus"/>-->
+                                <!--<TextView-->
+                                    <!--android:paddingLeft="10dp"-->
+                                    <!--android:layout_width="match_parent"-->
+                                    <!--android:layout_height="match_parent"-->
+                                    <!--android:gravity="center_vertical"-->
+                                    <!--android:text="Thêm món ăn"-->
+                                    <!--android:textSize="22sp"/>-->
+                            <!--</LinearLayout>-->
                         </LinearLayout>
+
+
                     </LinearLayout>
 
                     <!-- Bữa trưa -->
@@ -251,6 +263,7 @@
                                 android:text="Bữa trưa"
                                 android:textColor="#ffffff"/>
                             <TextView
+                                android:id="@+id/lunch_calories"
                                 android:layout_alignParentRight="true"
                                 android:layout_marginRight="50dp"
                                 android:layout_width="wrap_content"
@@ -268,27 +281,34 @@
                                 android:textColor="#ffffff"
                                 android:text="kcl"/>
                         </RelativeLayout>
-
-                        <!-- add food -->
                         <LinearLayout
+                            android:id="@+id/lunch_content"
                             android:layout_width="match_parent"
-                            android:layout_height="50dp"
-                            android:layout_marginLeft="30dp"
-                            android:layout_marginTop="10dp">
-                            <ImageView
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:onClick="clickToEat"
-                                android:clickable="true"
-                                android:src="@drawable/ic_plus"/>
-                            <TextView
-                                android:paddingLeft="10dp"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:gravity="center_vertical"
-                                android:text="Thêm món ăn"
-                                android:textSize="22sp"/>
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+                            <!--&lt;!&ndash; add food &ndash;&gt;-->
+                            <!--<LinearLayout-->
+                                <!--android:layout_width="match_parent"-->
+                                <!--android:layout_height="50dp"-->
+                                <!--android:layout_marginLeft="30dp"-->
+                                <!--android:layout_marginTop="10dp">-->
+                                <!--<ImageView-->
+                                    <!--android:layout_width="wrap_content"-->
+                                    <!--android:layout_height="match_parent"-->
+                                    <!--android:onClick="clickToEat"-->
+                                    <!--android:clickable="true"-->
+                                    <!--android:src="@drawable/ic_plus"/>-->
+                                <!--<TextView-->
+                                    <!--android:paddingLeft="10dp"-->
+                                    <!--android:layout_width="match_parent"-->
+                                    <!--android:layout_height="match_parent"-->
+                                    <!--android:gravity="center_vertical"-->
+                                    <!--android:text="Thêm món ăn"-->
+                                    <!--android:textSize="22sp"/>-->
+                            <!--</LinearLayout>-->
                         </LinearLayout>
+
+
                     </LinearLayout>
 
                     <!-- Bữa Tối -->
@@ -310,6 +330,7 @@
                                 android:text="Bữa tối"
                                 android:textColor="#ffffff"/>
                             <TextView
+                                android:id="@+id/dinner_calories"
                                 android:layout_alignParentRight="true"
                                 android:layout_marginRight="50dp"
                                 android:layout_width="wrap_content"
@@ -327,146 +348,153 @@
                                 android:textColor="#ffffff"
                                 android:text="kcl"/>
                         </RelativeLayout>
-
-                        <!-- add food -->
                         <LinearLayout
+                            android:id="@+id/dinner_content"
                             android:layout_width="match_parent"
-                            android:layout_height="50dp"
-                            android:layout_marginLeft="30dp"
-                            android:layout_marginTop="10dp">
-                            <ImageView
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:onClick="clickToEat"
-                                android:clickable="true"
-                                android:src="@drawable/ic_plus"/>
-                            <TextView
-                                android:paddingLeft="10dp"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:gravity="center_vertical"
-                                android:text="Thêm món ăn"
-                                android:textSize="22sp"/>
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+                            <!-- add food -->
+                            <!--<LinearLayout-->
+                                <!--android:layout_width="match_parent"-->
+                                <!--android:layout_height="50dp"-->
+                                <!--android:layout_marginLeft="30dp"-->
+                                <!--android:layout_marginTop="10dp">-->
+                                <!--<ImageView-->
+                                    <!--android:layout_width="wrap_content"-->
+                                    <!--android:layout_height="match_parent"-->
+                                    <!--android:onClick="clickToEat"-->
+                                    <!--android:clickable="true"-->
+                                    <!--android:src="@drawable/ic_plus"/>-->
+                                <!--<TextView-->
+                                    <!--android:paddingLeft="10dp"-->
+                                    <!--android:layout_width="match_parent"-->
+                                    <!--android:layout_height="match_parent"-->
+                                    <!--android:gravity="center_vertical"-->
+                                    <!--android:text="Thêm món ăn"-->
+                                    <!--android:textSize="22sp"/>-->
+                            <!--</LinearLayout>-->
                         </LinearLayout>
+
+
                     </LinearLayout>
 
-                    <!-- Ăn vặt -->
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
+                    <!--&lt;!&ndash; Ăn vặt &ndash;&gt;-->
+                    <!--<LinearLayout-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:orientation="vertical">-->
 
-                        <RelativeLayout
-                            android:layout_marginTop="10dp"
-                            android:layout_width="match_parent"
-                            android:layout_height="40dp"
-                            android:background="@color/colorPrimary">
-                            <TextView
-                                android:layout_marginLeft="30dp"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:gravity="center"
-                                android:text="Ăn vặt"
-                                android:textColor="#ffffff"/>
-                            <TextView
-                                android:layout_alignParentRight="true"
-                                android:layout_marginRight="50dp"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:gravity="center"
-                                android:paddingRight="5dp"
-                                android:text="0"
-                                android:textColor="#ffffff"/>
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:layout_alignParentRight="true"
-                                android:layout_marginRight="30dp"
-                                android:gravity="center"
-                                android:textColor="#ffffff"
-                                android:text="kcl"/>
-                        </RelativeLayout>
+                        <!--<RelativeLayout-->
+                            <!--android:layout_marginTop="10dp"-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="40dp"-->
+                            <!--android:background="@color/colorPrimary">-->
+                            <!--<TextView-->
+                                <!--android:layout_marginLeft="30dp"-->
+                                <!--android:layout_width="wrap_content"-->
+                                <!--android:layout_height="match_parent"-->
+                                <!--android:gravity="center"-->
+                                <!--android:text="Ăn vặt"-->
+                                <!--android:textColor="#ffffff"/>-->
+                            <!--<TextView-->
+                                <!--android:layout_alignParentRight="true"-->
+                                <!--android:layout_marginRight="50dp"-->
+                                <!--android:layout_width="wrap_content"-->
+                                <!--android:layout_height="match_parent"-->
+                                <!--android:gravity="center"-->
+                                <!--android:paddingRight="5dp"-->
+                                <!--android:text="0"-->
+                                <!--android:textColor="#ffffff"/>-->
+                            <!--<TextView-->
+                                <!--android:layout_width="wrap_content"-->
+                                <!--android:layout_height="match_parent"-->
+                                <!--android:layout_alignParentRight="true"-->
+                                <!--android:layout_marginRight="30dp"-->
+                                <!--android:gravity="center"-->
+                                <!--android:textColor="#ffffff"-->
+                                <!--android:text="kcl"/>-->
+                        <!--</RelativeLayout>-->
 
-                        <!-- add food -->
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="50dp"
-                            android:layout_marginLeft="30dp"
-                            android:layout_marginTop="10dp">
-                            <ImageView
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:onClick="clickToEat"
-                                android:clickable="true"
-                                android:src="@drawable/ic_plus"/>
-                            <TextView
-                                android:paddingLeft="10dp"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:gravity="center_vertical"
-                                android:text="Thêm món ăn"
-                                android:textSize="22sp"/>
-                        </LinearLayout>
-                    </LinearLayout>
+                        <!--&lt;!&ndash; add food &ndash;&gt;-->
+                        <!--<LinearLayout-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="50dp"-->
+                            <!--android:layout_marginLeft="30dp"-->
+                            <!--android:layout_marginTop="10dp">-->
+                            <!--<ImageView-->
+                                <!--android:layout_width="wrap_content"-->
+                                <!--android:layout_height="match_parent"-->
+                                <!--android:onClick="clickToEat"-->
+                                <!--android:clickable="true"-->
+                                <!--android:src="@drawable/ic_plus"/>-->
+                            <!--<TextView-->
+                                <!--android:paddingLeft="10dp"-->
+                                <!--android:layout_width="match_parent"-->
+                                <!--android:layout_height="match_parent"-->
+                                <!--android:gravity="center_vertical"-->
+                                <!--android:text="Thêm món ăn"-->
+                                <!--android:textSize="22sp"/>-->
+                        <!--</LinearLayout>-->
+                    <!--</LinearLayout>-->
 
-                    <!-- Nước -->
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
+                    <!--&lt;!&ndash; Nước &ndash;&gt;-->
+                    <!--<LinearLayout-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:orientation="vertical">-->
 
-                        <RelativeLayout
-                            android:layout_marginTop="10dp"
-                            android:layout_width="match_parent"
-                            android:layout_height="40dp"
-                            android:background="@color/colorPrimary">
-                            <TextView
-                                android:layout_marginLeft="30dp"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:gravity="center"
-                                android:text="Nước"
-                                android:textColor="#ffffff"/>
-                            <TextView
-                                android:layout_alignParentRight="true"
-                                android:layout_marginRight="50dp"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:gravity="center"
-                                android:paddingRight="5dp"
-                                android:text="0"
-                                android:textColor="#ffffff"/>
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:layout_alignParentRight="true"
-                                android:layout_marginRight="30dp"
-                                android:gravity="center"
-                                android:textColor="#ffffff"
-                                android:text="ml"/>
-                        </RelativeLayout>
+                        <!--<RelativeLayout-->
+                            <!--android:layout_marginTop="10dp"-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="40dp"-->
+                            <!--android:background="@color/colorPrimary">-->
+                            <!--<TextView-->
+                                <!--android:layout_marginLeft="30dp"-->
+                                <!--android:layout_width="wrap_content"-->
+                                <!--android:layout_height="match_parent"-->
+                                <!--android:gravity="center"-->
+                                <!--android:text="Nước"-->
+                                <!--android:textColor="#ffffff"/>-->
+                            <!--<TextView-->
+                                <!--android:layout_alignParentRight="true"-->
+                                <!--android:layout_marginRight="50dp"-->
+                                <!--android:layout_width="wrap_content"-->
+                                <!--android:layout_height="match_parent"-->
+                                <!--android:gravity="center"-->
+                                <!--android:paddingRight="5dp"-->
+                                <!--android:text="0"-->
+                                <!--android:textColor="#ffffff"/>-->
+                            <!--<TextView-->
+                                <!--android:layout_width="wrap_content"-->
+                                <!--android:layout_height="match_parent"-->
+                                <!--android:layout_alignParentRight="true"-->
+                                <!--android:layout_marginRight="30dp"-->
+                                <!--android:gravity="center"-->
+                                <!--android:textColor="#ffffff"-->
+                                <!--android:text="ml"/>-->
+                        <!--</RelativeLayout>-->
 
-                        <!-- add food -->
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="50dp"
-                            android:layout_marginLeft="30dp"
-                            android:layout_marginTop="10dp">
-                            <ImageView
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:onClick="clickToEat"
-                                android:clickable="true"
-                                android:src="@drawable/ic_plus"/>
-                            <TextView
-                                android:paddingLeft="10dp"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:gravity="center_vertical"
-                                android:text="Thêm món ăn"
-                                android:textSize="22sp"/>
-                        </LinearLayout>
-                    </LinearLayout>
+                        <!--&lt;!&ndash; add food &ndash;&gt;-->
+                        <!--<LinearLayout-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="50dp"-->
+                            <!--android:layout_marginLeft="30dp"-->
+                            <!--android:layout_marginTop="10dp">-->
+                            <!--<ImageView-->
+                                <!--android:layout_width="wrap_content"-->
+                                <!--android:layout_height="match_parent"-->
+                                <!--android:onClick="clickToEat"-->
+                                <!--android:clickable="true"-->
+                                <!--android:src="@drawable/ic_plus"/>-->
+                            <!--<TextView-->
+                                <!--android:paddingLeft="10dp"-->
+                                <!--android:layout_width="match_parent"-->
+                                <!--android:layout_height="match_parent"-->
+                                <!--android:gravity="center_vertical"-->
+                                <!--android:text="Thêm món ăn"-->
+                                <!--android:textSize="22sp"/>-->
+                        <!--</LinearLayout>-->
+                    <!--</LinearLayout>-->
                 </LinearLayout>
             </ScrollView>
 

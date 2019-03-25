@@ -43,10 +43,15 @@ import cz.msebera.android.httpclient.Header;
 
 public class LibraryActivity extends AppCompatActivity {
     private DrawerLayout drawerLayout;
+    private String keyword;
+    private Button loadMore;
+    private int page = 1;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_library);
+
 
         drawerLayout = findViewById(R.id.drawer_layout);
 
@@ -92,8 +97,136 @@ public class LibraryActivity extends AppCompatActivity {
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
         navigation.setSelectedItemId(R.id.navigation_library);
 
+        keyword = "";
+        InitData();
+
+
+
+    }
+
+    public void InitData(){
+        page = 1;
+        LinearLayout foodInfo = findViewById(R.id.food_content);
+        foodInfo.removeAllViews();
+
+        Button addFood = new Button(this);
+        addFood.setText("Tải thêm");
+        addFood.setBackground(getResources().getDrawable(R.drawable.custom_button));
+        LinearLayout.LayoutParams ll = new LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.WRAP_CONTENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT);
+        ll.gravity = Gravity.CENTER;
+        ll.topMargin = 20;
+        addFood.setLayoutParams(ll);
+        addFood.setPadding(10, 0, 10, 0);
+        addFood.setTextColor(Color.parseColor("#FFFFFF"));
+
+        addFood.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                loadMore();
+            }
+        });
+        foodInfo.addView(addFood);
+        loadMore = addFood;
         //add food
         RequestParams rp = new RequestParams();
+        rp.add("keyword", keyword);
+        HttpUtils http = new HttpUtils();
+        String authorization = ((MyApplication)getApplication()).token_type + " " +  ((MyApplication)getApplication()).access_token;
+        http.client.addHeader("Accept", "application/json");
+        http.client.addHeader("Authorization", authorization);
+        http.get("api/Foods", rp, new JsonHttpResponseHandler() {
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
+                try {
+                    JSONObject serverResp = new JSONObject(response.toString());
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, JSONArray response) {
+                super.onSuccess(statusCode, headers, response);
+                for (int i = 0; i < response.length(); i++){
+                    try{
+                        JSONObject obj = response.getJSONObject(i);
+                        String ID = obj.get("ID").toString();
+                        String Name = obj.get("NameVN").toString().equals("null") ? obj.get("NameENG").toString() : obj.get("NameVN").toString();
+                        String Protein = obj.get("Protein").toString().equals("null") ? "0" : obj.get("Protein").toString();
+                        String Fat = obj.get("Fat").toString().equals("null") ? "0" : obj.get("Fat").toString();
+                        String Carbs = obj.get("Carbs").toString().equals("null") ? "0" : obj.get("Carbs").toString();
+                        String Calories = obj.get("Calories").toString().equals("null") ? "0" : obj.get("Calories").toString();
+                        String Unit = obj.get("Unit").toString().equals("null") ? "" : obj.get("Unit").toString();
+                        String FollowedBy = obj.get("FollowedBy").toString().equals("null") ? "0" : obj.get("FollowedBy").toString();
+
+
+                        LayoutInflater vi = (LayoutInflater) getApplicationContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                        View v = vi.inflate(R.layout.food_info, null);
+                        // fill in any details dynamically here
+                        TextView foodID =  v.findViewById(R.id.food_id);
+                        foodID.setText(ID);
+                        TextView name =  v.findViewById(R.id.txt_library_name);
+                        name.setText(Name);
+                        TextView nutrition_info =  v.findViewById(R.id.nutrition_info);
+                        nutrition_info.setText("("+ Fat + " fats, "+ Carbs +" carbs, " + Protein + " proteins)");
+                        TextView txt_library_count =  v.findViewById(R.id.txt_library_count);
+                        txt_library_count.setText(FollowedBy);
+                        TextView txt_library_calories = v.findViewById(R.id.txt_library_calories);
+                        txt_library_calories.setText(Calories);
+                        Button addBtn = v.findViewById(R.id.btnAdd);
+
+                        addBtn.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                Intent intent = new Intent(LibraryActivity.this, Pop.class);
+                                intent.putExtra("FoodID", ((TextView)((ViewGroup)v.getParent().getParent().getParent()).findViewById(R.id.food_id)).getText());
+                                startActivity(intent);
+                            }
+                        });
+                        // insert into main view
+                        ViewGroup insertPoint = (ViewGroup) findViewById(R.id.food_content);
+
+                        insertPoint.addView(v, insertPoint.indexOfChild(loadMore), new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+
+
+                    }catch (Exception ex){
+
+                    }
+                }
+            }
+
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, String responseString) {
+                super.onSuccess(statusCode, headers, responseString);
+            }
+
+            @Override
+            public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
+                super.onFailure(statusCode, headers, throwable, errorResponse);
+                Toast.makeText(getApplicationContext(),"Kiểm tra lại kết nối mạng",Toast.LENGTH_LONG).show();
+            }
+
+            @Override
+            public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONArray errorResponse) {
+                super.onFailure(statusCode, headers, throwable, errorResponse);
+            }
+
+            @Override
+            public void onFailure(int statusCode, Header[] headers, String responseString, Throwable throwable) {
+                super.onFailure(statusCode, headers, responseString, throwable);
+            }
+        });
+    }
+
+    public void loadMore(){
+        page++;
+        //add food
+        RequestParams rp = new RequestParams();
+        rp.add("keyword", keyword);
+        rp.add("page", String.valueOf(page));
         HttpUtils http = new HttpUtils();
         String authorization = ((MyApplication)getApplication()).token_type + " " +  ((MyApplication)getApplication()).access_token;
         http.client.addHeader("Accept", "application/json");
@@ -142,12 +275,15 @@ public class LibraryActivity extends AppCompatActivity {
                         addBtn.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {
-                                startActivity(new Intent(LibraryActivity.this, Pop.class));
+                                Intent intent = new Intent(LibraryActivity.this, Pop.class);
+                                intent.putExtra("FoodID", ((TextView)((ViewGroup)v.getParent().getParent().getParent()).findViewById(R.id.food_id)).getText());
+                                startActivity(intent);
                             }
                         });
                         // insert into main view
                         ViewGroup insertPoint = (ViewGroup) findViewById(R.id.food_content);
-                        insertPoint.addView(v, 0, new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+
+                        insertPoint.addView(v, insertPoint.indexOfChild(loadMore), new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
 
 
                     }catch (Exception ex){
@@ -177,105 +313,6 @@ public class LibraryActivity extends AppCompatActivity {
                 super.onFailure(statusCode, headers, responseString, throwable);
             }
         });
-
-//        //pop up plus 1
-//        Button popUp1 = (Button) findViewById(R.id.btnAdd1);
-//        popUp1.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                startActivity(new Intent(LibraryActivity.this, Pop.class));
-//            }
-//        });
-//        //pop up plus 2
-//        Button popUp2= (Button) findViewById(R.id.btnAdd2);
-//        popUp2.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                startActivity(new Intent(LibraryActivity.this, Pop.class));
-//            }
-//        });
-//        //pop up plus 3
-//        Button popUp3 = (Button) findViewById(R.id.btnAdd3);
-//        popUp3.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                startActivity(new Intent(LibraryActivity.this, Pop.class));
-//            }
-//        });
-//        //pop up plus 4
-//        Button popUp4 = (Button) findViewById(R.id.btnAdd4);
-//        popUp4.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                startActivity(new Intent(LibraryActivity.this, Pop.class));
-//            }
-//        });
-//        //pop up plus 5
-//        Button popUp5 = (Button) findViewById(R.id.btnAdd5);
-//        popUp5.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                startActivity(new Intent(LibraryActivity.this, Pop.class));
-//            }
-//        });
-//        //pop up plus 6
-//        Button popUp6 = (Button) findViewById(R.id.btnAdd6);
-//        popUp6.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                startActivity(new Intent(LibraryActivity.this, Pop.class));
-//            }
-//        });
-
-//        //pop up food 1
-//        Button pop1 = (Button) findViewById(R.id.btnAddFood1);
-//        pop1.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                startActivity(new Intent(LibraryActivity.this, Pop.class));
-//            }
-//        });
-//
-//        //pop up food 2
-//        Button pop2 = (Button) findViewById(R.id.btnAddFood2);
-//        pop2.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                startActivity(new Intent(LibraryActivity.this, Pop.class));
-//            }
-//        });
-//        //pop up food 3
-//        Button pop3 = (Button) findViewById(R.id.btnAddFood3);
-//        pop3.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                startActivity(new Intent(LibraryActivity.this, Pop.class));
-//            }
-//        });
-//        //pop up food 4
-//        Button pop4 = (Button) findViewById(R.id.btnAddFood4);
-//        pop4.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                startActivity(new Intent(LibraryActivity.this, Pop.class));
-//            }
-//        });
-//        //pop up food 5
-//        Button pop5 = (Button) findViewById(R.id.btnAddFood5);
-//        pop5.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                startActivity(new Intent(LibraryActivity.this, Pop.class));
-//            }
-//        });
-//        //pop up food 6
-//        Button pop6 = (Button) findViewById(R.id.btnAddFood6);
-//        pop6.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                startActivity(new Intent(LibraryActivity.this, Pop.class));
-//            }
-//        });
     }
 
 
@@ -303,6 +340,10 @@ public class LibraryActivity extends AppCompatActivity {
         }
     };
 
+    public void goToAddMeal(View view) {
+        startActivity(new Intent(this, AddingMeal.class));
+    }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
@@ -314,37 +355,39 @@ public class LibraryActivity extends AppCompatActivity {
     }
 
     public void Search() {
-        TextView textView = new TextView(this);
-        textView.setText("Không có kết quả phù hợp!");
-        textView.setGravity(Gravity.CENTER);
-        textView.setTextSize(20);
-        textView.setLayoutParams(new LinearLayout.LayoutParams(
-                LinearLayout.LayoutParams.FILL_PARENT,
-                LinearLayout.LayoutParams.WRAP_CONTENT));
-        LinearLayout content = findViewById(R.id.food_content);
-
-        Button addFood = new Button(this);
-        addFood.setText("Thêm món mới");
-        addFood.setBackground(getResources().getDrawable(R.drawable.custom_button));
-        LinearLayout.LayoutParams ll = new LinearLayout.LayoutParams(
-                LinearLayout.LayoutParams.WRAP_CONTENT,
-                LinearLayout.LayoutParams.WRAP_CONTENT);
-        ll.gravity = Gravity.CENTER;
-        ll.topMargin = 20;
-        addFood.setLayoutParams(ll);
-        addFood.setPadding(10, 0, 10, 0);
-        addFood.setTextColor(Color.parseColor("#FFFFFF"));
-
-        addFood.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(LibraryActivity.this, AddingMeal.class));
-            }
-        });
-
-        content.removeAllViews();
-        content.addView(textView);
-        content.addView(addFood);
+        keyword = ((EditText)findViewById(R.id.edtAccount)).getText().toString();
+        InitData();
+//        TextView textView = new TextView(this);
+//        textView.setText("Không có kết quả phù hợp!");
+//        textView.setGravity(Gravity.CENTER);
+//        textView.setTextSize(20);
+//        textView.setLayoutParams(new LinearLayout.LayoutParams(
+//                LinearLayout.LayoutParams.FILL_PARENT,
+//                LinearLayout.LayoutParams.WRAP_CONTENT));
+//        LinearLayout content = findViewById(R.id.food_content);
+//
+//        Button addFood = new Button(this);
+//        addFood.setText("Thêm món mới");
+//        addFood.setBackground(getResources().getDrawable(R.drawable.custom_button));
+//        LinearLayout.LayoutParams ll = new LinearLayout.LayoutParams(
+//                LinearLayout.LayoutParams.WRAP_CONTENT,
+//                LinearLayout.LayoutParams.WRAP_CONTENT);
+//        ll.gravity = Gravity.CENTER;
+//        ll.topMargin = 20;
+//        addFood.setLayoutParams(ll);
+//        addFood.setPadding(10, 0, 10, 0);
+//        addFood.setTextColor(Color.parseColor("#FFFFFF"));
+//
+//        addFood.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                startActivity(new Intent(LibraryActivity.this, AddingMeal.class));
+//            }
+//        });
+//
+//        content.removeAllViews();
+//        content.addView(textView);
+//        content.addView(addFood);
     }
 
 

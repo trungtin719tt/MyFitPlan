@@ -84,22 +84,26 @@
             android:layout_marginTop="20dp"/>
 
         <RadioGroup
+            android:id="@+id/radio_purpose"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp">
             <RadioButton
+                android:id="@+id/weight_gain"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Tăng cân"
                 android:textSize="20dp"
                 />
             <RadioButton
+                android:id="@+id/weight_loss"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Giảm cân"
                 android:textSize="20dp"
                 />
             <RadioButton
+                android:id="@+id/weight_keep"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Giữ dáng"

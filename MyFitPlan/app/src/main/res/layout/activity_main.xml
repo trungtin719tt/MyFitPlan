@@ -58,16 +58,17 @@
                         android:id="@+id/txt_progress_calo"
                         android:layout_width="match_parent"
                         android:layout_height="20dp"
-                        android:text="2650/3250"/>
+                        android:text="0/0"/>
                     <ProgressBar
                         android:id="@+id/progress_calo"
                         android:layout_width="170dp"
                         android:layout_height="30dp"
                         android:background="#ffeb3b"
-                        android:progress="2650"
-                        android:max="3250"
+                        android:progress="0"
+                        android:max="0"
                         style="@style/Widget.AppCompat.ProgressBar.Horizontal"
                         />
+
 
                 </LinearLayout>
 
@@ -96,13 +97,13 @@
                         android:id="@+id/txt_progress_protein"
                         android:layout_width="match_parent"
                         android:layout_height="20dp"
-                        android:text="54/160"/>
+                        android:text="0/0"/>
                     <ProgressBar
                         android:id="@+id/progress_protein"
                         android:layout_width="170dp"
                         android:layout_height="30dp"
-                        android:progress="54"
-                        android:max="160"
+                        android:progress="0"
+                        android:max="0"
                         style="@style/Widget.AppCompat.ProgressBar.Horizontal"
                         android:background="#ffeb3b"/>
                 </LinearLayout>
@@ -132,13 +133,13 @@
                         android:id="@+id/txt_progress_carb"
                         android:layout_width="match_parent"
                         android:layout_height="20dp"
-                        android:text="54/160"/>
+                        android:text="0/0"/>
                     <ProgressBar
                         android:id="@+id/progress_carb"
                         android:layout_width="170dp"
                         android:layout_height="30dp"
-                        android:progress="54"
-                        android:max="160"
+                        android:progress="0"
+                        android:max="0"
                         style="@style/Widget.AppCompat.ProgressBar.Horizontal"
                         android:background="#ffeb3b"/>
                 </LinearLayout>
@@ -168,13 +169,13 @@
                         android:id="@+id/txt_progress_fat"
                         android:layout_width="match_parent"
                         android:layout_height="20dp"
-                        android:text="54/160"/>
+                        android:text="0/0"/>
                     <ProgressBar
                         android:id="@+id/progress_fat"
                         android:layout_width="170dp"
                         android:layout_height="30dp"
-                        android:progress="54"
-                        android:max="160"
+                        android:progress="0"
+                        android:max="0"
                         style="@style/Widget.AppCompat.ProgressBar.Horizontal"
                         android:background="#ffeb3b"/>
                 </LinearLayout>
