@@ -420,9 +420,11 @@
 
 
                     <LinearLayout
+                        android:id="@+id/logout_func"
                         android:layout_marginTop="2dp"
                         android:layout_width="match_parent"
                         android:layout_height="60dp"
+                        android:clickable="true"
                         android:orientation="horizontal"
                         android:gravity="center_vertical"
                         android:paddingLeft="25dp">
@@ -461,6 +463,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
             app:itemBackground="@color/colorPrimary"
+            android:background="@color/colorPrimary"
             android:foreground="?attr/selectableItemBackground"
             app:itemIconTint="@android:color/white"
             app:itemTextColor="@android:color/white"

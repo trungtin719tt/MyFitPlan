@@ -53,10 +53,10 @@
             android:orientation="vertical"
             android:layout_marginBottom="20dp"
             android:layout_margin="10dp">
-            <ImageView
-                android:layout_width="70dp"
-                android:layout_height="70dp"
-                android:src="@drawable/person_icon"/>
+            <!--<ImageView-->
+                <!--android:layout_width="70dp"-->
+                <!--android:layout_height="70dp"-->
+                <!--android:src="@drawable/person_icon"/>-->
             <TextView
                 android:id="@+id/username"
                 android:layout_width="fill_parent"
@@ -65,7 +65,7 @@
                 android:textColor="@color/white"
                 android:textStyle="bold"
                 android:textSize="20dp"
-                android:layout_marginLeft="75dp"
+                android:layout_marginLeft="0dp"
                 />
             <TextView
                 android:id="@+id/time"
@@ -75,7 +75,7 @@
                 android:textColor="@color/white"
                 android:textStyle="bold"
                 android:textSize="20dp"
-                android:layout_marginLeft="75dp"
+                android:layout_marginLeft="0dp"
                 android:layout_marginTop="30dp"
                 />
 
@@ -119,6 +119,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
         app:itemBackground="@color/colorPrimary"
+        android:background="@color/colorPrimary"
         android:foreground="?attr/selectableItemBackground"
         app:itemIconTint="@android:color/white"
         app:itemTextColor="@android:color/white"

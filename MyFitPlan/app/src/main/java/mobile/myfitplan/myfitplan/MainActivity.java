@@ -14,11 +14,13 @@ import android.text.Html;
 import android.view.MenuItem;
 import android.content.Intent;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.view.animation.RotateAnimation;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -36,7 +38,7 @@ import java.util.Date;
 
 import cz.msebera.android.httpclient.Header;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private DrawerLayout drawerLayout;
     private ProgressBar calories, fat, carb, protein;
     private TextView caloText, fatText, carbText, proteinText;
@@ -165,6 +167,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onFailure(int statusCode, Header[] headers, String responseString, Throwable throwable) {
                 super.onFailure(statusCode, headers, responseString, throwable);
+                startActivity(new Intent(MainActivity.this, FillingGoal.class));
             }
 
             @Override
@@ -201,9 +204,14 @@ public class MainActivity extends AppCompatActivity {
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-                menuItem.setChecked(true);
+            public boolean onNavigationItemSelected(MenuItem menuItem) {
                 drawerLayout.closeDrawers();
+                menuItem.setChecked(true);
+                if (menuItem.getItemId() == R.id.logout_func){
+                    logout();
+
+                }
+//                drawerLayout.closeDrawers();
                 return true;
             }
         });
@@ -217,6 +225,14 @@ public class MainActivity extends AppCompatActivity {
         btnAni.setRepeatCount(Animation.INFINITE);
         btnAni.setRepeatMode(Animation.REVERSE);
         imageButton.startAnimation(btnAni);
+
+        LinearLayout logout = findViewById(R.id.logout_func);
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                logout();
+            }
+        });
 //        rotateAnimation();
 
     }
@@ -229,6 +245,15 @@ public class MainActivity extends AppCompatActivity {
 //        rotateAnimation.setFillAfter(true);
 //        imageButton.startAnimation(rotateAnimation);
 //    }
+
+    private void logout(){
+        MyApplication app = (MyApplication)getApplication();
+        app.accUser = new AccUser();
+        app.username = null;
+        app.token_type = null;
+        app.access_token = null;
+        startActivity(new Intent(MainActivity.this, LoginPage.class));
+    }
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -264,6 +289,16 @@ public class MainActivity extends AppCompatActivity {
 
     public void clickToEat(View view) {
         startActivity(new Intent(MainActivity.this, SelectingMeal.class));
+    }
+
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+        menuItem.setChecked(true);
+        if (menuItem.getItemId() == R.id.logout_func){
+            logout();
+        }
+//                drawerLayout.closeDrawers();
+        return true;
     }
 
     //click để hiện popup

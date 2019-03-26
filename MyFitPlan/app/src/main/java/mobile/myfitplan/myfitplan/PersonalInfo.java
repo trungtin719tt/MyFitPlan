@@ -8,6 +8,19 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.loopj.android.http.JsonHttpResponseHandler;
+import com.loopj.android.http.RequestParams;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+import cz.msebera.android.httpclient.Header;
 
 
 /**
@@ -45,6 +58,113 @@ public class PersonalInfo extends Fragment {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getActivity(), ChangePassword.class));
+            }
+        });
+
+        RequestParams param = new RequestParams();
+        String username = ((MyApplication)getActivity().getApplication()).username;
+        param.add("email", username);
+        HttpUtils httpUtils = new HttpUtils();
+        String authorization = ((MyApplication)getActivity().getApplication()).token_type + " " +  ((MyApplication)getActivity().getApplication()).access_token;
+        httpUtils.client.addHeader("Authorization", authorization);
+        httpUtils.get("api/AccUsers", param, new JsonHttpResponseHandler() {
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
+                try {
+                    JSONObject res = new JSONObject(response.toString());
+                    int Purpose = (int)res.get("Purpose");
+                    if (Purpose == 0){
+                        ((TextView)getActivity().findViewById(R.id.purpose)).setText("Mục tiêu: Giữ dáng");
+                    } else if (Purpose == 1){
+                        ((TextView)getActivity().findViewById(R.id.purpose)).setText("Mục tiêu: Tăng cân");
+                    } else{
+                        ((TextView)getActivity().findViewById(R.id.purpose)).setText("Mục tiêu: Giảm cân");
+                    }
+
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+
+            @Override
+            public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
+                super.onFailure(statusCode, headers, throwable, errorResponse);
+            }
+
+            @Override
+            public void onFailure(int statusCode, Header[] headers, String responseString, Throwable throwable) {
+                super.onFailure(statusCode, headers, responseString, throwable);
+            }
+
+            @Override
+            public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONArray errorResponse) {
+                super.onFailure(statusCode, headers, throwable, errorResponse);
+            }
+
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, String responseString) {
+                super.onSuccess(statusCode, headers, responseString);
+            }
+
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, JSONArray response) {
+                super.onSuccess(statusCode, headers, response);
+            }
+        });
+
+        RequestParams rp = new RequestParams();
+        String accUserID = String.valueOf(((MyApplication)getActivity().getApplication()).accUser.ID);
+        rp.add("accUserID", accUserID);
+        rp.add("getType", "1");
+        HttpUtils http = new HttpUtils();
+        http.client.addHeader("Authorization", authorization);
+        http.get("api/UserProgresses", rp, new JsonHttpResponseHandler() {
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
+                try {
+                    JSONObject res = new JSONObject(response.toString());
+                    String weight = res.getString("Weight");
+                    String height = res.getString("Height");
+                    String calo = res.getString("GoalCalories");
+                    String fat = res.getString("GoalFat");
+                    String carb = res.getString("GoalCarbs");
+                    String protein = res.getString("GoalProtein");
+                    ((TextView)getActivity().findViewById(R.id.weight)).setText("Cân nặng: " + weight);
+                    ((TextView)getActivity().findViewById(R.id.height)).setText("Chiều cao: " + height);
+                    ((TextView)getActivity().findViewById(R.id.calories)).setText("Calories: " + calo);
+                    ((TextView)getActivity().findViewById(R.id.calories_details))
+                            .setText("Carbs "+ carb +" / Fat "+ fat +" / Protein "+ protein +"");
+
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+
+            @Override
+            public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
+                super.onFailure(statusCode, headers, throwable, errorResponse);
+            }
+
+            @Override
+            public void onFailure(int statusCode, Header[] headers, String responseString, Throwable throwable) {
+                super.onFailure(statusCode, headers, responseString, throwable);
+            }
+
+            @Override
+            public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONArray errorResponse) {
+                super.onFailure(statusCode, headers, throwable, errorResponse);
+            }
+
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, String responseString) {
+                super.onSuccess(statusCode, headers, responseString);
+            }
+
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, JSONArray response) {
+                super.onSuccess(statusCode, headers, response);
             }
         });
         return rootView;
