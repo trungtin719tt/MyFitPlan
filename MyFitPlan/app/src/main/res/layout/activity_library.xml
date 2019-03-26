@@ -41,14 +41,15 @@ android:fitsSystemWindows="true">
             <!--android:background="@drawable/custom_button"-->
             <!--android:onClick="loadMoreFood"/>-->
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Thêm món mới vào thư viện"
                 android:textSize="20dp"
-                android:layout_alignParentRight="true"
+                android:layout_centerHorizontal="true"
                 android:textColor="@color/blueBackGround"
                 android:layout_marginRight="20dp"
                 android:layout_marginTop="20dp"
+                android:layout_marginLeft="110dp"
                 android:clickable="true"
                 android:onClick="goToAddMeal"/>
         </RelativeLayout>
@@ -59,6 +60,7 @@ android:fitsSystemWindows="true">
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
             android:layout_gravity="center_horizontal"
         >
             <ImageView
@@ -67,7 +69,7 @@ android:fitsSystemWindows="true">
                 android:layout_height="45dp"
                 android:src="@drawable/orange_search_icon"
                 android:clickable="true"
-                android:layout_marginLeft="300dp"
+                android:layout_marginLeft="265dp"
                 />
 
             <EditText
@@ -78,7 +80,7 @@ android:fitsSystemWindows="true">
                 android:hint="Tên món ăn"
                 android:layout_marginBottom="10dp"
                 android:layout_marginLeft="50dp"
-                android:layout_marginRight="72dp"
+                android:layout_marginRight="95dp"
                 />
 
 

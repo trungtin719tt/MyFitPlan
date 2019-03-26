@@ -24,6 +24,7 @@ import android.view.View.OnKeyListener;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -271,8 +272,17 @@ public class LibraryActivity extends AppCompatActivity {
                         txt_library_count.setText(FollowedBy);
                         TextView txt_library_calories = v.findViewById(R.id.txt_library_calories);
                         txt_library_calories.setText(Calories);
-                        Button addBtn = v.findViewById(R.id.btnAdd);
+                        ImageButton addBtn = v.findViewById(R.id.btnAdd);
                         addBtn.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                Intent intent = new Intent(LibraryActivity.this, AddingMeal.class);
+                                intent.putExtra("FoodID", ((TextView)((ViewGroup)v.getParent().getParent().getParent()).findViewById(R.id.food_id)).getText());
+                                startActivity(intent);
+                            }
+                        });
+                        ImageButton btnHnag = v.findViewById(R.id.btnHnag);
+                        btnHnag.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {
                                 Intent intent = new Intent(LibraryActivity.this, Pop.class);
