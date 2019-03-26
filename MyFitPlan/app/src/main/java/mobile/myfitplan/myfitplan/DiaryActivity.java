@@ -18,6 +18,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -36,17 +37,42 @@ import java.util.Date;
 
 import cz.msebera.android.httpclient.Header;
 
-public class DiaryActivity extends AppCompatActivity {
+public class DiaryActivity extends AppCompatActivity implements View.OnClickListener {
     private DrawerLayout drawerLayout;
-    private TextView goalCalories, absorbedCalories, remainCalories, breakfastCalories, lunchCalories, dinnerCalories;
+    private TextView goalCalories, absorbedCalories, remainCalories, breakfastCalories, lunchCalories, dinnerCalories, txt_date;
     Date selectedDate, breakfast, lunch, dinner;
     double breakfastCalo = 0, lunchCalo = 0, dinnerCalo = 0;
+    private ImageView btn_diary_before;
+    private ImageView btn_diary_after;
+    private Date today;
+    private String currentDate, select;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_diary);
 
-        selectedDate = new Date();
+        //fixing
+        today = Calendar.getInstance().getTime();
+        selectedDate = today;
+
+        //get date
+        txt_date = findViewById(R.id.txt_date);
+        btn_diary_after = findViewById(R.id.btn_diary_after);
+        btn_diary_before = findViewById(R.id.btn_diary_before);
+
+        btn_diary_before.setOnClickListener(this);
+        btn_diary_after.setOnClickListener(this);
+
+        Calendar cal = Calendar.getInstance();
+        int year = cal.get(Calendar.YEAR);
+        int month = cal.get(Calendar.MONTH);
+        int day = cal.get(Calendar.DAY_OF_MONTH);
+        currentDate = day + "/" + (month + 1) + "/" + year;
+
+        select = currentDate; //start date
+
+//        selectedDate = new Date();
 
 
         goalCalories = findViewById(R.id.txt_calories_goal);
@@ -340,5 +366,59 @@ public class DiaryActivity extends AppCompatActivity {
                 return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onClick(View v) {
+        final Calendar cal = Calendar.getInstance();
+        int year = cal.get(Calendar.YEAR);
+        int month = cal.get(Calendar.MONTH);
+        int day = cal.get(Calendar.DAY_OF_MONTH);
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/YYYY");
+
+        today = Calendar.getInstance().getTime();
+
+        try {
+            cal.setTime(sdf.parse(select));
+        } catch (ParseException p) {
+            p.printStackTrace();
+        }
+
+        //previous day
+        if (v == btn_diary_before) {
+            cal.setTime(selectedDate);
+            cal.add(Calendar.DATE, -1);
+            selectedDate = cal.getTime();
+        }
+
+        //next day
+        if (v == btn_diary_after) {
+            cal.setTime(selectedDate);
+            cal.add(Calendar.DATE, 1);
+            selectedDate = cal.getTime();
+
+            select = sdf.format(selectedDate);
+        }
+
+        txt_date.setText(sdf.format(selectedDate));
+
+        Calendar calSelected = Calendar.getInstance();
+        calSelected.setTime(selectedDate);
+        Calendar calToday = Calendar.getInstance();
+        calToday.setTime(today);
+        if (calSelected.get(Calendar.YEAR) == calToday.get(Calendar.YEAR)){
+            if(calSelected.get(Calendar.MONTH) == calToday.get(Calendar.MONTH)){
+                if(calSelected.get(Calendar.DAY_OF_MONTH) == calToday.get(Calendar.DAY_OF_MONTH)){
+                    txt_date.setText("Hôm nay");
+                }
+                if(calSelected.get(Calendar.DAY_OF_MONTH) == calToday.get(Calendar.DAY_OF_MONTH) + 1){
+                    txt_date.setText("Ngày mai");
+                }
+                if(calSelected.get(Calendar.DAY_OF_MONTH) == calToday.get(Calendar.DAY_OF_MONTH) - 1){
+                    txt_date.setText("Hôm qua");
+
+                }
+            }
+        }
     }
 }

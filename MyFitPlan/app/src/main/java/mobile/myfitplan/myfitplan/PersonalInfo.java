@@ -47,6 +47,13 @@ public class PersonalInfo extends Fragment {
                 startActivity(new Intent(getActivity(), ChangePassword.class));
             }
         });
+        TextView target_record = rootView.findViewById(R.id.target_record);
+        target_record.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getActivity(), TargetRecord.class));
+            }
+        });
         return rootView;
     }
 
