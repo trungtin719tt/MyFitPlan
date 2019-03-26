@@ -53,31 +53,27 @@
             android:orientation="vertical"
             android:layout_marginBottom="20dp"
             android:layout_margin="10dp">
-            <ImageView
-                android:layout_width="70dp"
-                android:layout_height="70dp"
-                android:src="@drawable/person_icon"/>
             <TextView
                 android:id="@+id/username"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:text="TinNTSE62434"
+                android:text=""
                 android:textColor="@color/white"
                 android:textStyle="bold"
                 android:textSize="20dp"
-                android:layout_marginLeft="75dp"
+                android:layout_marginLeft="0dp"
                 />
-            <TextView
-                android:id="@+id/time"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:text="Thời gian: 1 ngày"
-                android:textColor="@color/white"
-                android:textStyle="bold"
-                android:textSize="20dp"
-                android:layout_marginLeft="75dp"
-                android:layout_marginTop="30dp"
-                />
+            <!--<TextView-->
+                <!--android:id="@+id/time"-->
+                <!--android:layout_width="fill_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="Thời gian: 1 ngày"-->
+                <!--android:textColor="@color/white"-->
+                <!--android:textStyle="bold"-->
+                <!--android:textSize="20dp"-->
+                <!--android:layout_marginLeft="75dp"-->
+                <!--android:layout_marginTop="30dp"-->
+                <!--/>-->
 
 
         </RelativeLayout>

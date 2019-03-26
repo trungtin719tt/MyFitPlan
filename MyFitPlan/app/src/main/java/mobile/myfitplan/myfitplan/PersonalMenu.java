@@ -108,7 +108,7 @@ public class PersonalMenu extends Fragment {
                                 JSONObject foodObj = foods.getJSONObject(j);
 
                                 String ID = foodObj.get("ID").toString();
-                                String Name = foodObj.get("NameVN").toString().equals("null") ? foodObj.get("NameENG").toString() : obj.get("NameVN").toString();
+                                String Name = foodObj.get("NameVN").toString().equals("null") ? foodObj.get("NameENG").toString() : foodObj.get("NameVN").toString();
                                 String Protein = foodObj.get("Protein").toString().equals("null") ? "0" : foodObj.get("Protein").toString();
                                 String Fat = foodObj.get("Fat").toString().equals("null") ? "0" : foodObj.get("Fat").toString();
                                 String Carbs = foodObj.get("Carbs").toString().equals("null") ? "0" : foodObj.get("Carbs").toString();

@@ -389,123 +389,7 @@
 
                     </LinearLayout>
 
-                    <!--&lt;!&ndash; Ăn vặt &ndash;&gt;-->
-                    <!--<LinearLayout-->
-                        <!--android:layout_width="match_parent"-->
-                        <!--android:layout_height="wrap_content"-->
-                        <!--android:orientation="vertical">-->
 
-                        <!--<RelativeLayout-->
-                            <!--android:layout_marginTop="10dp"-->
-                            <!--android:layout_width="match_parent"-->
-                            <!--android:layout_height="40dp"-->
-                            <!--android:background="@color/colorPrimary">-->
-                            <!--<TextView-->
-                                <!--android:layout_marginLeft="30dp"-->
-                                <!--android:layout_width="wrap_content"-->
-                                <!--android:layout_height="match_parent"-->
-                                <!--android:gravity="center"-->
-                                <!--android:text="Ăn vặt"-->
-                                <!--android:textColor="#ffffff"/>-->
-                            <!--<TextView-->
-                                <!--android:layout_alignParentRight="true"-->
-                                <!--android:layout_marginRight="50dp"-->
-                                <!--android:layout_width="wrap_content"-->
-                                <!--android:layout_height="match_parent"-->
-                                <!--android:gravity="center"-->
-                                <!--android:paddingRight="5dp"-->
-                                <!--android:text="0"-->
-                                <!--android:textColor="#ffffff"/>-->
-                            <!--<TextView-->
-                                <!--android:layout_width="wrap_content"-->
-                                <!--android:layout_height="match_parent"-->
-                                <!--android:layout_alignParentRight="true"-->
-                                <!--android:layout_marginRight="30dp"-->
-                                <!--android:gravity="center"-->
-                                <!--android:textColor="#ffffff"-->
-                                <!--android:text="kcl"/>-->
-                        <!--</RelativeLayout>-->
-
-                        <!--&lt;!&ndash; add food &ndash;&gt;-->
-                        <!--<LinearLayout-->
-                            <!--android:layout_width="match_parent"-->
-                            <!--android:layout_height="50dp"-->
-                            <!--android:layout_marginLeft="30dp"-->
-                            <!--android:layout_marginTop="10dp">-->
-                            <!--<ImageView-->
-                                <!--android:layout_width="wrap_content"-->
-                                <!--android:layout_height="match_parent"-->
-                                <!--android:onClick="clickToEat"-->
-                                <!--android:clickable="true"-->
-                                <!--android:src="@drawable/ic_plus"/>-->
-                            <!--<TextView-->
-                                <!--android:paddingLeft="10dp"-->
-                                <!--android:layout_width="match_parent"-->
-                                <!--android:layout_height="match_parent"-->
-                                <!--android:gravity="center_vertical"-->
-                                <!--android:text="Thêm món ăn"-->
-                                <!--android:textSize="22sp"/>-->
-                        <!--</LinearLayout>-->
-                    <!--</LinearLayout>-->
-
-                    <!--&lt;!&ndash; Nước &ndash;&gt;-->
-                    <!--<LinearLayout-->
-                        <!--android:layout_width="match_parent"-->
-                        <!--android:layout_height="wrap_content"-->
-                        <!--android:orientation="vertical">-->
-
-                        <!--<RelativeLayout-->
-                            <!--android:layout_marginTop="10dp"-->
-                            <!--android:layout_width="match_parent"-->
-                            <!--android:layout_height="40dp"-->
-                            <!--android:background="@color/colorPrimary">-->
-                            <!--<TextView-->
-                                <!--android:layout_marginLeft="30dp"-->
-                                <!--android:layout_width="wrap_content"-->
-                                <!--android:layout_height="match_parent"-->
-                                <!--android:gravity="center"-->
-                                <!--android:text="Nước"-->
-                                <!--android:textColor="#ffffff"/>-->
-                            <!--<TextView-->
-                                <!--android:layout_alignParentRight="true"-->
-                                <!--android:layout_marginRight="50dp"-->
-                                <!--android:layout_width="wrap_content"-->
-                                <!--android:layout_height="match_parent"-->
-                                <!--android:gravity="center"-->
-                                <!--android:paddingRight="5dp"-->
-                                <!--android:text="0"-->
-                                <!--android:textColor="#ffffff"/>-->
-                            <!--<TextView-->
-                                <!--android:layout_width="wrap_content"-->
-                                <!--android:layout_height="match_parent"-->
-                                <!--android:layout_alignParentRight="true"-->
-                                <!--android:layout_marginRight="30dp"-->
-                                <!--android:gravity="center"-->
-                                <!--android:textColor="#ffffff"-->
-                                <!--android:text="ml"/>-->
-                        <!--</RelativeLayout>-->
-
-                        <!--&lt;!&ndash; add food &ndash;&gt;-->
-                        <!--<LinearLayout-->
-                            <!--android:layout_width="match_parent"-->
-                            <!--android:layout_height="50dp"-->
-                            <!--android:layout_marginLeft="30dp"-->
-                            <!--android:layout_marginTop="10dp">-->
-                            <!--<ImageView-->
-                                <!--android:layout_width="wrap_content"-->
-                                <!--android:layout_height="match_parent"-->
-                                <!--android:onClick="clickToEat"-->
-                                <!--android:clickable="true"-->
-                                <!--android:src="@drawable/ic_plus"/>-->
-                            <!--<TextView-->
-                                <!--android:paddingLeft="10dp"-->
-                                <!--android:layout_width="match_parent"-->
-                                <!--android:layout_height="match_parent"-->
-                                <!--android:gravity="center_vertical"-->
-                                <!--android:text="Thêm món ăn"-->
-                                <!--android:textSize="22sp"/>-->
-                        <!--</LinearLayout>-->
-                    <!--</LinearLayout>-->
                 </LinearLayout>
             </ScrollView>
 
@@ -519,185 +403,187 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        android:fitsSystemWindows="true">
+        android:fitsSystemWindows="true"
+        app:headerLayout="@layout/nav_header_temp"
+        app:menu="@menu/activity_temp_drawer">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@android:color/white"
-            android:orientation="vertical">
+        <!--<LinearLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:background="@android:color/white"-->
+            <!--android:orientation="vertical">-->
 
-            <!-- Header -->
-            <LinearLayout
+            <!--&lt;!&ndash; Header &ndash;&gt;-->
+            <!--<LinearLayout-->
 
-                android:layout_width="match_parent"
-                android:layout_height="160dp"
-                android:background="#ffccbc"
-                android:paddingLeft="16dp"
-                android:paddingBottom="10dp"
-                android:orientation="vertical"
-                android:gravity="bottom">
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="160dp"-->
+                <!--android:background="#ffccbc"-->
+                <!--android:paddingLeft="16dp"-->
+                <!--android:paddingBottom="10dp"-->
+                <!--android:orientation="vertical"-->
+                <!--android:gravity="bottom">-->
 
-                <ImageView
-                    android:id="@+id/nav_header_avatar"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:src="@drawable/camera"/>
-                <TextView
-                    android:id="@+id/nav_header_name"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Nguyễn Việt Cường"
-                    android:textColor="#000000"
-                    android:textSize="18sp"/>
-                <TextView
-                    android:id="@+id/nav_header_email"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="cuongnv230796@gmail.com"
-                    android:textColor="#000000"/>
+                <!--<ImageView-->
+                    <!--android:id="@+id/nav_header_avatar"-->
+                    <!--android:layout_width="80dp"-->
+                    <!--android:layout_height="80dp"-->
+                    <!--android:src="@drawable/camera"/>-->
+                <!--<TextView-->
+                    <!--android:id="@+id/nav_header_name"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:text="Nguyễn Việt Cường"-->
+                    <!--android:textColor="#000000"-->
+                    <!--android:textSize="18sp"/>-->
+                <!--<TextView-->
+                    <!--android:id="@+id/nav_header_email"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:text="cuongnv230796@gmail.com"-->
+                    <!--android:textColor="#000000"/>-->
 
-            </LinearLayout>
+            <!--</LinearLayout>-->
 
-            <!-- Menu -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:background="@color/whiteText">
+            <!--&lt;!&ndash; Menu &ndash;&gt;-->
+            <!--<LinearLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:orientation="vertical"-->
+                <!--android:background="@color/whiteText">-->
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="250dp"
-                    android:orientation="vertical">
-                    <LinearLayout
-                        android:layout_marginTop="2dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="60dp"
-                        android:orientation="horizontal"
-                        android:gravity="center_vertical"
-                        android:paddingLeft="25dp">
-                        <ImageView
-                            android:id="@+id/nav_content_home"
-                            android:layout_width="35dp"
-                            android:layout_height="35dp"
-                            android:src="@drawable/ic_home"/>
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="25dp"
-                            android:text="Trang chủ"/>
-                    </LinearLayout>
+                <!--<LinearLayout-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="250dp"-->
+                    <!--android:orientation="vertical">-->
+                    <!--<LinearLayout-->
+                        <!--android:layout_marginTop="2dp"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="60dp"-->
+                        <!--android:orientation="horizontal"-->
+                        <!--android:gravity="center_vertical"-->
+                        <!--android:paddingLeft="25dp">-->
+                        <!--<ImageView-->
+                            <!--android:id="@+id/nav_content_home"-->
+                            <!--android:layout_width="35dp"-->
+                            <!--android:layout_height="35dp"-->
+                            <!--android:src="@drawable/ic_home"/>-->
+                        <!--<TextView-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:layout_marginLeft="25dp"-->
+                            <!--android:text="Trang chủ"/>-->
+                    <!--</LinearLayout>-->
 
-                    <LinearLayout
-                        android:layout_marginTop="2dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="60dp"
-                        android:orientation="horizontal"
-                        android:gravity="center_vertical"
-                        android:paddingLeft="25dp">
-                        <ImageView
-                            android:id="@+id/nav_content_diary"
-                            android:layout_width="35dp"
-                            android:layout_height="35dp"
-                            android:src="@drawable/ic_diary"/>
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="25dp"
-                            android:text="Nhật ký"/>
-                    </LinearLayout>
+                    <!--<LinearLayout-->
+                        <!--android:layout_marginTop="2dp"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="60dp"-->
+                        <!--android:orientation="horizontal"-->
+                        <!--android:gravity="center_vertical"-->
+                        <!--android:paddingLeft="25dp">-->
+                        <!--<ImageView-->
+                            <!--android:id="@+id/nav_content_diary"-->
+                            <!--android:layout_width="35dp"-->
+                            <!--android:layout_height="35dp"-->
+                            <!--android:src="@drawable/ic_diary"/>-->
+                        <!--<TextView-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:layout_marginLeft="25dp"-->
+                            <!--android:text="Nhật ký"/>-->
+                    <!--</LinearLayout>-->
 
-                    <LinearLayout
-                        android:layout_marginTop="2dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="60dp"
-                        android:orientation="horizontal"
-                        android:gravity="center_vertical"
-                        android:paddingLeft="25dp">
-                        <ImageView
-                            android:id="@+id/nav_content_library"
-                            android:layout_width="35dp"
-                            android:layout_height="35dp"
-                            android:src="@drawable/ic_library"/>
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="25dp"
-                            android:text="Thư viện"/>
-                    </LinearLayout>
+                    <!--<LinearLayout-->
+                        <!--android:layout_marginTop="2dp"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="60dp"-->
+                        <!--android:orientation="horizontal"-->
+                        <!--android:gravity="center_vertical"-->
+                        <!--android:paddingLeft="25dp">-->
+                        <!--<ImageView-->
+                            <!--android:id="@+id/nav_content_library"-->
+                            <!--android:layout_width="35dp"-->
+                            <!--android:layout_height="35dp"-->
+                            <!--android:src="@drawable/ic_library"/>-->
+                        <!--<TextView-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:layout_marginLeft="25dp"-->
+                            <!--android:text="Thư viện"/>-->
+                    <!--</LinearLayout>-->
 
-                    <LinearLayout
-                        android:layout_marginTop="2dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="60dp"
-                        android:orientation="horizontal"
-                        android:gravity="center_vertical"
-                        android:paddingLeft="25dp">
-                        <ImageView
-                            android:id="@+id/nav_content_goal"
-                            android:layout_width="35dp"
-                            android:layout_height="35dp"
-                            android:src="@drawable/ic_goal"/>
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="25dp"
-                            android:text="Mục tiêu"/>
-                    </LinearLayout>
-                </LinearLayout>
-
-
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="250dp"
-                    android:orientation="vertical"
-                    android:layout_marginTop="15dp">
-                    <LinearLayout
-                        android:layout_marginTop="2dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="60dp"
-                        android:orientation="horizontal"
-                        android:gravity="center_vertical"
-                        android:paddingLeft="25dp">
-                        <ImageView
-                            android:id="@+id/nav_content_setting"
-                            android:layout_width="35dp"
-                            android:layout_height="35dp"
-                            android:src="@drawable/ic_setting"/>
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="25dp"
-                            android:text="Cài đặt"/>
-                    </LinearLayout>
+                    <!--<LinearLayout-->
+                        <!--android:layout_marginTop="2dp"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="60dp"-->
+                        <!--android:orientation="horizontal"-->
+                        <!--android:gravity="center_vertical"-->
+                        <!--android:paddingLeft="25dp">-->
+                        <!--<ImageView-->
+                            <!--android:id="@+id/nav_content_goal"-->
+                            <!--android:layout_width="35dp"-->
+                            <!--android:layout_height="35dp"-->
+                            <!--android:src="@drawable/ic_goal"/>-->
+                        <!--<TextView-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:layout_marginLeft="25dp"-->
+                            <!--android:text="Mục tiêu"/>-->
+                    <!--</LinearLayout>-->
+                <!--</LinearLayout>-->
 
 
 
-                    <LinearLayout
-                        android:layout_marginTop="2dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="60dp"
-                        android:orientation="horizontal"
-                        android:gravity="center_vertical"
-                        android:paddingLeft="25dp">
-                        <ImageView
-                            android:id="@+id/nav_content_log_out"
-                            android:layout_width="35dp"
-                            android:layout_height="35dp"
-                            android:src="@drawable/ic_logout"/>
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="25dp"
-                            android:text="Đăng xuất"/>
-                    </LinearLayout>
-                </LinearLayout>
+                <!--<LinearLayout-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="250dp"-->
+                    <!--android:orientation="vertical"-->
+                    <!--android:layout_marginTop="15dp">-->
+                    <!--<LinearLayout-->
+                        <!--android:layout_marginTop="2dp"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="60dp"-->
+                        <!--android:orientation="horizontal"-->
+                        <!--android:gravity="center_vertical"-->
+                        <!--android:paddingLeft="25dp">-->
+                        <!--<ImageView-->
+                            <!--android:id="@+id/nav_content_setting"-->
+                            <!--android:layout_width="35dp"-->
+                            <!--android:layout_height="35dp"-->
+                            <!--android:src="@drawable/ic_setting"/>-->
+                        <!--<TextView-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:layout_marginLeft="25dp"-->
+                            <!--android:text="Cài đặt"/>-->
+                    <!--</LinearLayout>-->
 
-            </LinearLayout>
 
-        </LinearLayout>
+
+                    <!--<LinearLayout-->
+                        <!--android:layout_marginTop="2dp"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="60dp"-->
+                        <!--android:orientation="horizontal"-->
+                        <!--android:gravity="center_vertical"-->
+                        <!--android:paddingLeft="25dp">-->
+                        <!--<ImageView-->
+                            <!--android:id="@+id/nav_content_log_out"-->
+                            <!--android:layout_width="35dp"-->
+                            <!--android:layout_height="35dp"-->
+                            <!--android:src="@drawable/ic_logout"/>-->
+                        <!--<TextView-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:layout_marginLeft="25dp"-->
+                            <!--android:text="Đăng xuất"/>-->
+                    <!--</LinearLayout>-->
+                <!--</LinearLayout>-->
+
+            <!--</LinearLayout>-->
+
+        <!--</LinearLayout>-->
 
 
 

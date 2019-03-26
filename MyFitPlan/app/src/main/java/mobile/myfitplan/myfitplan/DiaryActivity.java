@@ -4,9 +4,11 @@ import android.content.Context;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
+import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -19,6 +21,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -46,13 +49,18 @@ public class DiaryActivity extends AppCompatActivity implements View.OnClickList
     private ImageView btn_diary_after;
     private Date today;
     private String currentDate, select;
+    private LinearLayout dinnerContent, lunchContent, breakfastContent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_diary);
 
-        //fixing
+        dinnerContent = findViewById(R.id.dinner_content);
+        lunchContent = findViewById(R.id.lunch_content);
+        breakfastContent = findViewById(R.id.breakfast_content);
+
+                //fixing
         today = Calendar.getInstance().getTime();
         selectedDate = today;
 
@@ -109,11 +117,44 @@ public class DiaryActivity extends AppCompatActivity implements View.OnClickList
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
         navigation.setSelectedItemId(R.id.navigation_diary);
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        drawer.addDrawerListener(toggle);
+        toggle.syncState();
 
+        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        navigationView.bringToFront();
+//        navigationView.setNavigationItemSelectedListener(this);
+        navigationView.setNavigationItemSelectedListener(
+                new NavigationView.OnNavigationItemSelectedListener() {
+                    @Override
+                    public boolean onNavigationItemSelected(MenuItem menuItem) {
+                        int id = menuItem.getItemId();
+
+                        if (id == R.id.nav_logout) {
+                            logout();
+                        }
+
+                        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+                        drawer.closeDrawer(GravityCompat.START);
+                        return true;
+                    }
+                });
         initData();
     }
 
     private void initData(){
+
+        dinnerContent.removeAllViews();
+        lunchContent.removeAllViews();
+        breakfastContent.removeAllViews();
+        lunchCalo = 0;
+        lunchCalories.setText(String.valueOf(lunchCalo));
+        breakfastCalo = 0;
+        breakfastCalories.setText(String.valueOf(breakfastCalo));
+        dinnerCalo = 0;
+        dinnerCalories.setText(String.valueOf(dinnerCalo));
 
         final Calendar calendar = Calendar.getInstance();
         int day          = Integer.parseInt(DateFormat.format("dd", selectedDate).toString()); // 20
@@ -309,6 +350,15 @@ public class DiaryActivity extends AppCompatActivity implements View.OnClickList
         });
     }
 
+    public void logout(){
+        MyApplication myApplication = (MyApplication)getApplication();
+        myApplication.access_token = null;
+        myApplication.token_type = null;
+        myApplication.username = null;
+        myApplication.accUser = new AccUser();
+        startActivity(new Intent(DiaryActivity.this, LoginPage.class));
+    }
+
     public void clickToEat(View view) {
         startActivity(new Intent(DiaryActivity.this, SelectingMeal.class));
     }
@@ -420,5 +470,7 @@ public class DiaryActivity extends AppCompatActivity implements View.OnClickList
                 }
             }
         }
+        initData();
+
     }
 }

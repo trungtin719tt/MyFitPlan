@@ -14,6 +14,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".temp"
+            android:label="@string/title_activity_temp"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
             android:name=".Personal"
             android:label="@string/title_activity_personal" />
         <activity android:name=".ForgotPassword2" />
@@ -87,7 +91,7 @@
         <activity
             android:name=".NewFolder"
             android:theme="@style/AppTheme.CustomTheme" />
-        <activity android:name=".TargetRecord"></activity>
+        <activity android:name=".TargetRecord" />
     </application>
 
 </manifest>

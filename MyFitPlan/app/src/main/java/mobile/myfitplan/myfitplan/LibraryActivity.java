@@ -7,9 +7,11 @@ import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
+import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -99,6 +101,31 @@ public class LibraryActivity extends AppCompatActivity {
         navigation.setSelectedItemId(R.id.navigation_library);
 
         keyword = "";
+
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        drawer.addDrawerListener(toggle);
+        toggle.syncState();
+
+        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        navigationView.bringToFront();
+//        navigationView.setNavigationItemSelectedListener(this);
+        navigationView.setNavigationItemSelectedListener(
+                new NavigationView.OnNavigationItemSelectedListener() {
+                    @Override
+                    public boolean onNavigationItemSelected(MenuItem menuItem) {
+                        int id = menuItem.getItemId();
+
+                        if (id == R.id.nav_logout) {
+                            logout();
+                        }
+
+                        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+                        drawer.closeDrawer(GravityCompat.START);
+                        return true;
+                    }
+                });
         InitData();
 
 
@@ -182,7 +209,7 @@ public class LibraryActivity extends AppCompatActivity {
                         addBtn.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {
-                                Intent intent = new Intent(LibraryActivity.this, Pop.class);
+                                Intent intent = new Intent(LibraryActivity.this, PopUpLibraryPlus.class);
                                 intent.putExtra("FoodID", ((TextView)((ViewGroup)v.getParent().getParent().getParent()).findViewById(R.id.food_id)).getText());
                                 startActivity(intent);
                             }
@@ -376,6 +403,15 @@ public class LibraryActivity extends AppCompatActivity {
     public void Search() {
         keyword = ((EditText)findViewById(R.id.edtAccount)).getText().toString();
         InitData();
+    }
+
+    public void logout(){
+        MyApplication myApplication = (MyApplication)getApplication();
+        myApplication.access_token = null;
+        myApplication.token_type = null;
+        myApplication.username = null;
+        myApplication.accUser = new AccUser();
+        startActivity(new Intent(LibraryActivity.this, LoginPage.class));
     }
 
 

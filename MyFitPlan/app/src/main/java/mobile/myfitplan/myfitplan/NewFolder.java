@@ -104,7 +104,6 @@ public class NewFolder extends AppCompatActivity {
 
         RequestParams rp = new RequestParams();
         rp.add("Name", folderName);
-        rp.add("AccUserID", accUserID);
         http.post("api/PersonalCategories", rp, new JsonHttpResponseHandler() {
             @Override
             public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
@@ -122,7 +121,7 @@ public class NewFolder extends AppCompatActivity {
             @Override
             public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
                 super.onFailure(statusCode, headers, throwable, errorResponse);
-                Toast.makeText(getApplicationContext(),"Tạo mới thư mục th",Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(),"Tạo mới thư mục thất bại",Toast.LENGTH_LONG).show();
                 finish();
             }
         });
