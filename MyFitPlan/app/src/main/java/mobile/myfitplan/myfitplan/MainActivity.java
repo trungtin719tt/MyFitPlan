@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
 
         RequestParams param = new RequestParams();
         String username = ((MyApplication) getApplication()).username;
-        param.add("email", username);
+//        param.add("email", username);
         HttpUtils httpUtils = new HttpUtils();
         String authorization = ((MyApplication)getApplication()).token_type + " " +  ((MyApplication)getApplication()).access_token;
         httpUtils.client.addHeader("Authorization", authorization);
@@ -85,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
                     SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
                     String currentDateandTime = sdf.format(new Date());
 //                    Date currentTime = Calendar.getInstance().getTime();
-                    rp.add("accUserID", String.valueOf(accUserID));
+//                    rp.add("accUserID", String.valueOf(accUserID));
                     rp.add("date", currentDateandTime);
                     HttpUtils http = new HttpUtils();
                     String authorization = ((MyApplication)getApplication()).token_type + " " +  ((MyApplication)getApplication()).access_token;

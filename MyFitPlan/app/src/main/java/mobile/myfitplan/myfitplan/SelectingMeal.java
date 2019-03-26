@@ -33,8 +33,8 @@ public class SelectingMeal extends AppCompatActivity {
 
         //add food
         RequestParams rp = new RequestParams();
-        rp.add("accUserID", String.valueOf(((MyApplication)getApplication()).accUser.ID));
-        rp.add("getType", "1");
+//        rp.add("accUserID", String.valueOf(((MyApplication)getApplication()).accUser.ID));
+//        rp.add("getType", "1");
         HttpUtils http = new HttpUtils();
         String authorization = ((MyApplication)getApplication()).token_type + " " +  ((MyApplication)getApplication()).access_token;
         http.client.addHeader("Accept", "application/json");

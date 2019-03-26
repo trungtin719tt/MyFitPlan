@@ -141,7 +141,7 @@ public class DiaryActivity extends AppCompatActivity implements View.OnClickList
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         String dateString = sdf.format(selectedDate);
 //                    Date currentTime = Calendar.getInstance().getTime();
-        rp.add("accUserID", String.valueOf(accUserID));
+//        rp.add("accUserID", String.valueOf(accUserID));
         rp.add("date", dateString);
         HttpUtils http = new HttpUtils();
         String authorization = ((MyApplication)getApplication()).token_type + " " +  ((MyApplication)getApplication()).access_token;
@@ -191,7 +191,7 @@ public class DiaryActivity extends AppCompatActivity implements View.OnClickList
 
         //add food
         RequestParams param = new RequestParams();
-        param.add("accUserID", String.valueOf(accUserID));
+//        param.add("accUserID", String.valueOf(accUserID));
         param.add("date", dateString);
         HttpUtils httpUtils = new HttpUtils();
         httpUtils.client.addHeader("Accept", "application/json");

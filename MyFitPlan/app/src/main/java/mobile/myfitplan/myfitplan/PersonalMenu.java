@@ -42,8 +42,8 @@ public class PersonalMenu extends Fragment {
 
         //add food
         RequestParams rp = new RequestParams();
-        rp.add("accUserID", String.valueOf(((MyApplication)getActivity().getApplication()).accUser.ID));
-        rp.add("getType", "1");
+//        rp.add("accUserID", String.valueOf(((MyApplication)getActivity().getApplication()).accUser.ID));
+//        rp.add("getType", "1");
         HttpUtils http = new HttpUtils();
         String authorization = ((MyApplication) getActivity().getApplication()).token_type + " " +  ((MyApplication)getActivity().getApplication()).access_token;
         http.client.addHeader("Accept", "application/json");
