@@ -27,6 +27,9 @@ import android.widget.TextView;
 
 public class LibraryActivity extends AppCompatActivity {
     private DrawerLayout drawerLayout;
+    private TextView txt_library_calories1, txt_library_calories2, txt_library_calories3, txt_library_calories4, txt_library_calories5, txt_library_calories6;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -81,99 +84,79 @@ public class LibraryActivity extends AppCompatActivity {
         popUp1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(LibraryActivity.this, Pop.class));
+//                startActivity(new Intent(LibraryActivity.this, Pop.class));
+                Intent intent = new Intent(LibraryActivity.this, Pop.class);
+                txt_library_calories1 = findViewById(R.id.txt_library_calories1);
+                intent.putExtra("KCAL", txt_library_calories1.getText().toString());
+                startActivity(intent);
             }
         });
+
         //pop up plus 2
         Button popUp2= (Button) findViewById(R.id.btnAdd2);
         popUp2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(LibraryActivity.this, Pop.class));
+//                startActivity(new Intent(LibraryActivity.this, Pop.class));
+                Intent intent = new Intent(LibraryActivity.this, Pop.class);
+                txt_library_calories2 = findViewById(R.id.txt_library_calories2);
+                intent.putExtra("KCAL", txt_library_calories2.getText().toString());
+                startActivity(intent);
             }
         });
+
         //pop up plus 3
         Button popUp3 = (Button) findViewById(R.id.btnAdd3);
         popUp3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(LibraryActivity.this, Pop.class));
+//                startActivity(new Intent(LibraryActivity.this, Pop.class));
+                Intent intent = new Intent(LibraryActivity.this, Pop.class);
+                txt_library_calories3 = findViewById(R.id.txt_library_calories3);
+                intent.putExtra("KCAL", txt_library_calories3.getText().toString());
+                startActivity(intent);
             }
         });
+
         //pop up plus 4
         Button popUp4 = (Button) findViewById(R.id.btnAdd4);
         popUp4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(LibraryActivity.this, Pop.class));
+//                startActivity(new Intent(LibraryActivity.this, Pop.class));
+                Intent intent = new Intent(LibraryActivity.this, Pop.class);
+                txt_library_calories4 = findViewById(R.id.txt_library_calories4);
+                intent.putExtra("KCAL", txt_library_calories4.getText().toString());
+                startActivity(intent);
             }
         });
+
         //pop up plus 5
         Button popUp5 = (Button) findViewById(R.id.btnAdd5);
         popUp5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(LibraryActivity.this, Pop.class));
+//                startActivity(new Intent(LibraryActivity.this, Pop.class));
+                Intent intent = new Intent(LibraryActivity.this, Pop.class);
+                txt_library_calories5 = findViewById(R.id.txt_library_calories5);
+                intent.putExtra("KCAL", txt_library_calories5.getText().toString());
+                startActivity(intent);
             }
         });
+
         //pop up plus 6
         Button popUp6 = (Button) findViewById(R.id.btnAdd6);
         popUp6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(LibraryActivity.this, Pop.class));
+//                startActivity(new Intent(LibraryActivity.this, Pop.class));
+                Intent intent = new Intent(LibraryActivity.this, Pop.class);
+                txt_library_calories6 = findViewById(R.id.txt_library_calories6);
+                intent.putExtra("KCAL", txt_library_calories6.getText().toString());
+                startActivity(intent);
             }
         });
 
-//        //pop up food 1
-//        Button pop1 = (Button) findViewById(R.id.btnAddFood1);
-//        pop1.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                startActivity(new Intent(LibraryActivity.this, Pop.class));
-//            }
-//        });
-//
-//        //pop up food 2
-//        Button pop2 = (Button) findViewById(R.id.btnAddFood2);
-//        pop2.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                startActivity(new Intent(LibraryActivity.this, Pop.class));
-//            }
-//        });
-//        //pop up food 3
-//        Button pop3 = (Button) findViewById(R.id.btnAddFood3);
-//        pop3.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                startActivity(new Intent(LibraryActivity.this, Pop.class));
-//            }
-//        });
-//        //pop up food 4
-//        Button pop4 = (Button) findViewById(R.id.btnAddFood4);
-//        pop4.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                startActivity(new Intent(LibraryActivity.this, Pop.class));
-//            }
-//        });
-//        //pop up food 5
-//        Button pop5 = (Button) findViewById(R.id.btnAddFood5);
-//        pop5.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                startActivity(new Intent(LibraryActivity.this, Pop.class));
-//            }
-//        });
-//        //pop up food 6
-//        Button pop6 = (Button) findViewById(R.id.btnAddFood6);
-//        pop6.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                startActivity(new Intent(LibraryActivity.this, Pop.class));
-//            }
-//        });
     }
 
 
@@ -246,19 +229,5 @@ public class LibraryActivity extends AppCompatActivity {
     }
 
 
-
-
-
-
-//    @Override
-//    public boolean onOptionsItemSelected(MenuItem item) {
-//        switch (item.getItemId()) {
-//            case android.R.id.home:
-//                finish();
-//                return true;
-//            default:
-//                return super.onOptionsItemSelected(item);
-//        }
-//    }
 
 }

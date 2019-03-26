@@ -11,14 +11,21 @@ import android.net.Uri;
 import java.io.InputStream;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class AddingMeal extends AppCompatActivity {
     private static int RESULT_LOAD_IMAGE = 1;
     ImageView getPhoto;
+    private Spinner spFoodName;
+    private String selectedSpinner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +42,34 @@ public class AddingMeal extends AppCompatActivity {
         int textColor = getResources().getColor(R.color.textColorOnPrimary);
         String сolorString = String.format("%X", textColor).substring(2);
         getSupportActionBar().setTitle(Html.fromHtml(String.format("<font color=\"#%s\"'>Thêm món</font>", сolorString)));
+
+        spFoodName = (Spinner)findViewById(R.id.spFoodName);
+        List<String> dataSrc = new ArrayList<>();
+
+        dataSrc.add("gram/ml");
+        dataSrc.add("Tô");
+        dataSrc.add("Ly");
+        dataSrc.add("Dĩa");
+        dataSrc.add("Chén");
+
+
+        //danh sách muốn hiện lên control phải có adapter
+        ArrayAdapter<String> dataAdp = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, dataSrc);
+        dataAdp.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        spFoodName.setAdapter(dataAdp);
+        spFoodName.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                selectedSpinner = parent.getItemAtPosition(position).toString();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
     }
 
     @Override
@@ -66,9 +101,6 @@ public class AddingMeal extends AppCompatActivity {
         }
     }
 
-    public void clickToGoToLibrary(View view) {
-        startActivity(new Intent(AddingMeal.this, LibraryActivity.class));
-    }
 
     public void clickToAddMeal(View view) {
 //        this.finish();

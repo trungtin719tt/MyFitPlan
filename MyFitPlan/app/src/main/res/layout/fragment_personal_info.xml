@@ -24,26 +24,26 @@
                 android:textAlignment="viewStart"
                 android:layout_marginLeft="30dp"
                 android:layout_marginTop="40dp"
-                android:textSize="20dp"/>
+                android:textSize="25dp"
+                android:textColor="@color/textColorOnWhite"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Cân nặng"
+                android:text="Cân nặng 65 KG"
                 android:textAlignment="viewStart"
                 android:textStyle="bold"
                 android:layout_marginLeft="30dp"
-                android:layout_marginTop="20dp"
                 android:textSize="20dp"/>
-            <TextView
-                android:id="@+id/weight"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="65 KG"
-                android:textStyle="bold"
-                android:textAlignment="viewStart"
-                android:layout_marginLeft="30dp"
-                android:layout_marginTop="5dp"
-                android:textSize="20dp"/>
+            <!--<TextView-->
+                <!--android:id="@+id/weight"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="65 KG"-->
+                <!--android:textStyle="bold"-->
+                <!--android:textAlignment="viewStart"-->
+                <!--android:layout_marginLeft="30dp"-->
+                <!--android:layout_marginTop="5dp"-->
+                <!--android:textSize="20dp"/>-->
             <TextView
                 android:id="@+id/weight_gain"
                 android:layout_width="match_parent"
@@ -54,6 +54,17 @@
                 android:layout_marginTop="5dp"
                 android:textSize="20dp"/>
             <TextView
+                android:id="@+id/target_record"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Lịch sử mục tiêu"
+                android:layout_marginLeft="30dp"
+                android:textSize="20dp"
+                android:clickable="true"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/blueBackGround"
+                />
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Calories hằng ngày"
@@ -61,7 +72,8 @@
                 android:textStyle="bold"
                 android:layout_marginLeft="30dp"
                 android:layout_marginTop="20dp"
-                android:textSize="20dp"/>
+                android:textSize="25dp"
+                android:textColor="@color/textColorOnWhite"/>
             <TextView
                 android:id="@+id/calories"
                 android:layout_width="match_parent"
@@ -99,7 +111,7 @@
                 android:text="Thay đổi mục tiêu"
                 android:textAlignment="viewStart"
                 android:layout_marginLeft="30dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="10dp"
                 android:textSize="20dp"
                 android:clickable="true"
                 android:textColor="@color/blueBackGround"/>
@@ -110,7 +122,7 @@
                 android:text="Đổi mật khẩu"
                 android:textAlignment="viewStart"
                 android:layout_marginLeft="30dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="10dp"
                 android:textSize="20dp"
                 android:clickable="true"
                 android:textColor="@color/blueBackGround"/>

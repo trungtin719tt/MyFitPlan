@@ -36,18 +36,22 @@
                 android:layout_marginTop="20dp"
                 android:gravity="center_vertical">
                 <ImageView
-                    android:id="@+id/btn_diary_before"
+                    android:id="@+id/btn_diary_previous"
                     android:layout_alignParentLeft="true"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:clickable="true"
                     android:src="@drawable/ic_arrow_left"/>
                 <TextView
+                    android:id="@+id/txt_date"
                     android:layout_centerHorizontal="true"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:clickable="true"
-                    android:text="Hôm nay"/>
+                    android:textColor="@color/textColorOnWhite"
+                    android:text="Hôm nay"
+                    android:focusable="false"
+                    />
                 <ImageView
                     android:id="@+id/btn_diary_after"
                     android:layout_alignParentRight="true"
@@ -65,7 +69,7 @@
                 android:layout_margin="10dp"
                 >
                 <LinearLayout
-                    android:id="@+id/goal_calories"
+                      android:id="@+id/goal_calories"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
@@ -73,13 +77,16 @@
                     android:paddingLeft="20dp"
                     android:layout_alignParentLeft="true">
                     <TextView
+                        android:id="@+id/txt_target"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="3250"/>
+                        android:text="3250"
+                        android:textColor="@color/textColorOnWhite"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Mục tiêu"/>
+                        android:text="Mục tiêu"
+                        android:textColor="@color/textColorOnWhite"/>
 
                 </LinearLayout>
                 <TextView
@@ -87,6 +94,7 @@
                     android:layout_height="wrap_content"
                     android:layout_toLeftOf="@+id/food_calories"
                     android:textSize="30dp"
+                    android:textColor="@color/textColorOnWhite"
                     android:text="-"/>
                 <LinearLayout
                     android:id="@+id/food_calories"
@@ -100,11 +108,14 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="600"/>
+                        android:text="600"
+                        android:textColor="@color/textColorOnWhite"
+                        android:id="@+id/txt_food"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Thức ăn"/>
+                        android:text="Thức ăn"
+                        android:textColor="@color/textColorOnWhite"/>
 
                 </LinearLayout>
                 <TextView
@@ -112,7 +123,8 @@
                     android:layout_height="wrap_content"
                     android:layout_toRightOf="@+id/food_calories"
                     android:textSize="30dp"
-                    android:text="="/>
+                    android:text="="
+                    android:textColor="@color/textColorOnWhite"/>
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -121,13 +133,16 @@
                     android:paddingRight="20dp"
                     android:layout_alignParentRight="true">
                     <TextView
+                        android:id="@+id/txt_left"
+                        android:textColor="@color/textColorOnWhite"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="2650"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Còn lại"/>
+                        android:text="Còn lại"
+                        android:textColor="@color/textColorOnWhite"/>
 
                 </LinearLayout>
             </RelativeLayout>
@@ -161,6 +176,7 @@
                                 android:text="Bữa sáng"
                                 android:textColor="#ffffff"/>
                             <TextView
+                                android:id="@+id/txt_calories_title"
                                 android:layout_alignParentRight="true"
                                 android:layout_marginRight="50dp"
                                 android:layout_width="wrap_content"
@@ -181,9 +197,11 @@
 
                         <!-- food and calories for meal -->
                         <RelativeLayout
+                            android:id="@+id/layout_food_item"
                             android:layout_width="match_parent"
                             android:layout_height="70dp"
-                            android:paddingLeft="30dp">
+                            android:paddingLeft="30dp"
+                            >
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
@@ -191,23 +209,28 @@
                                 android:gravity="center_vertical">
 
                                 <TextView
+                                    android:id="@+id/txt_food_item"
                                     android:layout_marginLeft="30dp"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:gravity="center"
-                                    android:text="Bún bò Huế"/>
+                                    android:text="Bún bò Huế"
+                                    android:textColor="@color/textColorOnWhite"/>
                                 <TextView
+                                    android:textColor="@color/textColorOnWhite"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:text="(10 fats, 15 carbs, 20 proteins)"/>
                             </LinearLayout>
                             <TextView
+                                android:id="@+id/txt_calories"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_alignParentRight="true"
                                 android:layout_marginRight="30dp"
                                 android:gravity="center"
-                                android:text="600"/>
+                                android:text="600"
+                                android:textColor="@color/textColorOnWhite"/>
                         </RelativeLayout>
 
                         <!-- add food -->
@@ -228,7 +251,8 @@
                                 android:layout_height="match_parent"
                                 android:gravity="center_vertical"
                                 android:text="Thêm món ăn"
-                                android:textSize="22sp"/>
+                                android:textSize="22sp"
+                                android:textColor="@color/textColorOnWhite"/>
                         </LinearLayout>
                     </LinearLayout>
 
@@ -236,7 +260,8 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical">
+                        android:orientation="vertical"
+                        android:id="@+id/my_root">
 
                         <RelativeLayout
                             android:layout_marginTop="10dp"
@@ -251,6 +276,7 @@
                                 android:text="Bữa trưa"
                                 android:textColor="#ffffff"/>
                             <TextView
+                                android:id="@+id/txt_calories_title2"
                                 android:layout_alignParentRight="true"
                                 android:layout_marginRight="50dp"
                                 android:layout_width="wrap_content"
@@ -287,6 +313,7 @@
                                 android:layout_height="match_parent"
                                 android:gravity="center_vertical"
                                 android:text="Thêm món ăn"
+                                android:textColor="@color/textColorOnWhite"
                                 android:textSize="22sp"/>
                         </LinearLayout>
                     </LinearLayout>

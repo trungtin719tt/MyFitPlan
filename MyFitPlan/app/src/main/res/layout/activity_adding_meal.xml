@@ -1,29 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     >
 
-    <!--<LinearLayout-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:orientation="horizontal"-->
-        <!--android:background="@color/colorPrimary">-->
-        <!--<ImageView-->
-            <!--android:layout_width="40dp"-->
-            <!--android:layout_height="40dp"-->
-            <!--android:src="@drawable/back_icon"/>-->
-        <!--<TextView-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="50dp"-->
-            <!--android:text="Thêm món"-->
-            <!--android:gravity="left"-->
-            <!--android:textSize="30dp"-->
-            <!--android:textStyle="bold"-->
-            <!--android:textColor="@color/white"-->
-            <!--/>-->
-    <!--</LinearLayout>-->
+
     <!-- Toolbar -->
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
@@ -32,32 +15,6 @@
         android:background="@color/colorPrimary"
         style="@style/MyTheme"
         android:theme="@style/AppTheme.AppBarOverlay" />
-
-    <!--<LinearLayout-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:orientation="horizontal">-->
-
-        <!--<ImageView-->
-            <!--android:layout_width="30dp"-->
-            <!--android:layout_height="20dp"-->
-            <!--android:src="@drawable/search_icon"-->
-            <!--android:clickable="true"-->
-            <!--android:onClick="clickToGoToLibrary"-->
-            <!--android:layout_marginTop="20dp"-->
-            <!--android:layout_marginLeft="10dp"-->
-            <!--/>-->
-        <!--<TextView-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:text="Tìm trên hệ thống"-->
-            <!--android:clickable="true"-->
-            <!--android:onClick="clickToGoToLibrary"-->
-            <!--android:textStyle="bold"-->
-            <!--android:layout_marginTop="20dp"-->
-            <!--android:layout_marginBottom="20dp"/>-->
-
-    <!--</LinearLayout>-->
 
     <TextView
         android:layout_width="match_parent"
@@ -69,7 +26,6 @@
         android:layout_marginLeft="20dp"
 
         />
-
     <EditText
         android:id="@+id/edtFoodName"
         android:layout_width="match_parent"
@@ -106,21 +62,77 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="20dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Thông tin dinh dưỡng trên"
+            android:textColor="@color/textColorOnWhite"
+            android:layout_gravity="center"/>
+        <EditText
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/edtNutritionQuantity"
+            android:layout_gravity="center"
+            android:inputType="number"
+            android:maxLength="5"/>
+        <LinearLayout
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:background="@drawable/border2"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"/>
+            <Spinner
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/spFoodName"
+                >
+            </Spinner>
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
         android:orientation="horizontal">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:text="Calories"
-            android:textStyle="bold"
+            android:textColor="@color/textColorOnWhite"
             android:layout_gravity="center_vertical"
             android:layout_marginTop="10dp"
             android:layout_marginLeft="20dp"/>
 
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="45dp"
-            android:layout_marginLeft="80dp"
-            android:layout_marginRight="40dp"/>
+        <LinearLayout
+            android:layout_width="150dp"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_marginLeft="130dp"
+            >
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="left"
+                android:inputType="number"
+                android:maxLength="5"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Kcal"
+                android:gravity="center"
+                android:layout_marginLeft="-35dp"
+                />
+        </LinearLayout>
+
 
     </LinearLayout>
 
@@ -132,16 +144,32 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:text="Tinh bột"
-            android:textStyle="bold"
+            android:textColor="@color/textColorOnWhite"
             android:layout_gravity="center_vertical"
             android:layout_marginTop="10dp"
             android:layout_marginLeft="20dp"/>
 
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="45dp"
-            android:layout_marginLeft="80dp"
-            android:layout_marginRight="40dp"/>
+        <LinearLayout
+            android:layout_width="150dp"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_marginLeft="132dp"
+            >
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="left"
+                android:inputType="number"
+                android:maxLength="5"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="g"
+                android:gravity="center"
+                android:layout_marginLeft="-35dp"
+                />
+        </LinearLayout>
 
     </LinearLayout>
 
@@ -153,16 +181,32 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:text="Chất đạm"
-            android:textStyle="bold"
+            android:textColor="@color/textColorOnWhite"
             android:layout_gravity="center_vertical"
             android:layout_marginTop="10dp"
             android:layout_marginLeft="20dp"/>
 
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="45dp"
-            android:layout_marginLeft="70dp"
-            android:layout_marginRight="40dp"/>
+        <LinearLayout
+            android:layout_width="150dp"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_marginLeft="121dp"
+            >
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="left"
+                android:inputType="number"
+                android:maxLength="5"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="g"
+                android:gravity="center"
+                android:layout_marginLeft="-35dp"
+                />
+        </LinearLayout>
 
     </LinearLayout>
 
@@ -174,16 +218,32 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:text="Chất béo"
-            android:textStyle="bold"
+            android:textColor="@color/textColorOnWhite"
             android:layout_gravity="center_vertical"
             android:layout_marginTop="10dp"
             android:layout_marginLeft="20dp"/>
 
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="45dp"
-            android:layout_marginLeft="75dp"
-            android:layout_marginRight="40dp"/>
+        <LinearLayout
+            android:layout_width="150dp"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_marginLeft="127dp"
+            >
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="left"
+                android:inputType="number"
+                android:maxLength="5"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="g"
+                android:gravity="center"
+                android:layout_marginLeft="-35dp"
+                />
+        </LinearLayout>
 
     </LinearLayout>
 

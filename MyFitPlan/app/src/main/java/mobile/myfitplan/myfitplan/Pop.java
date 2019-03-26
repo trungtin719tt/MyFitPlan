@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.NumberPicker;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -23,6 +24,7 @@ public class Pop extends AppCompatActivity {
     private String selectedSpinner;
     private NumberPicker np;
     int quantity = 1;
+    private EditText edtKcal;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,49 +39,50 @@ public class Pop extends AppCompatActivity {
 
         getWindow().setLayout((int)(width * .8), (int)(height * .4));
 
-//        spFoodName = (Spinner)findViewById(R.id.spFoodName);
-//        List<String> dataSrc = new ArrayList<>();
-//
-//        dataSrc.add("Bữa sáng");
-//        dataSrc.add("Bữa trưa");
-//        dataSrc.add("Bữa tối");
-//
-//        //danh sách muốn hiện lên control phải có adapter
-//        ArrayAdapter<String> dataAdp = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, dataSrc);
-//        dataAdp.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-//
-//        spFoodName.setAdapter(dataAdp);
-//        spFoodName.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-//            @Override
-//            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-//                selectedSpinner = parent.getItemAtPosition(position).toString();
-//            }
-//
-//            @Override
-//            public void onNothingSelected(AdapterView<?> parent) {
-//
-//            }
-//        });
+        //số kcal
+        Intent intent = getIntent();
+        edtKcal = findViewById(R.id.edtKcal);
+        edtKcal.setText(intent.getStringExtra("KCAL"));
 
     }
 
 
     //nhấn dấu -
     public void clickToDecrease(View view) {
-        Button decrement = (Button) findViewById(R.id.decrement);
         quantity = quantity - 1;
-        display(quantity);
+
+        //số kcal
+        Intent intent = getIntent();
+        edtKcal = findViewById(R.id.edtKcal);
+        int calo = Integer.parseInt(intent.getStringExtra("KCAL"));
+        int total = quantity * calo;
+
+        if (quantity < 0) {
+            Toast.makeText(this, "Nhập lại", Toast.LENGTH_SHORT).show();
+            quantity = 0;
+        } else {
+            display(quantity, total);
+        }
+
     }
 
     //nhấn dấu +
     public void clickToIncrease(View view) {
-        Button increment = (Button) findViewById(R.id.increment);
         quantity = quantity + 1;
-        display(quantity);
+
+        //số kcal
+        Intent intent = getIntent();
+        edtKcal = findViewById(R.id.edtKcal);
+        int cal = Integer.parseInt(intent.getStringExtra("KCAL"));
+        int total = quantity * cal;
+        display(quantity, total);
     }
 
     //hiển thị số
-    private void display(int number) {
+    private void display(int number, int cal) {
+        edtKcal = findViewById(R.id.edtKcal);
+        edtKcal.setText("" + cal);
+
         TextView numberDisplay = (TextView) findViewById(
                 R.id.numberDisplay);
         numberDisplay.setText("" + number);
@@ -87,6 +90,6 @@ public class Pop extends AppCompatActivity {
 
     //nhấn hoàn tất popup
     public void clickToSubmit(View view) {
-        this.finish();
+        startActivity(new Intent(this, MainActivity.class));
     }
 }

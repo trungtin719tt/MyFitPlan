@@ -143,6 +143,7 @@ android:fitsSystemWindows="true">
                                 android:layout_height="wrap_content"
                                 android:layout_marginRight="5dp"
                                 android:text="300"
+                                android:inputType="number"
                                 android:textColor="@color/textColorOnWhite" />
 
                             <TextView
@@ -240,6 +241,7 @@ android:fitsSystemWindows="true">
                                 android:layout_height="wrap_content"
                                 android:layout_marginRight="5dp"
                                 android:text="400"
+                                android:inputType="number"
                                 android:textColor="@color/textColorOnWhite" />
 
                             <TextView
@@ -335,6 +337,7 @@ android:fitsSystemWindows="true">
                                 android:layout_height="wrap_content"
                                 android:layout_marginRight="5dp"
                                 android:text="200"
+                                android:inputType="number"
                                 android:textColor="@color/textColorOnWhite" />
 
                             <TextView
@@ -430,6 +433,7 @@ android:fitsSystemWindows="true">
                                 android:layout_height="wrap_content"
                                 android:layout_marginRight="5dp"
                                 android:text="100"
+                                android:inputType="number"
                                 android:textColor="@color/textColorOnWhite" />
 
                             <TextView
@@ -525,6 +529,7 @@ android:fitsSystemWindows="true">
                                 android:layout_height="wrap_content"
                                 android:layout_marginRight="5dp"
                                 android:text="300"
+                                android:inputType="number"
                                 android:textColor="@color/textColorOnWhite" />
 
                             <TextView
@@ -620,6 +625,7 @@ android:fitsSystemWindows="true">
                                 android:layout_height="wrap_content"
                                 android:layout_marginRight="5dp"
                                 android:text="230"
+                                android:inputType="number"
                                 android:textColor="@color/textColorOnWhite" />
 
                             <TextView

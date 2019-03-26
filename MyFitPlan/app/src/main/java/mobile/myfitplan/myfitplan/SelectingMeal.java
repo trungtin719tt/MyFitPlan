@@ -14,6 +14,8 @@ import android.widget.TextView;
 public class SelectingMeal extends AppCompatActivity {
     public LinearLayout foodDisplay, foodDisplay1, foodDisplay2;
     public TextView txtPlus, txtPlus1, txtPlus2;
+    private TextView txt_library_calories1, txt_library_calories2, txt_library_calories3, txt_library_calories4, txt_library_calories5, txt_library_calories6;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +35,10 @@ public class SelectingMeal extends AppCompatActivity {
         popUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(SelectingMeal.this, Pop.class));
+                Intent intent = new Intent(SelectingMeal.this, Pop.class);
+                txt_library_calories1 = findViewById(R.id.txt_library_calories1);
+                intent.putExtra("KCAL", txt_library_calories1.getText().toString());
+                startActivity(intent);
             }
         });
 
@@ -42,7 +47,10 @@ public class SelectingMeal extends AppCompatActivity {
         popUp1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(SelectingMeal.this, Pop.class));
+                Intent intent = new Intent(SelectingMeal.this, Pop.class);
+                txt_library_calories2 = findViewById(R.id.txt_library_calories2);
+                intent.putExtra("KCAL", txt_library_calories2.getText().toString());
+                startActivity(intent);
             }
         });
 
@@ -51,7 +59,10 @@ public class SelectingMeal extends AppCompatActivity {
         popUp2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(SelectingMeal.this, Pop.class));
+                Intent intent = new Intent(SelectingMeal.this, Pop.class);
+                txt_library_calories3 = findViewById(R.id.txt_library_calories3);
+                intent.putExtra("KCAL", txt_library_calories3.getText().toString());
+                startActivity(intent);
             }
         });
 
@@ -60,7 +71,10 @@ public class SelectingMeal extends AppCompatActivity {
         popUp3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(SelectingMeal.this, Pop.class));
+                Intent intent = new Intent(SelectingMeal.this, Pop.class);
+                txt_library_calories4 = findViewById(R.id.txt_library_calories4);
+                intent.putExtra("KCAL", txt_library_calories4.getText().toString());
+                startActivity(intent);
             }
         });
 
@@ -69,7 +83,10 @@ public class SelectingMeal extends AppCompatActivity {
         popUp4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(SelectingMeal.this, Pop.class));
+                Intent intent = new Intent(SelectingMeal.this, Pop.class);
+                txt_library_calories5 = findViewById(R.id.txt_library_calories5);
+                intent.putExtra("KCAL", txt_library_calories5.getText().toString());
+                startActivity(intent);
             }
         });
         //layout popup 6
@@ -77,7 +94,10 @@ public class SelectingMeal extends AppCompatActivity {
         popUp5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(SelectingMeal.this, Pop.class));
+                Intent intent = new Intent(SelectingMeal.this, Pop.class);
+                txt_library_calories6 = findViewById(R.id.txt_library_calories6);
+                intent.putExtra("KCAL", txt_library_calories6.getText().toString());
+                startActivity(intent);
             }
         });
 
@@ -134,14 +154,6 @@ public class SelectingMeal extends AppCompatActivity {
 
     }
 
-//    public void clickToMinimizeMaxmimize(View view) {
-//        if (foodDisplay.getVisibility() == View.VISIBLE) {
-//            setLayoutInvisible();
-//        } else {
-//            setLayoutVisible();
-//        }
-//    }
-
 
     public void setLayoutInvisible(LinearLayout LL, TextView TV) {
         if (LL.getVisibility() == View.VISIBLE) {
@@ -171,23 +183,5 @@ public class SelectingMeal extends AppCompatActivity {
     public void clickToMoveToLibrary(View view) {
         startActivity(new Intent(this, LibraryActivity.class));
     }
-
-//    public void clickToBack(View view) {
-//        startActivity(new Intent(this, DiaryActivity.class));
-//    }
-
-//    public void setLayoutVisible1() {
-//        if (foodDisplay1.getVisibility() == View.GONE) {
-//            foodDisplay1.setVisibility(View.VISIBLE);
-//            txtPlus1.setVisibility(View.GONE);
-//        }
-//    }
-//
-//    public void setLayoutInvisible1() {
-//        if (foodDisplay1.getVisibility() == View.VISIBLE) {
-//            foodDisplay1.setVisibility(View.GONE);
-//            txtPlus1.setVisibility(View.VISIBLE);
-//        }
-//    }
 
 }

@@ -153,13 +153,21 @@
                         <!--android:layout_marginLeft="5dp"-->
                         <!--android:textStyle="bold"/>-->
                         <TextView
+                            android:id="@+id/txt_library_calories1"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="30 cal"
+                            android:text="30"
                             android:layout_marginLeft="20dp"
                             android:layout_gravity="center"
                             android:textStyle="bold"
                             android:textColor="@color/textColorOnWhite"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="kcl"
+                            android:layout_marginLeft="15dp"
+                            android:textColor="@color/textColorOnWhite" />
                     </LinearLayout>
                     <LinearLayout
                         android:id="@+id/popUp1"
@@ -198,13 +206,21 @@
                                 />
                         </RelativeLayout>
                         <TextView
+                            android:id="@+id/txt_library_calories2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="150 cal"
-                            android:layout_gravity="center"
+                            android:text="150"
                             android:layout_marginLeft="20dp"
+                            android:layout_gravity="center"
                             android:textStyle="bold"
                             android:textColor="@color/textColorOnWhite"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="kcl"
+                            android:layout_marginLeft="5dp"
+                            android:textColor="@color/textColorOnWhite" />
                     </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
@@ -315,13 +331,21 @@
                         <!--android:layout_marginLeft="5dp"-->
                         <!--android:textStyle="bold"/>-->
                         <TextView
+                            android:id="@+id/txt_library_calories3"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="70 cal"
+                            android:text="70"
                             android:layout_marginLeft="20dp"
                             android:layout_gravity="center"
                             android:textStyle="bold"
                             android:textColor="@color/textColorOnWhite"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="kcl"
+                            android:layout_marginLeft="10dp"
+                            android:textColor="@color/textColorOnWhite" />
                     </LinearLayout>
                     <LinearLayout
                         android:id="@+id/popUp3"
@@ -360,13 +384,21 @@
                                 />
                         </RelativeLayout>
                         <TextView
+                            android:id="@+id/txt_library_calories4"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="200 cal"
-                            android:layout_gravity="center"
+                            android:text="200"
                             android:layout_marginLeft="20dp"
+                            android:layout_gravity="center"
                             android:textStyle="bold"
                             android:textColor="@color/textColorOnWhite"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="kcl"
+                            android:layout_marginLeft="5dp"
+                            android:textColor="@color/textColorOnWhite" />
                     </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
@@ -477,13 +509,21 @@
                         <!--android:layout_marginLeft="5dp"-->
                         <!--android:textStyle="bold"/>-->
                         <TextView
+                            android:id="@+id/txt_library_calories5"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="80 cal"
+                            android:text="80"
                             android:layout_marginLeft="20dp"
                             android:layout_gravity="center"
                             android:textStyle="bold"
                             android:textColor="@color/textColorOnWhite"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="kcl"
+                            android:layout_marginLeft="10dp"
+                            android:textColor="@color/textColorOnWhite" />
                     </LinearLayout>
                     <LinearLayout
                         android:id="@+id/popUp5"
@@ -522,13 +562,21 @@
                                 />
                         </RelativeLayout>
                         <TextView
+                            android:id="@+id/txt_library_calories6"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="65 cal"
-                            android:layout_gravity="center"
+                            android:text="65"
                             android:layout_marginLeft="20dp"
+                            android:layout_gravity="center"
                             android:textStyle="bold"
                             android:textColor="@color/textColorOnWhite"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="kcl"
+                            android:layout_marginLeft="10dp"
+                            android:textColor="@color/textColorOnWhite" />
                     </LinearLayout>
                 </LinearLayout>
             </LinearLayout>

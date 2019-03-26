@@ -5,16 +5,15 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.text.Html;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-public class Confirm extends AppCompatActivity {
+public class TargetRecordActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_confirm);
+        setContentView(R.layout.activity_target_record);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -23,23 +22,9 @@ public class Confirm extends AppCompatActivity {
         //set title and color for toolbar
         int textColor = getResources().getColor(R.color.textColorOnPrimary);
         String сolorString = String.format("%X", textColor).substring(2);
-        getSupportActionBar().setTitle(Html.fromHtml(String.format("<font color=\"#%s\"'>Nhập mã xác nhận</font>", сolorString)));
-    }
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_personal, menu);
-        return true;
+        getSupportActionBar().setTitle(Html.fromHtml(String.format("<font color=\"#%s\"'>Lịch sử mục tiêu </font>", сolorString)));
     }
 
-
-    public void clickToConfirm(View view) {
-        startActivity(new Intent(this, FillingGoal.class));
-    }
-
-//    public void clickToBack(View view) {
-//        startActivity(new Intent(this, SignUp.class));
-//    }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
@@ -51,4 +36,7 @@ public class Confirm extends AppCompatActivity {
         }
     }
 
+    public void clickToBack(View view) {
+        this.finish();
+    }
 }

@@ -64,13 +64,6 @@ public class PersonalMenu extends Fragment {
             }
         });
 
-//        LinearLayout linearLayout = (LinearLayout) rootView.findViewById(R.id.popUp);
-//        linearLayout.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                startActivity(new Intent(getActivity(), NewFolder.class));
-//            }
-//        });
         LinearLayout linearLayoutMinimize = (LinearLayout) rootView.findViewById(R.id.minimize_layout);
         linearLayoutMinimize.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -112,13 +105,7 @@ public class PersonalMenu extends Fragment {
         txtPlus2 = (TextView) rootView.findViewById(R.id.txtPlus2);
         return rootView;
     }
-//    public void clickToMinimizeMaxmimize(LinearLayout LL) {
-//        if (LL.getVisibility() == View.VISIBLE) {
-//            setLayoutInvisible();
-//        } else {
-//            setLayoutVisible();
-//        }
-//    }
+
 
     public void clickToPopUp(View view) {
         Intent intent = new Intent(getActivity(), NewFolder.class);

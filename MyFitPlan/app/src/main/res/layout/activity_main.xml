@@ -28,31 +28,33 @@
             android:layout_height="match_parent"
             android:gravity="center_horizontal"
             android:orientation="vertical">
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp">
-                <ImageView
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
-                    android:src="@drawable/exclamation"
-                    />
-                <TextView
-                    android:id="@+id/alert_message"
-                    android:layout_width="300dp"
-                    android:layout_marginLeft="50dp"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/alertColor"
-                    android:textSize="30dp"
-                    android:text="Chú ý ăn uống! "/>
-            </RelativeLayout>
+            <!--<RelativeLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_margin="10dp">-->
+                <!--<ImageView-->
+                    <!--android:layout_width="45dp"-->
+                    <!--android:layout_height="45dp"-->
+                    <!--android:src="@drawable/exclamation"-->
+                    <!--/>-->
+                <!--<TextView-->
+                    <!--android:id="@+id/alert_message"-->
+                    <!--android:layout_width="300dp"-->
+                    <!--android:layout_marginLeft="50dp"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:textColor="@color/alertColor"-->
+                    <!--android:textSize="30dp"-->
+                    <!--android:text="Chú ý ăn uống! "/>-->
+            <!--</RelativeLayout>-->
             <TextView
                 android:id="@+id/home_notification"
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"
                 android:gravity="center"
                 android:text="Biểu đồ dinh dưỡng trong ngày"
-                android:textSize="25sp"/>
+                android:textColor="@color/textColorOnWhite"
+                android:textSize="25sp"
+                android:layout_marginTop="20dp"/>
 
             <!-- progress calories -->
             <LinearLayout
@@ -64,6 +66,7 @@
                     android:layout_width="80dp"
                     android:layout_height="match_parent"
                     android:text="Calories"
+                    android:textColor="@color/textColorOnWhite"
                     android:gravity="center"/>
 
                 <LinearLayout
@@ -77,17 +80,17 @@
                         android:layout_width="250dp"
                         android:layout_height="20dp"
                         android:text="2600/3250"
+                        android:textColor="@color/textColorOnWhite"
                         android:gravity="center"/>
                     <ProgressBar
-                        android:progressDrawable="@drawable/progess_bar"
+                        android:progressDrawable="@drawable/progress_bar_3"
                         android:id="@+id/progress_calo"
                         android:layout_width="280dp"
                         android:layout_height="30dp"
-                        android:progress="2600"
-                        android:max="3250"
+                        android:secondaryProgress="90"
+                        android:progress="80"
+
                         style="@android:style/Widget.ProgressBar.Horizontal"
-
-
                         />
 
                 </LinearLayout>
@@ -105,6 +108,7 @@
                     android:layout_width="80dp"
                     android:layout_height="match_parent"
                     android:text="Protein"
+                    android:textColor="@color/textColorOnWhite"
                     android:gravity="center"/>
 
                 <LinearLayout
@@ -117,15 +121,16 @@
                         android:id="@+id/txt_progress_protein"
                         android:layout_width="280dp"
                         android:layout_height="20dp"
-                        android:text="65/200"
+                        android:text="78/200"
+                        android:textColor="@color/textColorOnWhite"
                         android:gravity="center"/>
                     <ProgressBar
                         android:progressDrawable="@drawable/progess_bar"
                         android:id="@+id/progress_protein"
                         android:layout_width="280dp"
                         android:layout_height="30dp"
-                        android:secondaryProgress="60"
-                        android:max="200"
+                        android:progress="33"
+                        android:secondaryProgress="90"
                         style="@android:style/Widget.ProgressBar.Horizontal"
                         />
 
@@ -144,6 +149,7 @@
                     android:layout_width="80dp"
                     android:layout_height="match_parent"
                     android:text="Tinh bột"
+                    android:textColor="@color/textColorOnWhite"
                     android:gravity="center"/>
 
                 <LinearLayout
@@ -156,15 +162,14 @@
                         android:id="@+id/txt_progress_carb"
                         android:layout_width="280dp"
                         android:layout_height="20dp"
-                        android:text="150/325"
+                        android:text="400/360"
+                        android:textColor="@color/textColorOnWhite"
                         android:gravity="center"/>
                     <ProgressBar
                         android:progressDrawable="@drawable/progess_bar"
                         android:id="@+id/progress_carb"
                         android:layout_width="280dp"
                         android:layout_height="30dp"
-                        android:secondaryProgress="150"
-                        android:max="325"
                         style="@android:style/Widget.ProgressBar.Horizontal"
                         />
 
@@ -182,6 +187,7 @@
                     android:layout_width="80dp"
                     android:layout_height="match_parent"
                     android:text="Chất béo"
+                    android:textColor="@color/textColorOnWhite"
                     android:gravity="center"/>
 
                 <LinearLayout
@@ -194,15 +200,17 @@
                         android:id="@+id/txt_progress_fat"
                         android:layout_width="280dp"
                         android:layout_height="20dp"
-                        android:text="23/150"
+                        android:text="23/120"
+                        android:textColor="@color/textColorOnWhite"
                         android:gravity="center"/>
                     <ProgressBar
-                        android:progressDrawable="@drawable/progess_bar"
+                        android:progressDrawable="@drawable/progress_bar_2"
                         android:id="@+id/progress_fat"
                         android:layout_width="280dp"
                         android:layout_height="30dp"
-                        android:secondaryProgress="23"
-                        android:max="150"
+                        android:progress="15"
+                        android:secondaryProgress="90"
+
                         style="@android:style/Widget.ProgressBar.Horizontal"
                         />
 
@@ -221,6 +229,7 @@
                     android:layout_width="80dp"
                     android:layout_height="match_parent"
                     android:text="Nước"
+                    android:textColor="@color/textColorOnWhite"
                     android:gravity="center"/>
 
                 <LinearLayout
@@ -234,20 +243,105 @@
                         android:layout_width="280dp"
                         android:layout_height="20dp"
                         android:text="2222/2500ml"
+                        android:textColor="@color/textColorOnWhite"
                         android:gravity="center"/>
                     <ProgressBar
-                        android:progressDrawable="@drawable/progess_bar"
+                        android:progressDrawable="@drawable/progress_bar_3"
                         android:id="@+id/progress_nuoc"
                         android:layout_width="280dp"
                         android:layout_height="30dp"
-                        android:progress="2222"
-                        android:max="3250"
+                        android:progress="85"
+                        android:secondaryProgress="90"
                         style="@android:style/Widget.ProgressBar.Horizontal"
                         />
 
                 </LinearLayout>
 
+            </LinearLayout>
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="15dp"
+                >
+
+                //thiếu nhiều, đỏ
+                <LinearLayout
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="60dp"
+                    android:background="#cf5c04"
+                    >
+                </LinearLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Thiếu nhiều"
+                    android:textColor="@color/textColorOnWhite"
+                    android:textSize="15dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_gravity="center"/>
+
+                //Thiếu, vàng
+                <LinearLayout
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:background="#FFC107"
+                    android:layout_marginLeft="40dp"
+                    >
+                </LinearLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Thiếu"
+                    android:textColor="@color/textColorOnWhite"
+                    android:textSize="15dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="5dp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="15dp"
+                >
+
+                //Chấp nhận được, xanh
+                <LinearLayout
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:background="#76FF03"
+                    android:layout_marginLeft="60dp"
+                    >
+                </LinearLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Chấp nhận được"
+                    android:textColor="@color/textColorOnWhite"
+                    android:textSize="15dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="5dp"/>
+
+                //Vượt quá mức
+                <LinearLayout
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:background="#da1604"
+                    android:layout_marginLeft="8dp"
+                    >
+                </LinearLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Vượt quá mức"
+                    android:textColor="@color/textColorOnWhite"
+                    android:textSize="15dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_gravity="center"/>
 
             </LinearLayout>
 
@@ -472,7 +566,7 @@
             app:fabSize="auto"
             android:layout_gravity="bottom|end"
             android:onClick="clickToEat"
-            android:layout_marginBottom="80dp"
+            android:layout_marginBottom="90dp"
             android:layout_marginRight="40dp"
             app:backgroundTint="@color/colorPrimary"
             />
