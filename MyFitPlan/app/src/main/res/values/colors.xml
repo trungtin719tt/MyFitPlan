@@ -19,5 +19,7 @@
     <color name="textColorOnLight">#ffffff</color>
     <color name="textColorOnWhite">#000000</color>
 
+    <color name="bgBottomNavigation">#fe485a</color>
+
 
 </resources>
