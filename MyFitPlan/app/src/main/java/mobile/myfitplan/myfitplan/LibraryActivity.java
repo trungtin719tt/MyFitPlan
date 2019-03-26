@@ -357,37 +357,6 @@ public class LibraryActivity extends AppCompatActivity {
     public void Search() {
         keyword = ((EditText)findViewById(R.id.edtAccount)).getText().toString();
         InitData();
-//        TextView textView = new TextView(this);
-//        textView.setText("Không có kết quả phù hợp!");
-//        textView.setGravity(Gravity.CENTER);
-//        textView.setTextSize(20);
-//        textView.setLayoutParams(new LinearLayout.LayoutParams(
-//                LinearLayout.LayoutParams.FILL_PARENT,
-//                LinearLayout.LayoutParams.WRAP_CONTENT));
-//        LinearLayout content = findViewById(R.id.food_content);
-//
-//        Button addFood = new Button(this);
-//        addFood.setText("Thêm món mới");
-//        addFood.setBackground(getResources().getDrawable(R.drawable.custom_button));
-//        LinearLayout.LayoutParams ll = new LinearLayout.LayoutParams(
-//                LinearLayout.LayoutParams.WRAP_CONTENT,
-//                LinearLayout.LayoutParams.WRAP_CONTENT);
-//        ll.gravity = Gravity.CENTER;
-//        ll.topMargin = 20;
-//        addFood.setLayoutParams(ll);
-//        addFood.setPadding(10, 0, 10, 0);
-//        addFood.setTextColor(Color.parseColor("#FFFFFF"));
-//
-//        addFood.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                startActivity(new Intent(LibraryActivity.this, AddingMeal.class));
-//            }
-//        });
-//
-//        content.removeAllViews();
-//        content.addView(textView);
-//        content.addView(addFood);
     }
 
 
