@@ -8,7 +8,7 @@ import cz.msebera.android.httpclient.HttpEntity;
 
 public class HttpUtils {
 
-    private final String BASE_URL = "http://35.185.29.57:12345/";
+    private final String BASE_URL = "http://myfitplan.cf/";
 //    private final String BASE_URL = "http://localhost:58717/";
 
     public AsyncHttpClient client = new AsyncHttpClient();

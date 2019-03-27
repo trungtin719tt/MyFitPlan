@@ -98,6 +98,7 @@ public class FillingInfo extends AppCompatActivity {
                 super.onFailure(statusCode, headers, throwable, errorResponse);
                 Toast.makeText(getApplicationContext(),"Vui lòng điền thông tin chính xác",Toast.LENGTH_LONG).show();
             }
+
         });
     }
 

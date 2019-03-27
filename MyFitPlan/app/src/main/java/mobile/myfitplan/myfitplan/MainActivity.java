@@ -166,6 +166,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             @Override
             public void onFailure(int statusCode, Header[] headers, String responseString, Throwable throwable) {
                 super.onFailure(statusCode, headers, responseString, throwable);
+                startActivity(new Intent(MainActivity.this, FillingGoal.class));
             }
 
             @Override
